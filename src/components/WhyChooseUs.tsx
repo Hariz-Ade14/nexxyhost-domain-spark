@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Clock, Shield, Dollar, Users } from 'lucide-react';
+import { Clock, Shield, DollarSign, Users } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const features = [
@@ -23,7 +23,7 @@ const WhyChooseUs = () => {
       stat: '0 Security Breaches'
     },
     {
-      icon: Dollar,
+      icon: DollarSign,
       title: 'Affordable Plans',
       description: 'Premium hosting solutions at competitive prices with transparent billing.',
       stat: 'Starting at $2.99/mo'
