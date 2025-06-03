@@ -1,8 +1,7 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Hero = () => {
-  const [domain, setDomain] = useState('');
+  const [domain, setDomain] = useState("");
 
   return (
     <section className="relative bg-gradient-to-br from-[#59B2B8ff] via-[#00656Aff] to-teal-900 text-white overflow-hidden">
@@ -16,7 +15,9 @@ const Hero = () => {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center">
           {/* Main headline */}
-          <h1  className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-transparent bg-clip-text text-teal-500">NexxyHost -Web Hosting</h1>
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-transparent bg-clip-text text-teal-500">
+            NexxyHost Web Hosting
+          </h1>
           <h1 className="text-2xl lg:text-4xl font-bold mb-6 leading-tight">
             Find the perfect domain.
             <br />
@@ -26,7 +27,8 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-          Secured by multi-layers of security protection, together with redundancy capabilities.
+            Secured by multi-layers of security protection, together with
+            redundancy capabilities.
           </p>
 
           {/* Domain search bar */}
@@ -55,11 +57,16 @@ const Hero = () => {
           {/* Popular extensions */}
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <span className="text-gray-400">Popular:</span>
-            {['.com $12.99', '.net $14.99', '.org $13.99', '.io $49.99'].map((ext) => (
-              <span key={ext} className="bg-gray-800 px-4 py-2 rounded-full text-gray-300 hover:bg-gray-700 cursor-pointer transition-colors">
-                {ext}
-              </span>
-            ))}
+            {[".com $12.99", ".net $14.99", ".org $13.99", ".io $49.99"].map(
+              (ext) => (
+                <span
+                  key={ext}
+                  className="bg-gray-800 px-4 py-2 rounded-full text-gray-300 hover:bg-gray-700 cursor-pointer transition-colors"
+                >
+                  {ext}
+                </span>
+              )
+            )}
           </div>
         </div>
       </div>
