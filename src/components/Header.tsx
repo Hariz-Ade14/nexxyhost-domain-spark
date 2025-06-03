@@ -1,141 +1,165 @@
-
-import React, { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const menuItems = [
     {
-      name: 'DOMAINS',
+      name: "DOMAINS",
       items: [
-        'Purchase and Register Domain',
-        'Transfer Domain',
-        'Perform WHOIS Search',
-        'Become a Domain Reseller'
-      ]
+        { label: "Purchase and Register Domain", url: "/register-domain" },
+        { label: "Transfer Domain", url: "/transfer-domain" },
+        { label: "Perform WHOIS Search", url: "/register-domain" },
+        { label: "Become a Domain Reseller", url: "/register-domain" },
+      ],
     },
     {
-      name: 'WEBSITE AND HOSTING',
+      name: "WEBSITE AND HOSTING",
       items: [
-        'Website Builder',
-        'Shared Hosting',
-        'WordPress Shared Hosting',
-        'Hosting Migration and Transfer',
-        'Dedicated Cloud Hosting',
-        'Reseller Hosting'
-      ]
+        { label: "Website Builder", url: "/register-domain" },
+        { label: "Shared Hosting", url: "/transfer-domain" },
+        { label: "WordPress Shared Hosting", url: "/register-domain" },
+        { label: "Hosting Migration and Transfer", url: "/register-domain" },
+        { label: "Dedicated Cloud Hosting", url: "/register-domain" },
+        { label: "Reseller Hosting", url: "/register-domain" },
+      ],
     },
     {
-      name: 'EMAIL SERVICES',
+      name: "EMAIL SERVICES",
       items: [
-        'Business Email Hosting',
-        'Enterprise Email Hosting'
-      ]
+        { label: "Business Email Hosting", url: "/register-domain" },
+        { label: "Enterprise Email Hosting", url: "/transfer-domain" },
+      ],
     },
     {
-      name: 'SECURITY',
+      name: "SECURITY",
       items: [
-        'SSL Certificates',
-        'Website Security'
-      ]
+        { label: "SSL Certificates", url: "/register-domain" },
+        { label: "Website Security", url: "/transfer-domain" },
+      ],
     },
     {
-      name: 'SUPPORT',
+      name: "SUPPORT",
       items: [
-        'Knowledgebase',
-        'Submit Ticket',
-        'Legals',
-        'Contact Us'
-      ]
-    }
+        { label: "Knowledgebase", url: "/register-domain" },
+        { label: "Submit Ticket", url: "/transfer-domain" },
+        { label: "Legals", url: "/register-domain" },
+        { label: "Contact Us", url: "/transfer-domain" },
+      ],
+    },
   ];
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex-shrink-0">
             <div className="text-2xl font-bold text-blue-600">
-              nexxyhost
+              <img
+                src="/favicon.ico"
+                alt="favicon"
+                className=""
+             
+              />
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {menuItems.map((menu) => (
-              <div
-                key={menu.name}
-                className="relative group"
-                onMouseEnter={() => setActiveDropdown(menu.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors">
-                  {menu.name}
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                
-                {activeDropdown === menu.name && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                    {menu.items.map((item, index) => (
-                      <a
-                        key={index}
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                      >
-                        {item}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
+          <div className="hidden md:block">
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                {menuItems.map(({ name, items }) => (
+                  <NavigationMenuItem key={name}>
+                    <NavigationMenuTrigger className="px-3 py-2">
+                      {name}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-2 p-4 md:w-[500px]">
+                        {items.map((item) => (
+                          <li key={item.label}>
+                            <Link
+                              to={item.url}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
-          {/* Right side actions */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
+          {/* Desktop CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a
+              href="#"
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+            >
               Webmail Login
             </a>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <button className="bg-[#048086ff] text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
               Get Started
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="space-y-4 mt-4">
-              {menuItems.map((menu) => (
-                <div key={menu.name} className="space-y-2">
-                  <div className="font-semibold text-gray-900">{menu.name}</div>
-                  {menu.items.map((item, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="block pl-4 text-sm text-gray-600 hover:text-blue-600"
-                    >
-                      {item}
-                    </a>
-                  ))}
+          <div className="md:hidden py-4">
+            <div className="space-y-4">
+              {menuItems.map(({ name, items }) => (
+                <div key={name} className="space-y-2">
+                  <div className="font-medium px-2">{name}</div>
+                  <div className="space-y-1">
+                    {items.map((item) => (
+                      <Link
+                        key={item.label}
+                        to={item.url}
+                        className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               ))}
-              <div className="pt-4 border-t border-gray-200">
-                <a href="#" className="block text-gray-700 hover:text-blue-600 mb-2">
+              <div className="space-y-2 pt-4 border-t border-gray-200">
+                <a
+                  href="#"
+                  className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                >
                   Webmail Login
                 </a>
-                <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <button className="w-full text-left px-3 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors">
                   Get Started
                 </button>
               </div>
