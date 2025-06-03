@@ -34,10 +34,10 @@ const ServiceHighlights = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-teal-900 mb-4">
             Everything You Need to Succeed Online
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-teal-600 max-w-3xl mx-auto">
             From domain registration to enterprise hosting, we provide all the tools and services your business needs.
           </p>
         </div>
@@ -48,28 +48,28 @@ const ServiceHighlights = () => {
               key={index}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
             >
-              <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
-                <service.icon className="h-8 w-8 text-blue-600" />
+              <div className="bg-teal-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-200 transition-colors">
+                <service.icon className="h-8 w-8 text-teal-600" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-teal-900 mb-4">
                 {service.title}
               </h3>
               
-              <p className="text-gray-600 mb-6">
+              <p className="text-teal-600 mb-6">
                 {service.description}
               </p>
               
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-gray-500">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                  <li key={featureIndex} className="flex items-center text-sm text-teal-500">
+                    <div className="w-2 h-2 bg-teal-600 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
               
-              <button className="mt-6 w-full py-3 text-blue-600 font-semibold hover:bg-blue-50 rounded-lg transition-colors">
+              <button className="mt-6 w-full py-3 text-teal-600 font-semibold hover:bg-teal-50 rounded-lg transition-colors">
                 Learn More
               </button>
             </div>

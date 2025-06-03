@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import RegisterDomain from "./pages/Domain/registerDomain"; 
+import TransferDomain from "./pages/Domain/TransferDomain";
+import WhoIsSearch from "./pages/Domain/whoIsSearch";
 
 const queryClient = new QueryClient();
 
@@ -16,8 +19,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
+          <Route path="/register-domain" element={<RegisterDomain/>}/>
+          <Route path="/transfer-domain" element={<TransferDomain/>}/>
+          <Route path="/regiter-domain" element={<WhoIsSearch/>}/>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
