@@ -7,7 +7,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import PricingPlans from '../components/PricingPlans';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
-
+import Features from '@/components/Features';
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
@@ -16,6 +16,7 @@ const Index = () => {
       <ServiceHighlights />
       <WhyChooseUs />
       <PricingPlans />
+      <Features />
       <Testimonials />
       <Footer />
     </div>
