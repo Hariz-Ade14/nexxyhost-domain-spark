@@ -7,11 +7,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const route = useNavigate();
   const menuItems = [
     {
       name: "DOMAINS",
@@ -65,12 +65,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="text-2xl font-bold text-blue-600">
-              <img
-                src="/favicon.ico"
-                alt="favicon"
-                className=""
-             
-              />
+              <a href="/">
+                <img src="/favicon.ico" alt="favicon" className=""  />
+              </a>
             </div>
           </div>
 
@@ -111,7 +108,7 @@ const Header = () => {
             >
               Webmail Login
             </a>
-            <button className="bg-[#048086ff] text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+            <button className="bg-[#048086ff] text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
               Get Started
             </button>
           </div>

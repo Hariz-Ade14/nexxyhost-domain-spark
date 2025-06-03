@@ -66,7 +66,7 @@ const Footer = () => {
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
               Stay Updated with NexxyHost
             </h3>
-            <p className="text-teal-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-white-100 mb-8 max-w-2xl mx-auto">
               Get the latest hosting tips, security updates, and exclusive offers delivered to your inbox.
             </p>
             
@@ -76,12 +76,12 @@ const Footer = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg text-teal-900 border-none outline-none"
+                className="flex-1 px-4 py-3 rounded-lg text-white-900 border-none outline-none"
                 required
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-white text-teal-600 font-semibold rounded-lg hover:bg-teal-100 transition-colors"
+                className="px-6 py-3 bg-teal-900 text-white font-semibold rounded-lg hover:bg-teal-100 transition-colors"
               >
                 Subscribe
               </button>
@@ -98,7 +98,7 @@ const Footer = () => {
             <div className="text-3xl font-bold text-[#048086ff] mb-4">
               nexxyhost
             </div>
-            <p className="text-teal-400 mb-6 max-w-sm">
+            <p className="text-white-400 mb-6 max-w-sm">
               Empowering businesses worldwide with reliable hosting, domains, and security solutions since 2008.
             </p>
             
@@ -130,7 +130,7 @@ const Footer = () => {
                   <li key={linkIndex}>
                     <a
                       href="#"
-                      className="text-teal-400 hover:text-white transition-colors text-sm"
+                      className="text-white-400 hover:text-white transition-colors text-sm"
                     >
                       {link}
                     </a>
@@ -142,25 +142,25 @@ const Footer = () => {
         </div>
 
         {/* Webmail login link */}
-        <div className="mt-12 pt-8 border-t border-teal-800">
+        <div className="mt-12 pt-8 border-t border-white-800">
           <div className="flex flex-col lg:flex-row justify-between items-center">
             <div className="mb-4 lg:mb-0">
               <a
                 href="#"
-                className="inline-flex items-center px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-teal-800 text-white font-semibold rounded-lg hover:bg-white-700 transition-colors"
               >
                 Webmail Login
               </a>
             </div>
             
             <div className="text-center lg:text-right">
-              <p className="text-teal-400 text-sm">
+              <p className="text-white-400 text-sm">
                 © 2024 NexxyHost. All rights reserved.
               </p>
               <div className="mt-2 space-x-6">
-                <a href="#" className="text-teal-400 hover:text-white text-sm">Privacy Policy</a>
-                <a href="#" className="text-teal-400 hover:text-white text-sm">Terms of Service</a>
-                <a href="#" className="text-teal-400 hover:text-white text-sm">Cookie Policy</a>
+                <a href="#" className="text-white-400 hover:text-white text-sm">Privacy Policy</a>
+                <a href="#" className="text-white-400 hover:text-white text-sm">Terms of Service</a>
+                <a href="#" className="text-white-400 hover:text-white text-sm">Cookie Policy</a>
               </div>
             </div>
           </div>
