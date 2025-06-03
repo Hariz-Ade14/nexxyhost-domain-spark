@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import RegisterDomain from "./pages/Domain/registerDomain"; 
 import TransferDomain from "./pages/Domain/TransferDomain";
 import WhoIsSearch from "./pages/Domain/whoIsSearch";
-
+import Layout from "./components/Layout";
 const queryClient = new QueryClient();
 
 const App = () => (
