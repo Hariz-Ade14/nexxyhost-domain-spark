@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="text-center">
           {/* Main headline */}
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-transparent bg-clip-text text-teal-500">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-transparent bg-clip-text text-teal-600">
             NexxyHost Web Hosting
           </h1>
           <h1 className="text-2xl lg:text-4xl font-bold mb-6 leading-tight">
