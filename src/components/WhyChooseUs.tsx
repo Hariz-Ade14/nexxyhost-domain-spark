@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="text-center group">
-              <div className="bg-gradient-to-br from-teal-100 to-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-teal-200 to-teal-400 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="h-10 w-10 text-teal-600" />
               </div>
               

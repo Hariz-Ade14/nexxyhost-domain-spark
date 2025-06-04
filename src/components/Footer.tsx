@@ -1,60 +1,48 @@
-
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube } from "react-icons/fa";
 const Footer = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const footerSections = [
     {
-      title: 'DOMAINS',
+      title: "DOMAINS",
       links: [
-        'Purchase and Register Domain',
-        'Transfer Domain',
-        'Perform WHOIS Search',
-        'Become a Domain Reseller'
-      ]
+        "Purchase and Register Domain",
+        "Transfer Domain",
+        "Perform WHOIS Search",
+        "Become a Domain Reseller",
+      ],
     },
     {
-      title: 'WEBSITE AND HOSTING',
+      title: "WEBSITE AND HOSTING",
       links: [
-        'Website Builder',
-        'Shared Hosting',
-        'WordPress Shared Hosting',
-        'Hosting Migration and Transfer',
-        'Dedicated Cloud Hosting',
-        'Reseller Hosting'
-      ]
+        "Website Builder",
+        "Shared Hosting",
+        "WordPress Shared Hosting",
+        "Hosting Migration and Transfer",
+        "Dedicated Cloud Hosting",
+        "Reseller Hosting",
+      ],
     },
     {
-      title: 'EMAIL SERVICES',
-      links: [
-        'Business Email Hosting',
-        'Enterprise Email Hosting'
-      ]
+      title: "EMAIL SERVICES",
+      links: ["Business Email Hosting", "Enterprise Email Hosting"],
     },
     {
-      title: 'SECURITY',
-      links: [
-        'SSL Certificates',
-        'Website Security'
-      ]
+      title: "SECURITY",
+      links: ["SSL Certificates", "Website Security"],
     },
     {
-      title: 'SUPPORT',
-      links: [
-        'Knowledgebase',
-        'Submit Ticket',
-        'Legals',
-        'Contact Us'
-      ]
-    }
+      title: "SUPPORT",
+      links: ["Knowledgebase", "Submit Ticket", "Legals", "Contact Us"],
+    },
   ];
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle newsletter subscription
-    console.log('Newsletter subscription:', email);
-    setEmail('');
+    console.log("Newsletter subscription:", email);
+    setEmail("");
   };
 
   return (
@@ -67,10 +55,14 @@ const Footer = () => {
               Stay Updated with NexxyHost
             </h3>
             <p className="text-white-100 mb-8 max-w-2xl mx-auto">
-              Get the latest hosting tips, security updates, and exclusive offers delivered to your inbox.
+              Get the latest hosting tips, security updates, and exclusive
+              offers delivered to your inbox.
             </p>
-            
-            <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto flex gap-4">
+
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="max-w-md mx-auto flex gap-4"
+            >
               <input
                 type="email"
                 value={email}
@@ -81,7 +73,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-teal-900 text-white font-semibold rounded-lg hover:bg-teal-100 transition-colors"
+                className="px-6 py-3 bg-teal-900 text-white font-semibold rounded-lg hover:bg-teal-900/50 transition-colors"
               >
                 Subscribe
               </button>
@@ -92,29 +84,47 @@ const Footer = () => {
 
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-7 gap-3">
           {/* Logo and description */}
           <div className="lg:col-span-2">
-            <div className="text-3xl font-bold text-[#048086ff] mb-4">
-              nexxyhost
+            <div className="flex-shrink-0">
+              <div className="text-2xl font-bold text-blue-600">
+                <a href="/">
+                  <img src="/favicon.ico" alt="favicon" className="" />
+                </a>
+              </div>
             </div>
-            <p className="text-white-400 mb-6 max-w-sm">
-              Empowering businesses worldwide with reliable hosting, domains, and security solutions since 2008.
+            <p className="text-white-400 mb-6 mt-5 max-w-fit">
+              Empowering businesses worldwide with reliable hosting, domains,
+              and security solutions since 2008.
             </p>
-            
+            <div className="flex flex-col">
+              <h4 className="text-sm font-bold text-[#048086ff] mb-4 uppercase tracking-wider">
+                Address
+              </h4>
+              <ul>
+                <li className="text-white-400 hover:text-white transition-colors text-sm">
+                  Central Business District, Abuja-Nigeria.
+                </li>
+                <li className="text-white-400 hover:text-white transition-colors text-sm">
+                  Phone: (234) 811-690-0912
+                </li>
+              </ul>
+            </div>
+
             {/* Social icons */}
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-teal-800 rounded-lg flex items-center justify-center hover:bg-teal-600 transition-colors">
-                <span className="text-sm font-bold">f</span>
+            <div className="flex space-x-4 my-5">
+              <a href="#">
+                <FaFacebook size={25} />
               </a>
-              <a href="#" className="w-10 h-10 bg-teal-800 rounded-lg flex items-center justify-center hover:bg-teal-600 transition-colors">
-                <span className="text-sm font-bold">t</span>
+              <a href="#">
+                <FaTwitter size={25} />
               </a>
-              <a href="#" className="w-10 h-10 bg-teal-800 rounded-lg flex items-center justify-center hover:bg-teal-600 transition-colors">
-                <span className="text-sm font-bold">in</span>
+              <a href="#">
+                <FaLinkedin size={25} />
               </a>
-              <a href="#" className="w-10 h-10 bg-teal-800 rounded-lg flex items-center justify-center hover:bg-teal-600 transition-colors">
-                <span className="text-sm font-bold">yt</span>
+              <a href="#">
+                <FaYoutube size={25} />
               </a>
             </div>
           </div>
@@ -143,27 +153,9 @@ const Footer = () => {
 
         {/* Webmail login link */}
         <div className="mt-12 pt-8 border-t border-white-800">
-          <div className="flex flex-col lg:flex-row justify-between items-center">
-            <div className="mb-4 lg:mb-0">
-              <a
-                href="#"
-                className="inline-flex items-center px-6 py-3 bg-teal-800 text-white font-semibold rounded-lg hover:bg-white-700 transition-colors"
-              >
-                Webmail Login
-              </a>
-            </div>
-            
-            <div className="text-center lg:text-right">
-              <p className="text-white-400 text-sm">
-                © 2024 NexxyHost. All rights reserved.
-              </p>
-              <div className="mt-2 space-x-6">
-                <a href="#" className="text-white-400 hover:text-white text-sm">Privacy Policy</a>
-                <a href="#" className="text-white-400 hover:text-white text-sm">Terms of Service</a>
-                <a href="#" className="text-white-400 hover:text-white text-sm">Cookie Policy</a>
-              </div>
-            </div>
-          </div>
+          <p className="text-white-400 text-center text-sm">
+            © 2024 NexxyHost. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

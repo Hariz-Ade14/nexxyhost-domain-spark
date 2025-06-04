@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import RegisterDomain from "./pages/Domain/registerDomain"; 
 import TransferDomain from "./pages/Domain/TransferDomain";
 import WhoIsSearch from "./pages/Domain/whoIsSearch";
-import Layout from "./components/Layout";
+import SharedHosting from "./pages/WebsiteAndHosting/sharedHosting";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -23,6 +23,9 @@ const App = () => (
           <Route path="/register-domain" element={<RegisterDomain/>}/>
           <Route path="/transfer-domain" element={<TransferDomain/>}/>
           <Route path="/regiter-domain" element={<WhoIsSearch/>}/>
+          <Route path="/shared-hosting" element={<SharedHosting/>}/>
+          {/* <Route path="/vps-hosting" element={<VpsHosting/>}/>
+          <Route path="/dedicated-hosting" element={<DedicatedHosting/>}/> */}
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import {
   NavigationMenu,
@@ -16,8 +16,7 @@ const Header = () => {
     {
       name: "DOMAINS",
       items: [
-        { label: "Purchase and Register Domain", url: "/register-domain" },
-        { label: "Transfer Domain", url: "/transfer-domain" },
+        { label: "Transfer | Register Domain", url: "/register-domain" },
         { label: "Perform WHOIS Search", url: "/register-domain" },
         { label: "Become a Domain Reseller", url: "/register-domain" },
       ],
@@ -26,7 +25,7 @@ const Header = () => {
       name: "WEBSITE AND HOSTING",
       items: [
         { label: "Website Builder", url: "/register-domain" },
-        { label: "Shared Hosting", url: "/transfer-domain" },
+        { label: "Shared Hosting", url: "/shared-hosting" },
         { label: "WordPress Shared Hosting", url: "/register-domain" },
         { label: "Hosting Migration and Transfer", url: "/register-domain" },
         { label: "Dedicated Cloud Hosting", url: "/register-domain" },
@@ -58,8 +57,21 @@ const Header = () => {
     },
   ];
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <header className={`fixed w-full px-4 py-2 transition-all duration-300 z-10 ${
+      scrolled ? 'bg-white shadow-md' : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -76,8 +88,8 @@ const Header = () => {
             <NavigationMenu viewport={false}>
               <NavigationMenuList>
                 {menuItems.map(({ name, items }) => (
-                  <NavigationMenuItem key={name}>
-                    <NavigationMenuTrigger className="px-3 py-2">
+                  <NavigationMenuItem className="!bg-transparent" key={name}>
+                    <NavigationMenuTrigger className={`px-3 !bg-transparent !hover:bg-transparent  py-2  hover:underline ${scrolled ? "text-teal-900" : "text-teal-500 hover:text-teal-500"}`}>
                       {name}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -86,7 +98,7 @@ const Header = () => {
                           <li key={item.label}>
                             <Link
                               to={item.url}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              className="block select-none space-y-1 text-teal-900 rounded-md p-3 leading-none no-underline outline-none hover:underline"
                             >
                               {item.label}
                             </Link>
@@ -104,11 +116,11 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="#"
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              className={`${scrolled ? "text-teal-900 hover:text-teal-600" : "hover:text-teal-900 text-teal-500"} text-teal-500 hover:text-teal-700 font-medium transition-colors`}
             >
-              Webmail Login
+               Login
             </a>
-            <button className="bg-[#048086ff] text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+            <button className="bg-button text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
               Get Started
             </button>
           </div>

@@ -11,7 +11,7 @@ import Features from '@/components/Features';
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <ServiceHighlights />
       <WhyChooseUs />
