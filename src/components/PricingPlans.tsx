@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const PricingPlans = () => {
+const PricingPlans = ({plan}: {plan?: string}) => {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annual'>('monthly');
 
   const plans = [
@@ -58,12 +58,14 @@ const PricingPlans = () => {
     }
   ];
 
+
+
   return (
-    <section className="py-20 bg-teal-50">
+    <section className="py-20 px-5 lg:px-0 bg-teal-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-teal-900 mb-4">
-            Choose Your Perfect Plan
+            Choose Your Perfect {plan && plan} Plan
           </h2>
           <p className="text-xl text-teal-600 max-w-3xl mx-auto mb-8">
             Flexible hosting solutions that grow with your business
@@ -75,7 +77,7 @@ const PricingPlans = () => {
               onClick={() => setBillingPeriod('monthly')}
               className={`px-6 py-2 rounded-full transition-colors ${
                 billingPeriod === 'monthly'
-                  ? 'bg-teal-600 text-white'
+                  ? 'bg-button text-white'
                   : 'text-teal-600 hover:text-teal-600'
               }`}
             >
@@ -85,7 +87,7 @@ const PricingPlans = () => {
               onClick={() => setBillingPeriod('annual')}
               className={`px-6 py-2 rounded-full transition-colors ${
                 billingPeriod === 'annual'
-                  ? 'bg-teal-600 text-white'
+                  ? 'bg-button text-white'
                   : 'text-teal-600 hover:text-teal-600'
               }`}
             >
@@ -97,7 +99,7 @@ const PricingPlans = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 space-y-5">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -107,7 +109,7 @@ const PricingPlans = () => {
             >
               {plan.isPopular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-teal-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-button text-white px-4 py-2 rounded-full text-sm font-semibold">
                     Best Value
                   </span>
                 </div>
@@ -147,8 +149,8 @@ const PricingPlans = () => {
               <button
                 className={`w-full py-4 rounded-lg font-semibold transition-colors ${
                   plan.isPopular
-                    ? 'bg-teal-600 text-white hover:bg-teal-700'
-                    : 'bg-teal-100 text-teal-900 hover:bg-teal-200'
+                    ? 'bg-button text-white hover:bg-teal-700'
+                    : 'bg-button text-white hover:bg-teal-700'
                 }`}
               >
                 Get Started

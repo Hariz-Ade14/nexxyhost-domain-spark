@@ -7,11 +7,19 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Link,useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const route = useNavigate();
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: true,  
+    });
+  }, []);
+
   const menuItems = [
     {
       name: "DOMAINS",
@@ -24,12 +32,12 @@ const Header = () => {
     {
       name: "WEBSITE AND HOSTING",
       items: [
-        { label: "Website Builder", url: "/register-domain" },
+        { label: "Website Builder", url: "/website-builder" },
         { label: "Shared Hosting", url: "/shared-hosting" },
-        { label: "WordPress Shared Hosting", url: "/register-domain" },
-        { label: "Hosting Migration and Transfer", url: "/register-domain" },
-        { label: "Dedicated Cloud Hosting", url: "/register-domain" },
-        { label: "Reseller Hosting", url: "/register-domain" },
+        { label: "WordPress Shared Hosting", url: "/wordpressshared-hosting" },
+        { label: "Hosting Migration and Transfer", url: "/hosting-migration" },
+        { label: "Dedicated Cloud Hosting", url: "/dedicated-cloud-hosting" },
+        { label: "Reseller Hosting", url: "/reseller-hosting" },
       ],
     },
     {
@@ -69,10 +77,10 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full px-4 py-2 transition-all duration-300 z-10 ${
+    <header className={`fixed w-full lg:px-4 py-2 transition-all duration-300 z-10 ${
       scrolled ? 'bg-white shadow-md' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    } ${isMenuOpen &&" bg-white"}`}>
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -128,7 +136,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+              className={`inline-flex items-center justify-center p-2 rounded-md  hover:text-teal-600 focus:outline-none ${scrolled ? "text-teal-900" : "text-teal-500"}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -142,17 +150,17 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4">
+          <div data-aos="fade-in" className="md:hidden bg-white mx-0 py-4 overflow-scroll">
             <div className="space-y-4">
               {menuItems.map(({ name, items }) => (
                 <div key={name} className="space-y-2">
-                  <div className="font-medium px-2">{name}</div>
+                  <div className="font-medium px-2 text-teal-900">{name}</div>
                   <div className="space-y-1">
                     {items.map((item) => (
                       <Link
                         key={item.label}
                         to={item.url}
-                        className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                        className="block px-3 py-2 rounded-md text-teal-700 hover:underline"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.label}
@@ -161,10 +169,10 @@ const Header = () => {
                   </div>
                 </div>
               ))}
-              <div className="space-y-2 pt-4 border-t border-gray-200">
+              <div className="space-y-2 pt-4 border-t border-teal-200">
                 <a
                   href="#"
-                  className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                  className="block px-3 py-2 rounded-md text-teal-700 hover:bg-teal-50 hover:text-blue-600"
                 >
                   Webmail Login
                 </a>

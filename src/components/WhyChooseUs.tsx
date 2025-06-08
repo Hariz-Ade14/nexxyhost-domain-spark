@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Trust indicators */}
-        <div className="mt-20 text-center">
+        {/* <div className="mt-20 text-center">
           <p className="text-teal-500 mb-8">Trusted by over 50,000+ websites worldwide</p>
           <div className="flex justify-center items-center space-x-12 opacity-60">
             <div className="text-2xl font-bold text-teal-600">WordPress</div>
@@ -75,7 +75,7 @@ const WhyChooseUs = () => {
             <div className="text-2xl font-bold text-teal-600">Joomla</div>
             <div className="text-2xl font-bold text-teal-600">Drupal</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

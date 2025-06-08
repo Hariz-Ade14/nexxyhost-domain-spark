@@ -72,97 +72,53 @@ const PurchaseRegister: React.FC = () => {
   return (
     <Layout>
       <div>
-        <section
-          id="domain-search"
-          className="py-12 px-4 sm:px-6 lg:px-8 bg-white"
-        >
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-teal-900 mb-4">
-                Find Your Domain Name
-              </h2>
-              <p className="text-xl text-teal-600">
-                Search for the perfect domain name for your website
+       
+
+            <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 mt-12 items-center">
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <h1 className="text-2xl md:text-3xl font-bold text-teal-900 mb-6">
+                Find Your Perfect Domain Name
+                 
+              </h1>
+              <p className="text-xl text-center w-[70%] text-teal-600 mb-8">
+                Secure your online identity with the perfect domain name. Choose from hundreds 
+                of extensions and get your website online today with instant activation.
+              </p>
+              <div className="bg-white p-2 rounded-2xl shadow-lg mb-8">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input
+                    type="text"
+                    placeholder="Enter your domain name..."
+                    className="flex-1 px-4 py-3 border border-teal-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  />
+                  <button className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all">
+                    Search
+                  </button>
+                </div>
+              </div>
+              <p className="text-teal-600">
+                <span className="font-semibold">Popular:</span> .com, .net, .org, .io, .co
               </p>
             </div>
-
-            <form onSubmit={handleSearch} className="mb-12">
-              <div className="flex flex-col md:flex-row">
-                <div className="flex-grow mb-4 md:mb-0 md:mr-4">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      placeholder="Enter your domain name..."
-                      className="w-full px-4 py-3 border border-teal-900 rounded-md focus:ring-teal-500 focus:border-teal-500"
-                      value={domainName}
-                      onChange={(e) => setDomainName(e.target.value)}
-                    />
-                    {/* <div className="absolute inset-y-0 left-0 pl-3 mr-4 flex items-center pointer-events-none">
-                      <Globe className="h-5 w-5 text-teal-400" />
-                    </div> */}
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-[#048086ff] text-white font-medium rounded-md hover:bg-teal-700 transition-colors"
-                >
-                  <div className="flex items-center justify-center">
-                    <Search className="w-5 h-5 mr-2" />
-                    Search
-                  </div>
-                </button>
-              </div>
-            </form>
-
-            {searchResults.length > 0 && (
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold mb-4">Search Results</h3>
-
-                <div className="bg-teal-50 rounded-lg overflow-hidden shadow">
-                  <div className="divide-y divide-teal-200">
-                    {searchResults.map((result, index) => (
-                      <div
-                        key={index}
-                        className="p-4 flex flex-col md:flex-row md:items-center md:justify-between"
-                      >
-                        <div className="flex items-center mb-3 md:mb-0">
-                          <span
-                            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                              result.available
-                                ? "bg-green-100 text-green-800"
-                                : "bg-red-100 text-red-800"
-                            } mr-3`}
-                          >
-                            {result.available ? "Available" : "Taken"}
-                          </span>
-                          <span className="text-lg font-medium">
-                            {result.domain}
-                          </span>
-                        </div>
-
-                        <div className="flex items-center">
-                          <span className="text-lg font-semibold text-teal-900 mr-4">
-                            ${result.price}/year
-                          </span>
-
-                          {result.available ? (
-                            <button className="px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700 transition-colors">
-                              Add to Cart
-                            </button>
-                          ) : (
-                            <button className="px-4 py-2 bg-teal-200 text-teal-700 rounded hover:bg-teal-300 transition-colors">
-                              Search Alternatives
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+            {/* <div className="relative">
+              <img 
+                src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                alt="Domain registration and web presence"
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                <div className="flex items-center space-x-3">
+                  <Globe className="h-5 w-5 text-teal-600" />
+                  <span className="text-sm font-semibold text-teal-700">Instant Activation</span>
                 </div>
               </div>
-            )}
+            </div> */}
           </div>
-        </section>
+        </div>
+      </section>
+
 
         {/* Domain Extensions */}
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-teal-50">
@@ -308,7 +264,7 @@ const PurchaseRegister: React.FC = () => {
             </p>
             <a
               href="#domain-search"
-              className="inline-block px-8 py-3 bg-white text-teal-700 font-medium rounded-md hover:bg-teal-100 transition-colors shadow-md text-lg"
+              className="inline-block px-8 py-3 bg-teal-900 text-white font-medium rounded-md hover:bg-teal-900/50 transition-colors shadow-md text-lg"
             >
               Find Your Domain Now
             </a>
