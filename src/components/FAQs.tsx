@@ -78,9 +78,9 @@ const FAQs = () => {
                 data-aos="fade-down"
                 className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
               >
-                <details  data-aos="fade-in"  className="group">
+                <details  data-aos="fade-in" className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-lg lg:font-semibold text-gray-900">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0 ml-4">
