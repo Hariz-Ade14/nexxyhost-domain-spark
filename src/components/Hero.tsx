@@ -8,7 +8,7 @@ const Hero = () => {
     <section className="relative bg-[url('/images/nexxyhost.jpg')] bg-cover bg-center bg-no-repeat bg-fixed w-full text-white overflow-hidden">
       <Header />
       <div className="relative w-[100%] mx-auto sm:px-6 py-24 lg:py-32">
-        <div className="text-center bg-black/30 w-full flex flex-col gap-7">
+        <div className="text-center bg-black/30 w-full px-3 lg:px-0 flex flex-col gap-7">
           {/* Main headline */}
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-teal-200">
             Domain Names | Hosting | Security
