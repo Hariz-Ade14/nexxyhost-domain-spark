@@ -85,7 +85,7 @@ const Header = () => {
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       } ${isMenuOpen && " bg-white"}`}
     >
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-2">
+      <div className="max-w-full mx-auto sm:px-6 lg:px-2">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -136,19 +136,10 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="#"
-              className={`${
-                scrolled
-                  ? "text-teal-900 hover:text-teal-600"
-                  : "hover:text-teal-900 text-white"
-              } text-teal-500 hover:text-teal-700 font-medium transition-colors`}
-            >
-              Login
-            </a>
-            <button className="bg-button text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
-              Get Started
-            </button>
+            <a href="https://nexxyhost.com/clientarea/clientarea.php" className="no-underline">
+            <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+             Login
+            </button></a>
           </div>
 
           {/* Mobile Menu Button */}

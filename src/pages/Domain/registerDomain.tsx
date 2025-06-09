@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Hero from "../../components/Hero";
-// import Breadcrumb from '../../components/Breadcrumb';
-// import FAQ, { FAQItem } from '../../components/FAQ';
-import { Globe, Check, Search } from "lucide-react";
+
+import { Check, ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 const domainExtensions = [
   { name: ".com", price: 12.99 },
@@ -72,46 +70,49 @@ const PurchaseRegister: React.FC = () => {
   return (
     <Layout>
       <div>
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-5">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col gap-2">
-              <h1 className="text-2xl md:text-3xl font-bold text-teal-900 mb-6">
-                Find Your Perfect Domain Name
-                 
-              </h1>
-              <p className="text-[20px]  w-[70%] text-black mb-8">
-                Secure your online identity with the perfect domain name. Choose from hundreds 
-                of extensions and get your website online today with instant activation.
-              </p>
-              <div className="bg-white p-2 rounded-2xl mb-8">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="text"
-                    placeholder="Enter your domain name..."
-                    className="flex-1 px-4 py-3 border border-teal-900 rounded-lg"
-                  />
-                  <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all">
-                    Search
-                  </button>
+        <section className="bg-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="flex flex-col gap-2">
+                <h1 className="text-2xl md:text-3xl font-bold text-teal-900 mb-6">
+                  Find Your Perfect Domain Name
+                </h1>
+                <p className="text-[20px]  w-[70%] text-black mb-8">
+                  Secure your online identity with the perfect domain name.
+                  Choose from hundreds of extensions and get your website online
+                  today with instant activation.
+                </p>
+                <div className="bg-white p-2 rounded-2xl mb-8">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <input
+                      type="text"
+                      placeholder="Enter your domain name..."
+                      className="flex-1 px-4 py-3 border border-teal-900 rounded-lg"
+                    />
+                    <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all">
+                      Search
+                    </button>
+                   
+                  </div> 
+                  <a href="https://nexxyhost.com/clientarea/cart.php?a=add&domain=transfer" className="text-teal-900 hover:underline no-underline flex mt-5">
+                      Transfer Domain from another registrar <ChevronRight />
+                    </a>
                 </div>
+                <p className="text-teal-600">
+                  <span className="font-semibold">Popular:</span> .com, .net,
+                  .org, .io, .co
+                </p>
               </div>
-              <p className="text-teal-600">
-                <span className="font-semibold">Popular:</span> .com, .net, .org, .io, .co
-              </p>
-            </div>
-            <div className="relative">
-              <img
-                src="/images/register.avif"
-                alt="Website design and development illustration"
-                className="rounded-2xl"
-              />
-             
+              <div className="relative">
+                <img
+                  src="/images/register.avif"
+                  alt="Website design and development illustration"
+                  className="rounded-2xl"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
+        </section>
 
         {/* Domain Extensions */}
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-teal-50">

@@ -9,8 +9,8 @@ const SharedHosting: React.FC = () => {
       <div>
         {/* Features Section */}
         <section id="features" className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center my-6 flex items-center justify-center flex-col bg-[url('/images/banner333.jpg')] min-h-[500px] bg-cover bg-center">
+          <div className="max-w-full mx-auto">
+            <div className="text-center my-6 flex items-center justify-center flex-col bg-[url('/images/banner333.jpg')] min-h-[500px]  bg-cover bg-center bg-no-repeat bg-fixed w-full">
               <h2 className="lg:text-5xl text-2xl font-bold text-teal-500 mb-4">
                 Powerful Hosting Features
               </h2>

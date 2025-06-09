@@ -83,21 +83,21 @@ const Footer = () => {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto bg-black rounded-t-[30px] px-4 sm:px-6 lg:px-8 py-16">
+      <div className="w-full mx-auto bg-black rounded-t-[30px] px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-7 gap-3">
           {/* Logo and description */}
           <div className="lg:col-span-2">
-            <div className="flex-shrink-0">
+            {/* <div className="flex-shrink-0">
               <div className="text-2xl font-bold text-blue-600">
                 <a href="/">
                   <img src="/favicon.ico" alt="favicon" className="" />
                 </a>
               </div>
-            </div>
-            <p className="text-white-400 mb-6 mt-5 max-w-fit">
+            </div> */}
+            {/* <p className="text-white-400 mb-6 mt-5 max-w-fit">
               Empowering businesses worldwide with reliable hosting, domains,
               and security solutions since 2008.
-            </p>
+            </p> */}
             <div className="flex flex-col">
               <h4 className="text-sm font-bold text-[#048086ff] mb-4 uppercase tracking-wider">
                 Address

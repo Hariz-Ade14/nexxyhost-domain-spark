@@ -6,31 +6,31 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      company: 'Digital Marketing Agency',
+      name: 'Ifeanyi Fred',
+      // company: 'Digital Marketing Agency',
       avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b932?w=100&h=100&fit=crop&crop=face',
-      text: "NexxyHost has been incredible for our agency. The uptime is fantastic and their support team always resolves issues quickly. We've migrated all our client sites here.",
+      text: "Very friendly and helped with what I wanted without stressing me out.",
       rating: 5
     },
     {
-      name: 'Michael Chen',
-      company: 'E-commerce Store Owner',
+      name: 'Divine Uche',
+      // company: 'E-commerce Store Owner',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
-      text: "The performance improvement was immediate after switching to NexxyHost. Our page load times decreased by 60% and we haven't had any downtime issues.",
+      text: "Great experience! Weldone.",
       rating: 5
     },
     {
-      name: 'Emily Rodriguez',
-      company: 'Blogger & Content Creator',
+      name: 'Christian Okoro',
+      // company: 'Blogger & Content Creator',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
-      text: "As someone who's not very technical, I appreciate how easy NexxyHost makes everything. Their one-click WordPress install and automatic backups give me peace of mind.",
+      text: "Good job nexxyhost. Keep it up.",
       rating: 5
     },
     {
-      name: 'David Thompson',
-      company: 'Startup Founder',
+      name: 'Muhammad Saghir Husseini',
+      // company: 'Startup Founder',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
-      text: "We needed hosting that could scale with our growing startup. NexxyHost's cloud solutions have been perfect - reliable, fast, and cost-effective.",
+      text: "Great Customer Support. Please keep it up.",
       rating: 5
     }
   ];
@@ -72,11 +72,11 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center justify-center">
-                <img
+                {/* <img
                   src={testimonials[currentTestimonial].avatar}
                   alt={testimonials[currentTestimonial].name}
                   className="w-16 h-16 rounded-full mr-4"
-                />
+                /> */}
                 <div className="text-left">
                   <div className="text-xl font-semibold text-white">
                     {testimonials[currentTestimonial].name}
