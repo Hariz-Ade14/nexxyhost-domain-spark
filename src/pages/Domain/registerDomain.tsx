@@ -79,7 +79,7 @@ const PurchaseRegister: React.FC = () => {
                 </h1>
                 <p className="text-[20px]  w-[70%] text-black mb-8">
                   Secure your online identity with the perfect domain name.
-                  Choose from hundreds of extensions and get your website online
+                  Choose from hundreds of extension and get your website online
                   today with instant activation.
                 </p>
                 <div className="bg-white p-2 rounded-2xl mb-8">
