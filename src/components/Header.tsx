@@ -104,13 +104,10 @@ const Header = () => {
                   <NavigationMenuItem className="!bg-transparent" key={name}>
                     <NavigationMenuTrigger
                       className={`px-3 !bg-transparent !hover:bg-transparent  py-2  hover:underline ${
-                        location.pathname !== "/" ?
-                        "text-black" : "text-gray-300" 
-                      } ${
-                        scrolled
-                          ? "text-teal-900"
-                          : " hover:text-teal-500"
-                      }`}
+                        location.pathname !== "/"
+                          ? "text-black"
+                          : "text-gray-300"
+                      } ${scrolled ? "text-teal-900" : " hover:text-teal-500"}`}
                     >
                       {name}
                     </NavigationMenuTrigger>
@@ -136,10 +133,14 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://nexxyhost.com/clientarea/clientarea.php" className="no-underline">
-            <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
-             Login
-            </button></a>
+            <a
+              href="https://nexxyhost.com/clientarea/clientarea.php"
+              className="no-underline"
+            >
+              <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                Login
+              </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -162,10 +163,12 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div
-            data-aos="fade-in"
-            className="md:hidden bg-white mx-0 py-4 overflow-scroll"
+            data-aos="fade-left"
+            data-aos-offset="500"
+            data-aos-duration="500"
+            className="fixed inset-0 z-50 bg-white md:hidden overflow-y-auto py-4 top-[70px]"
           >
-            <div className="space-y-4">
+            <div className="space-y-4  overflow-y-scroll">
               {menuItems.map(({ name, items }) => (
                 <div key={name} className="space-y-2">
                   <div className="font-medium px-2 text-teal-900">{name}</div>
@@ -183,17 +186,14 @@ const Header = () => {
                   </div>
                 </div>
               ))}
-              <div className="space-y-2 pt-4 border-t border-teal-200">
-                <a
-                  href="#"
-                  className="block px-3 py-2 rounded-md text-teal-700 hover:bg-teal-50 hover:text-blue-600"
-                >
-                  Webmail Login
-                </a>
-                <button className="w-full text-left px-3 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors">
-                  Get Started
+              <a
+                href="https://nexxyhost.com/clientarea/clientarea.php"
+                className="no-underline mx-3 my-10"
+              >
+                <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                  Login
                 </button>
-              </div>
+              </a>
             </div>
           </div>
         )}
