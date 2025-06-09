@@ -166,7 +166,7 @@ const Header = () => {
             data-aos="fade-left"
             data-aos-offset="500"
             data-aos-duration="500"
-            className="fixed inset-0 z-50 bg-white md:hidden overflow-y-auto py-4 top-[70px]"
+            className="fixed inset-0 z-50 bg-white md:hidden overflow-y-auto pt-4 pb-12 top-[70px]"
           >
             <div className="space-y-4  overflow-y-scroll">
               {menuItems.map(({ name, items }) => (
