@@ -1,141 +1,196 @@
-
-import React, { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   const menuItems = [
     {
-      name: 'DOMAINS',
+      name: "Domains",
       items: [
-        'Purchase and Register Domain',
-        'Transfer Domain',
-        'Perform WHOIS Search',
-        'Become a Domain Reseller'
-      ]
+        { label: "Transfer | Register Domain", url: "/register-domain" },
+        { label: "Perform WHOIS Search", url: "/register-domain" },
+        { label: "Become a Domain Reseller", url: "/register-domain" },
+      ],
     },
     {
-      name: 'WEBSITE AND HOSTING',
+      name: "Website & Hosting",
       items: [
-        'Website Builder',
-        'Shared Hosting',
-        'WordPress Shared Hosting',
-        'Hosting Migration and Transfer',
-        'Dedicated Cloud Hosting',
-        'Reseller Hosting'
-      ]
+        { label: "Website Builder", url: "/website-builder" },
+        { label: "Shared Hosting", url: "/shared-hosting" },
+        { label: "WordPress Shared Hosting", url: "/wordpressshared-hosting" },
+        { label: "Hosting Migration and Transfer", url: "/hosting-migration" },
+        { label: "Dedicated Cloud Hosting", url: "/dedicated-cloud-hosting" },
+        { label: "Reseller Hosting", url: "/reseller-hosting" },
+      ],
     },
     {
-      name: 'EMAIL SERVICES',
+      name: "Email Services",
       items: [
-        'Business Email Hosting',
-        'Enterprise Email Hosting'
-      ]
+        { label: "Business Email Hosting", url: "/register-domain" },
+        { label: "Enterprise Email Hosting", url: "/transfer-domain" },
+      ],
     },
     {
-      name: 'SECURITY',
+      name: "Security",
       items: [
-        'SSL Certificates',
-        'Website Security'
-      ]
+        { label: "SSL Certificates", url: "/register-domain" },
+        { label: "Website Security", url: "/transfer-domain" },
+      ],
     },
     {
-      name: 'SUPPORT',
+      name: "Support",
       items: [
-        'Knowledgebase',
-        'Submit Ticket',
-        'Legals',
-        'Contact Us'
-      ]
-    }
+        { label: "Knowledgebase", url: "/register-domain" },
+        { label: "Submit Ticket", url: "/transfer-domain" },
+        { label: "Legals", url: "/register-domain" },
+        { label: "Contact Us", url: "/transfer-domain" },
+      ],
+    },
   ];
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const location = useLocation();
+
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <header
+      className={`fixed w-full lg:px-4 py-1 transition-all duration-300 z-10 ${
+        scrolled ? "bg-white shadow-md" : "bg-transparent"
+      } ${isMenuOpen && " bg-white"}`}
+    >
+      <div className="max-w-full mx-auto sm:px-6 lg:px-2">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex-shrink-0">
             <div className="text-2xl font-bold text-blue-600">
-              nexxyhost
+              <a href="/">
+                <img src="/favicon.ico" alt="favicon" className="w-[120px]" />
+              </a>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {menuItems.map((menu) => (
-              <div
-                key={menu.name}
-                className="relative group"
-                onMouseEnter={() => setActiveDropdown(menu.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors">
-                  {menu.name}
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                
-                {activeDropdown === menu.name && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                    {menu.items.map((item, index) => (
-                      <a
-                        key={index}
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                      >
-                        {item}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
-
-          {/* Right side actions */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
-              Webmail Login
-            </a>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-              Get Started
-            </button>
+          <div className="hidden md:block">
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                {menuItems.map(({ name, items }) => (
+                  <NavigationMenuItem className="!bg-transparent" key={name}>
+                    <NavigationMenuTrigger
+                      className={`px-3 !bg-transparent !hover:bg-transparent  py-2  hover:underline ${
+                        location.pathname !== "/" ?
+                        "text-black" : "text-gray-300" 
+                      } ${
+                        scrolled
+                          ? "text-teal-900"
+                          : " hover:text-teal-500"
+                      }`}
+                    >
+                      {name}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-2 p-4 md:w-[500px]">
+                        {items.map((item) => (
+                          <li key={item.label}>
+                            <Link
+                              to={item.url}
+                              className="block select-none space-y-1 text-teal-900 rounded-md p-3 leading-none no-underline outline-none hover:underline"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Desktop CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a href="https://nexxyhost.com/clientarea/clientarea.php" className="no-underline">
+            <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+             Login
+            </button></a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              className={`inline-flex items-center justify-center p-2 rounded-md  hover:text-teal-600 focus:outline-none ${
+                scrolled ? "text-teal-900" : "text-teal-500"
+              }`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="space-y-4 mt-4">
-              {menuItems.map((menu) => (
-                <div key={menu.name} className="space-y-2">
-                  <div className="font-semibold text-gray-900">{menu.name}</div>
-                  {menu.items.map((item, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="block pl-4 text-sm text-gray-600 hover:text-blue-600"
-                    >
-                      {item}
-                    </a>
-                  ))}
+          <div
+            data-aos="fade-in"
+            className="md:hidden bg-white mx-0 py-4 overflow-scroll"
+          >
+            <div className="space-y-4">
+              {menuItems.map(({ name, items }) => (
+                <div key={name} className="space-y-2">
+                  <div className="font-medium px-2 text-teal-900">{name}</div>
+                  <div className="space-y-1">
+                    {items.map((item) => (
+                      <Link
+                        key={item.label}
+                        to={item.url}
+                        className="block px-3 py-2 rounded-md text-teal-700 hover:underline"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               ))}
-              <div className="pt-4 border-t border-gray-200">
-                <a href="#" className="block text-gray-700 hover:text-blue-600 mb-2">
+              <div className="space-y-2 pt-4 border-t border-teal-200">
+                <a
+                  href="#"
+                  className="block px-3 py-2 rounded-md text-teal-700 hover:bg-teal-50 hover:text-blue-600"
+                >
                   Webmail Login
                 </a>
-                <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <button className="w-full text-left px-3 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors">
                   Get Started
                 </button>
               </div>

@@ -34,10 +34,10 @@ const WhyChooseUs = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-teal-900 mb-4">
             Why Choose NexxyHost?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Join thousands of satisfied customers who trust us with their online presence.
           </p>
         </div>
@@ -45,20 +45,20 @@ const WhyChooseUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="text-center group">
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="h-10 w-10 text-blue-600" />
+              <div className="bg-gradient-to-br from-teal-200 to-teal-400 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="h-10 w-10 text-teal-600" />
               </div>
               
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-teal-900 mb-3">
                 {feature.title}
               </h3>
               
-              <p className="text-gray-600 mb-4">
+              <p className="text-black mb-4">
                 {feature.description}
               </p>
               
-              <div className="bg-blue-50 px-4 py-2 rounded-full inline-block">
-                <span className="text-blue-600 font-semibold text-sm">
+              <div className="bg-teal-50 px-4 py-2 rounded-full inline-block">
+                <span className="text-black font-semibold text-sm">
                   {feature.stat}
                 </span>
               </div>
@@ -67,15 +67,15 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Trust indicators */}
-        <div className="mt-20 text-center">
-          <p className="text-gray-500 mb-8">Trusted by over 50,000+ websites worldwide</p>
+        {/* <div className="mt-20 text-center">
+          <p className="text-teal-500 mb-8">Trusted by over 50,000+ websites worldwide</p>
           <div className="flex justify-center items-center space-x-12 opacity-60">
-            <div className="text-2xl font-bold text-gray-400">WordPress</div>
-            <div className="text-2xl font-bold text-gray-400">Shopify</div>
-            <div className="text-2xl font-bold text-gray-400">Joomla</div>
-            <div className="text-2xl font-bold text-gray-400">Drupal</div>
+            <div className="text-2xl font-bold text-teal-600">WordPress</div>
+            <div className="text-2xl font-bold text-teal-600">Shopify</div>
+            <div className="text-2xl font-bold text-teal-600">Joomla</div>
+            <div className="text-2xl font-bold text-teal-600">Drupal</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

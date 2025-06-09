@@ -7,16 +7,20 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import PricingPlans from '../components/PricingPlans';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
-
+import Features from '@/components/Features';
+import FAQs from '@/components/FAQs';
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* <Header /> */}
       <Hero />
+      
       <ServiceHighlights />
       <WhyChooseUs />
       <PricingPlans />
+      <Features />
       <Testimonials />
+      <FAQs/>
       <Footer />
     </div>
   );

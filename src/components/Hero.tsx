@@ -1,35 +1,30 @@
-
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import Header from "./Header";
+import { Palette } from "lucide-react";
 const Hero = () => {
-  const [domain, setDomain] = useState('');
+  const [domain, setDomain] = useState("");
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
-      {/* Lightning effect background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-1 h-32 bg-blue-400 transform rotate-12 animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-24 bg-purple-400 transform -rotate-12 animate-pulse delay-300"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-1 h-20 bg-cyan-400 transform rotate-45 animate-pulse delay-700"></div>
-      </div>
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="text-center">
+    <section className="relative bg-[url('/images/nexxyhost.jpg')] bg-cover bg-center bg-no-repeat bg-fixed w-full text-white overflow-hidden">
+      <Header />
+      <div className="relative w-[100%] mx-auto sm:px-6 py-24 lg:py-32">
+        <div className="text-center bg-black/30 w-full px-3 lg:px-0 flex flex-col gap-7">
           {/* Main headline */}
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-            Find the perfect domain.
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-              Fast. Secure. Affordable.
-            </span>
+          <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-teal-200">
+            Domain Names | Hosting | Security
+          </h1>
+          <h1 className="text-xl lg:text-xl font-semibold text-white lg:leading-[.5rem]">
+            PROFESSIONAL TECHNICAL SUPPORT 24/7 TO HELP YOU!
           </h1>
 
-          <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Start your online journey with NexxyHost. Get premium hosting, domains, and security solutions all in one place.
+          <p className="text-md lg:text-sm lg:leading-[1.5rem] text-white  max-w-3xl mx-auto">
+            Huge Choice | New Extensions | Lowest Prices
+            <br />
+            Register Your Perfect Domain Name Today.
           </p>
 
           {/* Domain search bar */}
-          <div className="max-w-4xl mx-auto mb-8">
+          <div className="lg:w-[80%] w-[80%] mx-auto mb-8">
             <div className="flex flex-col lg:flex-row gap-4 p-2 bg-white rounded-2xl shadow-2xl">
               <div className="flex-1">
                 <input
@@ -37,37 +32,101 @@ const Hero = () => {
                   value={domain}
                   onChange={(e) => setDomain(e.target.value)}
                   placeholder="Enter your domain name..."
-                  className="w-full px-6 py-4 text-lg text-gray-900 bg-transparent border-none outline-none placeholder-gray-500"
+                  className="w-full px-6 py-2 text-lg text-gray-900 bg-transparent border-none outline-none placeholder-gray-500"
                 />
               </div>
               <div className="flex gap-2">
-                <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors">
-                  Search
+                <a
+                  href="https://nexxyhost.com/clientarea/cart.php?a=add&domain=register"
+                  className="no-underline w-[50%] "
+                >
+                  <button className="px-8 py-3 bg-[#048086ff] text-white font-semibold rounded-xl hover:bg-teal-900 transition-colors">
+                    Register
+                  </button>
+                </a>
+                <a
+                  href="https://nexxyhost.com/clientarea/cart.php?a=add&domain=transfer"
+                  className="no-underline w-[50%] "
+                >
+                
+                <button className="px-8 py-3 bg-[#048086ff] text-white font-semibold rounded-xl hover:bg-teal-900 transition-colors">
+                  Transfer
                 </button>
-                <button className="px-8 py-4 bg-gray-700 text-white font-semibold rounded-xl hover:bg-gray-600 transition-colors">
-                  Transfer Domain
-                </button>
+                </a>
               </div>
             </div>
           </div>
 
           {/* Popular extensions */}
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="text-gray-400">Popular:</span>
-            {['.com $12.99', '.net $14.99', '.org $13.99', '.io $49.99'].map((ext) => (
-              <span key={ext} className="bg-gray-800 px-4 py-2 rounded-full text-gray-300 hover:bg-gray-700 cursor-pointer transition-colors">
+            {[
+              ".com $12.99",
+              ".net $14.99",
+              ".org $13.99",
+              ".io $49.99",
+              ".xyz $49.99",
+            ].map((ext) => (
+              <span
+                key={ext}
+                className="bg-button px-4 py-2 rounded-full text-gray-300 hover:bg-teal-900 cursor-pointer transition-colors"
+              >
                 {ext}
               </span>
             ))}
           </div>
         </div>
       </div>
-
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-      </div>
+      <section className="bg-white to-cyan-50 py-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <img
+                src="/images/image4.avif"
+                alt="Website design and development illustration"
+                className="rounded-2xl w-[1000px]"
+              />
+            </div>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
+                Your online success begins with us
+              </h1>
+              <p className="text-xl text-black mb-8">
+                Our state-of-the-art data centers and cloud infrastructure
+                ensure your website is always fast, secure, and available. With
+                99.9% uptime guarantee and global CDN network. Our
+                state-of-the-art data centers and cloud infrastructure ensure
+                your website is always fast, secure, and available. With 99.9%
+                uptime guarantee and global CDN network.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
+                Explore Our hosting options
+              </h1>
+              <p className="text-xl text-black mb-8">
+                Are you looking for speed, simplicity, space, or less expensive
+                hosting plans? We have got you covered. Choose from our shared
+                and cloud hosting. Are you looking for speed, simplicity, space,
+                or less expensive hosting plans? We have got you covered. Choose
+                from our shared and cloud hosting.
+              </p>
+            </div>
+            <div className="relative">
+              <img
+                src="/images/image2.jpg"
+                alt="Website design and development illustration"
+                className="rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   );
 };
