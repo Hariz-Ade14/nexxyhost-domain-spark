@@ -67,7 +67,7 @@ const PricingPlans = ({plan}: {plan?: string}) => {
           <h2 className="text-3xl lg:text-4xl font-bold text-teal-900 mb-4">
             Choose Your Perfect {plan && plan} Plan
           </h2>
-          <p className="text-xl text-teal-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-black max-w-3xl mx-auto mb-8">
             Flexible hosting solutions that grow with your business
           </p>
 
@@ -119,7 +119,7 @@ const PricingPlans = ({plan}: {plan?: string}) => {
                 <h3 className="text-2xl font-bold text-teal-900 mb-2">
                   {plan.name}
                 </h3>
-                <p className="text-teal-600 mb-6">
+                <p className="text-black mb-6">
                   {plan.description}
                 </p>
                 
@@ -131,7 +131,7 @@ const PricingPlans = ({plan}: {plan?: string}) => {
                 </div>
                 
                 {billingPeriod === 'annual' && (
-                  <p className="text-sm text-green-600">
+                  <p className="text-sm text-black">
                     Billed annually (${(plan.annualPrice * 12).toFixed(2)}/year)
                   </p>
                 )}
@@ -141,7 +141,7 @@ const PricingPlans = ({plan}: {plan?: string}) => {
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center">
                     <div className="w-2 h-2 bg-teal-600 rounded-full mr-3"></div>
-                    <span className="text-teal-700">{feature}</span>
+                    <span className="text-black">{feature}</span>
                   </li>
                 ))}
               </ul>

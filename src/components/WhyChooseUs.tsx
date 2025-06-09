@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-teal-900 mb-4">
             Why Choose NexxyHost?
           </h2>
-          <p className="text-xl text-teal-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Join thousands of satisfied customers who trust us with their online presence.
           </p>
         </div>
@@ -53,12 +53,12 @@ const WhyChooseUs = () => {
                 {feature.title}
               </h3>
               
-              <p className="text-teal-600 mb-4">
+              <p className="text-black mb-4">
                 {feature.description}
               </p>
               
               <div className="bg-teal-50 px-4 py-2 rounded-full inline-block">
-                <span className="text-teal-600 font-semibold text-sm">
+                <span className="text-black font-semibold text-sm">
                   {feature.stat}
                 </span>
               </div>

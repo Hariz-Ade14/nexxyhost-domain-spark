@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import {
   NavigationMenu,
@@ -8,21 +8,22 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      once: true,  
+      duration: 1000,
+      once: true,
     });
   }, []);
 
   const menuItems = [
     {
-      name: "DOMAINS",
+      name: "Domains",
       items: [
         { label: "Transfer | Register Domain", url: "/register-domain" },
         { label: "Perform WHOIS Search", url: "/register-domain" },
@@ -30,7 +31,7 @@ const Header = () => {
       ],
     },
     {
-      name: "WEBSITE AND HOSTING",
+      name: "Website & Hosting",
       items: [
         { label: "Website Builder", url: "/website-builder" },
         { label: "Shared Hosting", url: "/shared-hosting" },
@@ -41,21 +42,21 @@ const Header = () => {
       ],
     },
     {
-      name: "EMAIL SERVICES",
+      name: "Email Services",
       items: [
         { label: "Business Email Hosting", url: "/register-domain" },
         { label: "Enterprise Email Hosting", url: "/transfer-domain" },
       ],
     },
     {
-      name: "SECURITY",
+      name: "Security",
       items: [
         { label: "SSL Certificates", url: "/register-domain" },
         { label: "Website Security", url: "/transfer-domain" },
       ],
     },
     {
-      name: "SUPPORT",
+      name: "Support",
       items: [
         { label: "Knowledgebase", url: "/register-domain" },
         { label: "Submit Ticket", url: "/transfer-domain" },
@@ -72,21 +73,25 @@ const Header = () => {
       setScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const location = useLocation();
+
   return (
-    <header className={`fixed w-full lg:px-4 py-2 transition-all duration-300 z-10 ${
-      scrolled ? 'bg-white shadow-md' : 'bg-transparent'
-    } ${isMenuOpen &&" bg-white"}`}>
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <header
+      className={`fixed w-full lg:px-4 py-1 transition-all duration-300 z-10 ${
+        scrolled ? "bg-white shadow-md" : "bg-transparent"
+      } ${isMenuOpen && " bg-white"}`}
+    >
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-2">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="text-2xl font-bold text-blue-600">
               <a href="/">
-                <img src="/favicon.ico" alt="favicon" className=""  />
+                <img src="/favicon.ico" alt="favicon" className="w-[120px]" />
               </a>
             </div>
           </div>
@@ -97,7 +102,16 @@ const Header = () => {
               <NavigationMenuList>
                 {menuItems.map(({ name, items }) => (
                   <NavigationMenuItem className="!bg-transparent" key={name}>
-                    <NavigationMenuTrigger className={`px-3 !bg-transparent !hover:bg-transparent  py-2  hover:underline ${scrolled ? "text-teal-900" : "text-teal-500 hover:text-teal-500"}`}>
+                    <NavigationMenuTrigger
+                      className={`px-3 !bg-transparent !hover:bg-transparent  py-2  hover:underline ${
+                        location.pathname !== "/" ?
+                        "text-black" : "text-gray-300" 
+                      } ${
+                        scrolled
+                          ? "text-teal-900"
+                          : " hover:text-teal-500"
+                      }`}
+                    >
                       {name}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -124,9 +138,13 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="#"
-              className={`${scrolled ? "text-teal-900 hover:text-teal-600" : "hover:text-teal-900 text-teal-500"} text-teal-500 hover:text-teal-700 font-medium transition-colors`}
+              className={`${
+                scrolled
+                  ? "text-teal-900 hover:text-teal-600"
+                  : "hover:text-teal-900 text-white"
+              } text-teal-500 hover:text-teal-700 font-medium transition-colors`}
             >
-               Login
+              Login
             </a>
             <button className="bg-button text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
               Get Started
@@ -136,7 +154,9 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              className={`inline-flex items-center justify-center p-2 rounded-md  hover:text-teal-600 focus:outline-none ${scrolled ? "text-teal-900" : "text-teal-500"}`}
+              className={`inline-flex items-center justify-center p-2 rounded-md  hover:text-teal-600 focus:outline-none ${
+                scrolled ? "text-teal-900" : "text-teal-500"
+              }`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -150,7 +170,10 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div data-aos="fade-in" className="md:hidden bg-white mx-0 py-4 overflow-scroll">
+          <div
+            data-aos="fade-in"
+            className="md:hidden bg-white mx-0 py-4 overflow-scroll"
+          >
             <div className="space-y-4">
               {menuItems.map(({ name, items }) => (
                 <div key={name} className="space-y-2">

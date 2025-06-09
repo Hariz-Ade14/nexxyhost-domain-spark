@@ -37,7 +37,7 @@ const ServiceHighlights = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-teal-900 mb-4">
             Everything You Need to Succeed Online
           </h2>
-          <p className="text-xl text-teal-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             From domain registration to enterprise hosting, we provide all the tools and services your business needs.
           </p>
         </div>
@@ -56,13 +56,13 @@ const ServiceHighlights = () => {
                 {service.title}
               </h3>
               
-              <p className="text-teal-600 mb-6">
+              <p className="text-black mb-6">
                 {service.description}
               </p>
               
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-teal-500">
+                  <li key={featureIndex} className="flex items-center text-sm text-black">
                     <div className="w-2 h-2 bg-teal-600 rounded-full mr-3"></div>
                     {feature}
                   </li>

@@ -72,28 +72,26 @@ const PurchaseRegister: React.FC = () => {
   return (
     <Layout>
       <div>
-       
-
-            <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 mt-12 items-center">
-            <div className="flex flex-col gap-2 items-center justify-center">
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-2">
               <h1 className="text-2xl md:text-3xl font-bold text-teal-900 mb-6">
                 Find Your Perfect Domain Name
                  
               </h1>
-              <p className="text-xl text-center w-[70%] text-teal-600 mb-8">
+              <p className="text-[20px]  w-[70%] text-black mb-8">
                 Secure your online identity with the perfect domain name. Choose from hundreds 
                 of extensions and get your website online today with instant activation.
               </p>
-              <div className="bg-white p-2 rounded-2xl shadow-lg mb-8">
+              <div className="bg-white p-2 rounded-2xl mb-8">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <input
                     type="text"
                     placeholder="Enter your domain name..."
-                    className="flex-1 px-4 py-3 border border-teal-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="flex-1 px-4 py-3 border border-teal-900 rounded-lg"
                   />
-                  <button className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all">
+                  <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all">
                     Search
                   </button>
                 </div>
@@ -102,19 +100,14 @@ const PurchaseRegister: React.FC = () => {
                 <span className="font-semibold">Popular:</span> .com, .net, .org, .io, .co
               </p>
             </div>
-            {/* <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Domain registration and web presence"
-                className="rounded-2xl shadow-2xl"
+            <div className="relative">
+              <img
+                src="/images/register.avif"
+                alt="Website design and development illustration"
+                className="rounded-2xl"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-3">
-                  <Globe className="h-5 w-5 text-teal-600" />
-                  <span className="text-sm font-semibold text-teal-700">Instant Activation</span>
-                </div>
-              </div>
-            </div> */}
+             
+            </div>
           </div>
         </div>
       </section>
@@ -263,7 +256,7 @@ const PurchaseRegister: React.FC = () => {
               establishing your online presence.
             </p>
             <a
-              href="#domain-search"
+              href="/register-domain"
               className="inline-block px-8 py-3 bg-teal-900 text-white font-medium rounded-md hover:bg-teal-900/50 transition-colors shadow-md text-lg"
             >
               Find Your Domain Now

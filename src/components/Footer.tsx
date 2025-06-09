@@ -46,7 +46,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-teal-900 text-white">
+    <footer className="text-white bg-teal-600">
       {/* Newsletter section */}
       <div className="bg-teal-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -83,7 +83,7 @@ const Footer = () => {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto bg-black rounded-t-[30px] px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-7 gap-3">
           {/* Logo and description */}
           <div className="lg:col-span-2">

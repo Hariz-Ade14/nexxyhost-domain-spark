@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import Header from "./Header";
+import { Palette } from "lucide-react";
 const Hero = () => {
   const [domain, setDomain] = useState("");
 
   return (
-    <section className="relative bg-[url('/images/nexxyhost.jpg')] min-h-fit bg-cover bg-center  text-white overflow-hidden">
+    <section className="relative bg-[url('/images/nexxyhost.jpg')] bg-cover bg-center bg-no-repeat bg-fixed w-full text-white overflow-hidden">
       <Header />
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="text-center flex flex-col gap-4">
+      <div className="relative w-[100%] mx-auto sm:px-6 py-24 lg:py-32">
+        <div className="text-center bg-black/30 w-full flex flex-col gap-2">
           {/* Main headline */}
-          <h1 className="text-4xl lg:text-4xl font-bold leading-tight text-teal-300">
+          <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-teal-200">
             Domain Names | Hosting | Security
           </h1>
-          <h1 className="text-2xl lg:text-2xl font-semibold leading-tight">
+          <h1 className="text-xl lg:text-xl font-semibold text-white lg:leading-[.5rem]">
             PROFESSIONAL TECHNICAL SUPPORT 24/7 TO HELP YOU!
-            <br />
           </h1>
 
-          <p className="text-xl lg:text-xl lg:leading-[1rem] text-gray-300  max-w-3xl mx-auto">
-            Huge Choice | New Extensions | Lowest Prices<br/>
+          <p className="text-md lg:text-sm lg:leading-[1.5rem] text-white  max-w-3xl mx-auto">
+            Huge Choice | New Extensions | Lowest Prices
+            <br />
             Register Your Perfect Domain Name Today.
           </p>
 
-
           {/* Domain search bar */}
-          <div className="w-full mx-auto mb-8">
+          <div className="lg:w-full w-[80%] mx-auto mb-8">
             <div className="flex flex-col lg:flex-row gap-4 p-2 bg-white rounded-2xl shadow-2xl">
               <div className="flex-1">
                 <input
@@ -65,6 +65,52 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <section className="bg-white to-cyan-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <img
+                src="/images/image4.avif"
+                alt="Website design and development illustration"
+                className="rounded-2xl"
+              />
+            </div>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
+                Your online success begins with us
+              </h1>
+              <p className="text-xl text-black mb-8">
+                Our state-of-the-art data centers and cloud infrastructure
+                ensure your website is always fast, secure, and available. With
+                99.9% uptime guarantee and global CDN network.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
+                Explore Our hosting options
+              </h1>
+              <p className="text-xl text-black mb-8">
+                Are you looking for speed, simplicity, space, or less expensive
+                hosting plans? We have got you covered. Choose from our shared
+                and cloud hosting.
+              </p>
+            </div>
+            <div className="relative">
+              <img
+                src="/images/image2.jpg"
+                alt="Website design and development illustration"
+                className="rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   );
 };
