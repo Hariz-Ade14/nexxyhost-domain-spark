@@ -7,9 +7,13 @@
 
 body{
   font-family:  "Ubuntu", sans-serif;
-  /* font-style: italic; */
-
 }
+
+html {
+  scroll-behavior: smooth;
+}
+              
+
 
 @layer base {
   :root {

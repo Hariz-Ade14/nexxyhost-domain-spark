@@ -50,18 +50,18 @@ const WordpressShareHosting = () => {
         </section>
        
 
-        <section className="bg-gradient-to-br from-teal-50 to-teal-50 py-20">
+        <section className="bg-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <img
-                  src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="/images/wordpress.png"
                   alt="WordPress dashboard and content management"
-                  className="rounded-2xl shadow-xl"
+                  className="rounded-2xl  w-[450px]"
                 />
-                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-teal-500 to-teal-900 p-3 rounded-xl shadow-lg text-white">
+                {/* <div className="absolute -top-4 -right-4 bg-gradient-to-r from-teal-500 to-teal-900 p-3 rounded-xl shadow-lg text-white">
                   <RefreshCw className="h-6 w-6" />
-                </div>
+                </div> */}
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-6">
