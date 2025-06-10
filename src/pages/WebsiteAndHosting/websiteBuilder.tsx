@@ -20,15 +20,14 @@ const WebsiteBuilder = () => {
     <Layout>
       <div>
         <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-5">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
                   Build Your Dream Website Without Coding
-                  {/* <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600"> */}
-                  {/* </span> */}
+                 
                 </h1>
-                <p className="text-xl text-teal-600 mb-8">
+                <p className="text-base text-black mb-8">
                   Create stunning, professional websites in minutes with our
                   intuitive drag-and-drop builder. Choose from hundreds of
                   templates and customize everything to match your brand.
@@ -37,7 +36,7 @@ const WebsiteBuilder = () => {
                   <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
                     Start Building Free
                   </button>
-                  <button className="border-2 border-teal-900 text-teal-900 px-8 py-3 rounded-lg font-semibold hover:bg-teal-600 hover:text-white transition-all">
+                  <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
                     View Templates
                   </button>
                 </div>
@@ -63,10 +62,10 @@ const WebsiteBuilder = () => {
 
         <section className="b-gradient-to-br from-teal-50 to-cyan-50 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <h2 className="text-3xl font-bold text-teal-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
               Build Beautiful Websites Visually
             </h2>
-            <p className="text-lg text-teal-600 mb-6">
+            <p className="text-base text-black mb-6">
               Our intuitive drag-and-drop website builder makes it easy to
               create professional websites without any coding knowledge. Choose
               from hundreds of templates and customize everything to match your
@@ -75,25 +74,25 @@ const WebsiteBuilder = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                <span className="text-teal-700 font-medium">
+                <span className="text-black font-medium">
                   Intuitive Drag & Drop Interface
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
-                <span className="text-teal-700 font-medium">
+                <span className="text-black font-medium">
                   500+ Professional Templates
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                <span className="text-teal-700 font-medium">
+                <span className="text-black font-medium">
                   Automatic Mobile Optimization
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
-                <span className="text-teal-700 font-medium">
+                <span className="text-black font-medium">
                   Built-in SEO Tools
                 </span>
               </div>
@@ -118,7 +117,7 @@ const WebsiteBuilder = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-6">
                   Design Like a Pro
                 </h2>
-                <p className="text-lg text-teal-600 mb-8">
+                <p className="text-base text-black mb-8">
                   Our intuitive interface makes website building accessible to
                   everyone. No technical skills required - just drag, drop, and
                   customize.
@@ -132,7 +131,7 @@ const WebsiteBuilder = () => {
                       <h4 className="font-semibold text-teal-900 mb-1">
                         Visual Editor
                       </h4>
-                      <p className="text-teal-600">
+                      <p className="text-black">
                         See your changes in real-time as you build
                       </p>
                     </div>
@@ -145,7 +144,7 @@ const WebsiteBuilder = () => {
                       <h4 className="font-semibold text-teal-900 mb-1">
                         Custom Branding
                       </h4>
-                      <p className="text-teal-600">
+                      <p className="text-black">
                         Upload your logo and customize colors to match your
                         brand
                       </p>
@@ -159,7 +158,7 @@ const WebsiteBuilder = () => {
                       <h4 className="font-semibold text-teal-900 mb-1">
                         One-Click Publishing
                       </h4>
-                      <p className="text-teal-600">
+                      <p className="text-black">
                         Publish your website instantly with a single click
                       </p>
                     </div>

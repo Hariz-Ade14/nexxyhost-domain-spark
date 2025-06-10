@@ -80,13 +80,13 @@ const HostingMigrationAndTransfer = () => {
     <div>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  items-center">
             <div>
-              <h1 className="text-3xl md:text-5xl font-bold text-teal-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
                 Seamless Website Migration Zero Hassle, Zero Downtime
               </h1>
-              <p className="text-xl text-teal-600 mb-8 max-w-3xl">
+              <p className="text-base text-black mb-8 max-w-3xl">
                 Switch to our high-performance hosting with complete peace of mind. 
                 Our expert migration team handles everything so you can focus on your business.
               </p>
@@ -94,7 +94,7 @@ const HostingMigrationAndTransfer = () => {
                 <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
                   Start Free Migration
                 </button>
-                <button className="border-2 border-teal-900 text-teal-900 px-8 py-3 rounded-lg font-semibold hover:bg-teal-600 hover:text-white transition-all">
+                <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
                   Talk to Migration Expert
                 </button>
               </div>
@@ -123,7 +123,7 @@ const HostingMigrationAndTransfer = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-4">
               Our 6-Step Migration Process
             </h2>
-            <p className="text-xl text-teal-600 max-w-2xl mx-auto">
+            <p className="text-xl text-black max-w-2xl mx-auto">
               We've perfected our migration process to ensure a smooth, secure transfer of your website
             </p>
           </div>
@@ -137,7 +137,7 @@ const HostingMigrationAndTransfer = () => {
                   </div>
                   <h3 className="text-xl font-bold text-teal-900">{step.title}</h3>
                 </div>
-                <p className="text-teal-600 leading-relaxed">{step.description}</p>
+                <p className="text-black leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ const HostingMigrationAndTransfer = () => {
                 alt="Data migration and server transfer visualization"
                 className="rounded-2xl shadow-xl"
               />
-              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-teal-500 to-cyan-500 p-3 rounded-xl shadow-lg text-white">
+              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-teal-500 to-teal-900 p-3 rounded-xl shadow-lg text-white">
                 <ArrowRight className="h-6 w-6" />
               </div>
             </div>
@@ -162,7 +162,7 @@ const HostingMigrationAndTransfer = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-6">
                 Professional Migration Service
               </h2>
-              <p className="text-lg text-teal-600 mb-8">
+              <p className="text-lg text-black mb-8">
                 Our experienced migration specialists use advanced tools and proven processes 
                 to ensure your website transfer is completed flawlessly.
               </p>
@@ -173,7 +173,7 @@ const HostingMigrationAndTransfer = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-teal-900 mb-1">Complete Data Transfer</h4>
-                    <p className="text-teal-600">Files, databases, emails, and configurations</p>
+                    <p className="text-black">Files, databases, emails, and configurations</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -182,7 +182,7 @@ const HostingMigrationAndTransfer = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-teal-900 mb-1">Testing & Validation</h4>
-                    <p className="text-teal-600">Comprehensive testing before going live</p>
+                    <p className="text-black">Comprehensive testing before going live</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -191,7 +191,7 @@ const HostingMigrationAndTransfer = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-teal-900 mb-1">Post-Migration Support</h4>
-                    <p className="text-teal-600">30 days of dedicated support included</p>
+                    <p className="text-black">30 days of dedicated support included</p>
                   </div>
                 </div>
               </div>
@@ -207,7 +207,7 @@ const HostingMigrationAndTransfer = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-4">
               Why Choose Our Migration Service?
             </h2>
-            <p className="text-xl text-teal-600 max-w-2xl mx-auto">
+            <p className="text-xl text-black max-w-2xl mx-auto">
               Experience the difference with our professional, risk-free migration service
             </p>
           </div>
@@ -221,7 +221,7 @@ const HostingMigrationAndTransfer = () => {
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-teal-900 mb-3">{benefit.title}</h3>
-                  <p className="text-teal-600 leading-relaxed">{benefit.description}</p>
+                  <p className="text-black leading-relaxed">{benefit.description}</p>
                 </div>
               );
             })}
@@ -236,7 +236,7 @@ const HostingMigrationAndTransfer = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-4">
               We Migrate Any Platform
             </h2>
-            <p className="text-xl text-teal-600 max-w-2xl mx-auto">
+            <p className="text-xl text-black max-w-2xl mx-auto">
               From popular CMS platforms to custom applications, we handle migrations of all types
             </p>
           </div>
@@ -255,7 +255,7 @@ const HostingMigrationAndTransfer = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="bg-gradient-to-r from-teal-600 to-cyan-600 py-20 text-white">
+      <section className="bg-gradient-to-r from-teal-900 to-cyan-600 py-20 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Professional Migration Service
@@ -279,7 +279,7 @@ const HostingMigrationAndTransfer = () => {
                   <span className="text-5xl font-bold">FREE</span>
                   <p className="text-xl opacity-90 mt-2">With any hosting plan</p>
                 </div>
-                <button className="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-teal-100 transition-all transform hover:scale-105">
+                <button className="bg-white text-teal-900 px-8 py-3 rounded-lg font-semibold hover:bg-teal-100 transition-all transform hover:scale-105">
                   Request Free Migration
                 </button>
                 <p className="text-sm opacity-90 mt-4">*Migration completed within 24-48 hours</p>
@@ -301,22 +301,22 @@ const HostingMigrationAndTransfer = () => {
           <div className="space-y-6">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h3 className="text-lg font-bold text-teal-900 mb-2">How long does migration take?</h3>
-              <p className="text-teal-600">Most migrations are completed within 24-48 hours. Complex sites with large databases may take up to 72 hours. We'll provide you with a timeline after analyzing your site.</p>
+              <p className="text-black">Most migrations are completed within 24-48 hours. Complex sites with large databases may take up to 72 hours. We'll provide you with a timeline after analyzing your site.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h3 className="text-lg font-bold text-teal-900 mb-2">Will my site be down during migration?</h3>
-              <p className="text-teal-600">Downtime is minimal, typically just a few minutes during the final DNS switch. We perform the migration on our servers first, then switch over when everything is ready.</p>
+              <p className="text-black">Downtime is minimal, typically just a few minutes during the final DNS switch. We perform the migration on our servers first, then switch over when everything is ready.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h3 className="text-lg font-bold text-teal-900 mb-2">What if something goes wrong?</h3>
-              <p className="text-teal-600">We offer a success guarantee. If migration fails, we'll fix it at no cost or provide a full refund. Your original site remains untouched until migration is complete.</p>
+              <p className="text-black">We offer a success guarantee. If migration fails, we'll fix it at no cost or provide a full refund. Your original site remains untouched until migration is complete.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h3 className="text-lg font-bold text-teal-900 mb-2">Do you migrate email accounts too?</h3>
-              <p className="text-teal-600">Yes! We migrate all email accounts, settings, and existing emails to ensure you don't lose any important communications during the transition.</p>
+              <p className="text-black">Yes! We migrate all email accounts, settings, and existing emails to ensure you don't lose any important communications during the transition.</p>
             </div>
           </div>
         </div>

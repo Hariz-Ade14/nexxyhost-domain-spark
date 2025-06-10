@@ -5,42 +5,51 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: "DOMAINS",
-      links: [
-        "Purchase and Register Domain",
-        "Transfer Domain",
-        "Perform WHOIS Search",
-        "Become a Domain Reseller",
+      name: "Domains",
+      items: [
+        { label: "Transfer | Register Domain", url: "/register-domain" },
+        { label: "Perform WHOIS Search", url: "/register-domain" },
+        { label: "Become a Domain Reseller", url: "/register-domain" },
       ],
     },
     {
-      title: "WEBSITE AND HOSTING",
-      links: [
-        "Website Builder",
-        "Shared Hosting",
-        "WordPress Shared Hosting",
-        "Hosting Migration and Transfer",
-        "Dedicated Cloud Hosting",
-        "Reseller Hosting",
+      name: "Website & Hosting",
+      items: [
+        { label: "Website Builder", url: "/website-builder" },
+        { label: "Shared Hosting", url: "/shared-hosting" },
+        { label: "WordPress Shared Hosting", url: "/wordpressshared-hosting" },
+        { label: "Hosting Migration and Transfer", url: "/hosting-migration" },
+        { label: "Dedicated Cloud Hosting", url: "/dedicated-cloud-hosting" },
+        { label: "Reseller Hosting", url: "/reseller-hosting" },
       ],
     },
     {
-      title: "EMAIL SERVICES",
-      links: ["Business Email Hosting", "Enterprise Email Hosting"],
+      name: "Email Services",
+      items: [
+        { label: "Business Email Hosting", url: "/register-domain" },
+        { label: "Enterprise Email Hosting", url: "/transfer-domain" },
+      ],
     },
     {
-      title: "SECURITY",
-      links: ["SSL Certificates", "Website Security"],
+      name: "Security",
+      items: [
+        { label: "SSL Certificates", url: "/register-domain" },
+        { label: "Website Security", url: "/transfer-domain" },
+      ],
     },
     {
-      title: "SUPPORT",
-      links: ["Knowledgebase", "Submit Ticket", "Legals", "Contact Us"],
+      name: "Support",
+      items: [
+        { label: "Knowledgebase", url: "/register-domain" },
+        { label: "Submit Ticket", url: "/transfer-domain" },
+        { label: "Legals", url: "/register-domain" },
+        { label: "Contact Us", url: "/transfer-domain" },
+      ],
     },
   ];
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter subscription
     console.log("Newsletter subscription:", email);
     setEmail("");
   };
@@ -133,16 +142,16 @@ const Footer = () => {
           {footerSections.map((section, index) => (
             <div key={index} className="lg:col-span-1">
               <h4 className="text-sm font-bold text-[#048086ff] mb-4 uppercase tracking-wider">
-                {section.title}
+                {section.name}
               </h4>
               <ul className="space-y-3">
-                {section.links.map((link, linkIndex) => (
+                {section.items.map((link, linkIndex,) => (
                   <li key={linkIndex}>
                     <a
-                      href="#"
+                      href={link.url}
                       className="text-white-400 hover:text-white transition-colors text-sm"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}

@@ -48,10 +48,9 @@ const Hero = () => {
                   href="https://nexxyhost.com/clientarea/cart.php?a=add&domain=transfer"
                   className="no-underline w-[50%] "
                 >
-                
-                <button className="px-8 py-3 bg-[#048086ff] text-white font-semibold rounded-xl hover:bg-teal-900 transition-colors">
-                  Transfer
-                </button>
+                  <button className="px-8 py-3 bg-[#048086ff] text-white font-semibold rounded-xl hover:bg-teal-900 transition-colors">
+                    Transfer
+                  </button>
                 </a>
               </div>
             </div>
@@ -88,15 +87,15 @@ const Hero = () => {
             </div>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
-                Your online success begins with us
+                Reliable, Secured & Affordable
               </h1>
-              <p className="text-xl text-black mb-8">
-                Our state-of-the-art data centers and cloud infrastructure
-                ensure your website is always fast, secure, and available. With
-                99.9% uptime guarantee and global CDN network. Our
-                state-of-the-art data centers and cloud infrastructure ensure
-                your website is always fast, secure, and available. With 99.9%
-                uptime guarantee and global CDN network.
+              <p className="text-base text-black mb-8">
+                For NexxyHost, It is all about great pricing and a commitment to
+                World-class customer service delivery. It's fundamental to
+                generate confidence and security in each of our customers,
+                offering them Top-notch services. Our vast Team is dedicated to
+                helping our customers around the clock so we can be the best web
+                hosting company to our customer at all times.
               </p>
             </div>
           </div>
@@ -107,14 +106,15 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
-                Explore Our hosting options
+              Domain Name | Hosting | Security
               </h1>
-              <p className="text-xl text-black mb-8">
-                Are you looking for speed, simplicity, space, or less expensive
-                hosting plans? We have got you covered. Choose from our shared
-                and cloud hosting. Are you looking for speed, simplicity, space,
-                or less expensive hosting plans? We have got you covered. Choose
-                from our shared and cloud hosting.
+              <p className="text-base text-black mb-8">
+                At NexxyHost, Our main goal has been to provide high quality
+                Hosting, Servers and Domain Name Registration at an affordable
+                price to every client, Beginners, Small Businesses and Large
+                Businesses. Without successful clients, we wouldn't be around,
+                which is what pushes us to provide the best service possible
+                without compromising on quality or features.
               </p>
             </div>
             <div className="relative">

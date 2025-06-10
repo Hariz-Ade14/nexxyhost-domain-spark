@@ -1,39 +1,20 @@
 import React from "react";
 import Layout from "@/components/Layout";
 
-import { Server, Shield, Zap, Users, Database, Globe } from 'lucide-react';
+import {Zap } from 'lucide-react';
 
 const SharedHosting: React.FC = () => {
   return (
     <Layout>
       <div>
-        {/* Features Section */}
-        <section id="features" className="py-12 bg-white">
-          <div className="max-w-full mx-auto">
-            <div className="text-center my-6 flex items-center justify-center flex-col bg-[url('/images/banner333.jpg')] min-h-[500px]  bg-cover bg-center bg-no-repeat bg-fixed w-full">
-              <h2 className="lg:text-5xl text-2xl font-bold text-teal-500 mb-4">
-                Powerful Hosting Features
-              </h2>
-              <p className="text-xl text-teal-600 max-w-3xl mx-auto">
-                Our shared hosting plans include everything you need to build
-                and grow your website
-              </p>
-            </div>
-
-          </div>
-        </section>
-
         <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-5">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-6xl font-bold text-teal-900 mb-6">
-                Reliable Shared Hosting
-                {/* <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600"> */}
-                  For Everyone
-                {/* </span> */}
+              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
+                Reliable Shared Hosting For Everyone
               </h1>
-              <p className="text-xl text-teal-600 mb-8 max-w-3xl">
+              <p className="text-base text-black mb-8 max-w-3xl">
                 Perfect for personal websites, blogs, and small businesses. Get fast, secure, 
                 and affordable hosting with everything you need to succeed online.
               </p>
@@ -41,7 +22,7 @@ const SharedHosting: React.FC = () => {
                 <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
                   Start Your Website
                 </button>
-                <button className="border-2 border-teal-900 text-teal-900 px-8 py-3 rounded-lg font-semibold hover:bg-teal-600 hover:text-white transition-all">
+                <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
                   View All Features
                 </button>
               </div>
@@ -69,7 +50,7 @@ const SharedHosting: React.FC = () => {
               <h2 className="text-3xl font-bold text-teal-900 mb-4">
                 Technical Specifications
               </h2>
-              <p className="text-xl text-teal-600 max-w-3xl mx-auto">
+              <p className="text-xl text-black max-w-3xl mx-auto">
                 Our hosting infrastructure is built for performance, security,
                 and reliability
               </p>
@@ -95,7 +76,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">Intel Xeon Processors</span>
+                    <span className="text-black">Intel Xeon Processors</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -111,7 +92,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">NVMe SSD Storage</span>
+                    <span className="text-black">NVMe SSD Storage</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -127,7 +108,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">Multiple Cache Layers</span>
+                    <span className="text-black">Multiple Cache Layers</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -143,7 +124,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">Nginx Server</span>
+                    <span className="text-black">Nginx Server</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -159,7 +140,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       Global CDN Integration
                     </span>
                   </li>
@@ -185,7 +166,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">cPanel Control Panel</span>
+                    <span className="text-black">cPanel Control Panel</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -201,7 +182,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       Latest PHP, MySQL, Perl, Python
                     </span>
                   </li>
@@ -219,7 +200,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       Softaculous Auto-Installer
                     </span>
                   </li>
@@ -237,7 +218,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">Free Website Builder</span>
+                    <span className="text-black">Free Website Builder</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -253,7 +234,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">Git Version Control</span>
+                    <span className="text-black">Git Version Control</span>
                   </li>
                 </ul>
               </div>
@@ -277,7 +258,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">Free SSL Certificates</span>
+                    <span className="text-black">Free SSL Certificates</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -293,7 +274,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">DDoS Protection</span>
+                    <span className="text-black">DDoS Protection</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -309,7 +290,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       Automatic Malware Scanning
                     </span>
                   </li>
@@ -327,7 +308,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       Web Application Firewall
                     </span>
                   </li>
@@ -345,7 +326,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       Regular Security Updates
                     </span>
                   </li>
@@ -371,7 +352,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       24/7/365 Technical Support
                     </span>
                   </li>
@@ -389,7 +370,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       99.9% Uptime Guarantee
                     </span>
                   </li>
@@ -407,7 +388,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">Automated Backups</span>
+                    <span className="text-black">Automated Backups</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -423,7 +404,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       30-Day Money-Back Guarantee
                     </span>
                   </li>
@@ -441,7 +422,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-teal-600">
+                    <span className="text-black">
                       Comprehensive Knowledge Base
                     </span>
                   </li>
@@ -468,7 +449,7 @@ const SharedHosting: React.FC = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-6">
                 Built for Speed & Reliability
               </h2>
-              <p className="text-lg text-teal-600 mb-8">
+              <p className="text-lg text-black mb-8">
                 Our shared hosting platform uses the latest technology to ensure your website 
                 loads quickly and stays online 24/7.
               </p>
@@ -479,7 +460,7 @@ const SharedHosting: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-teal-900 mb-1">SSD Storage</h4>
-                    <p className="text-teal-600">Lightning-fast solid-state drives for optimal performance</p>
+                    <p className="text-black">Lightning-fast solid-state drives for optimal performance</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -488,7 +469,7 @@ const SharedHosting: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-teal-900 mb-1">Global CDN</h4>
-                    <p className="text-teal-600">Content delivery network for faster global access</p>
+                    <p className="text-black">Content delivery network for faster global access</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -497,7 +478,7 @@ const SharedHosting: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-teal-900 mb-1">Advanced Caching</h4>
-                    <p className="text-teal-600">Built-in caching technology for improved load times</p>
+                    <p className="text-black">Built-in caching technology for improved load times</p>
                   </div>
                 </div>
               </div>
@@ -509,13 +490,13 @@ const SharedHosting: React.FC = () => {
         {/* Free Migration */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl overflow-hidden shadow-xl">
+            <div className="bg-gradient-to-r from-teal-900 to-cyan-600 rounded-xl overflow-hidden shadow-xl">
               <div className="px-6 py-12 sm:px-12 lg:flex lg:items-center lg:py-16">
                 <div className="lg:w-0 lg:flex-1">
-                  <h2 className="text-3xl font-extrabold tracking-tight text-teal-800">
+                  <h2 className="text-3xl font-extrabold tracking-tight text-white">
                     Free Website Migration
                   </h2>
-                  <p className="mt-4 max-w-3xl text-lg text-cyan-100">
+                  <p className="mt-4 max-w-3xl text-lg text-white">
                     Our team of experts will handle your website migration
                     completely free of charge. We'll ensure your website is
                     transferred without any downtime or data loss.
@@ -608,7 +589,7 @@ const SharedHosting: React.FC = () => {
             <h2 className="text-3xl font-bold text-teal-900 mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-teal-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-black mb-8 max-w-3xl mx-auto">
               Choose the perfect hosting plan for your website and get online in
               minutes with our easy setup process.
             </p>
