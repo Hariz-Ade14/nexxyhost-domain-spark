@@ -14,6 +14,10 @@ import HostingMigrationAndTransfer from "./pages/WebsiteAndHosting/HostingMigrat
 import WordpressShareHosting from "./pages/WebsiteAndHosting/wordpressShareHosting";
 import DedicatedCloudHosting from "./pages/WebsiteAndHosting/DedicatedCloudHosting";
 import Resellerhosting from "./pages/WebsiteAndHosting/resellerhosting";
+import BusinessEmailHosting from "./pages/EmailServices/BusinessEmailHosting";
+import EnterpriseEmailHosting from "./pages/EmailServices/EnterpriseEmailHosting";
+
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -31,10 +35,11 @@ const App = () => (
           <Route path="/shared-hosting" element={<SharedHosting/>}/>
           <Route path="/website-builder" element={<WebsiteBuilder/>}/>
           <Route path="/wordpressshared-hosting" element={<WordpressShareHosting/>}/>
-          {/* {/* <Route path="/vps-hosting" element={<VpsHosting/>}/> */}
           <Route path="/hosting-migration" element={<HostingMigrationAndTransfer/>}/>
           <Route path="/dedicated-cloud-hosting" element={<DedicatedCloudHosting/>}/>
           <Route path="/reseller-hosting" element={<Resellerhosting/>}/>
+          <Route path="/business-email-hosting" element={<BusinessEmailHosting/>}/>
+          <Route path="/enterprise-email-hosting" element={<EnterpriseEmailHosting/>}/>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

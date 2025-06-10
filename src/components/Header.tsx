@@ -44,24 +44,24 @@ const Header = () => {
     {
       name: "Email Services",
       items: [
-        { label: "Business Email Hosting", url: "/register-domain" },
-        { label: "Enterprise Email Hosting", url: "/transfer-domain" },
+        { label: "Business Email Hosting", url: "/business-email-hosting" },
+        { label: "Enterprise Email Hosting", url: "/enterprise-email-hosting" },
       ],
     },
     {
       name: "Security",
       items: [
-        { label: "SSL Certificates", url: "/register-domain" },
-        { label: "Website Security", url: "/transfer-domain" },
+        { label: "SSL Certificates", url: "/ssl-certificate" },
+        { label: "Website Security", url: "/website-security" },
       ],
     },
     {
       name: "Support",
       items: [
         { label: "Knowledgebase", url: "/register-domain" },
-        { label: "Submit Ticket", url: "/transfer-domain" },
-        { label: "Legals", url: "/register-domain" },
-        { label: "Contact Us", url: "/transfer-domain" },
+        { label: "Submit Ticket", url: "/submit-ticket" },
+        { label: "Legals", url: "/legals" },
+        { label: "Contact Us", url: "/contactus" },
       ],
     },
   ];
@@ -147,7 +147,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               className={`inline-flex items-center justify-center p-2 rounded-md  hover:text-teal-600 focus:outline-none ${
-                scrolled ? "text-teal-900" : "text-teal-500"
+                scrolled ? "text-teal-900" : "text-teal-900"
               }`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
