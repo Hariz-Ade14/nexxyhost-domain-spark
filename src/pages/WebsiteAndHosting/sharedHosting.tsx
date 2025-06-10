@@ -1,48 +1,61 @@
 import React from "react";
 import Layout from "@/components/Layout";
-
-import {Zap } from 'lucide-react';
+import PricingPlans from "@/components/PricingPlans";
+import { Zap } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 const SharedHosting: React.FC = () => {
   return (
     <Layout>
       <div>
         <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-5">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
-                Reliable Shared Hosting For Everyone
-              </h1>
-              <p className="text-base text-black mb-8 max-w-3xl">
-                Perfect for personal websites, blogs, and small businesses. Get fast, secure, 
-                and affordable hosting with everything you need to succeed online.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
-                  Start Your Website
-                </button>
-                <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
-                  View All Features
-                </button>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
+                  Reliable Shared Hosting For Everyone
+                </h1>
+                <p className="text-base text-black mb-8 max-w-3xl">
+                  Perfect for personal websites, blogs, and small businesses.
+                  Get fast, secure, and affordable hosting with everything you
+                  need to succeed online.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
+                    Start Your Website
+                  </button>
+                  <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
+                    View All Features
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Shared hosting servers and infrastructure"
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-semibold text-teal-700">Shared Resources</span>
+              <div className="relative">
+                <img
+                  src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Shared hosting servers and infrastructure"
+                  className="rounded-2xl shadow-2xl"
+                />
+                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-semibold text-teal-700">
+                      Shared Resources
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
         {/* Technical Specs */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-teal-50">
           <div className="max-w-7xl mx-auto">
@@ -140,9 +153,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-black">
-                      Global CDN Integration
-                    </span>
+                    <span className="text-black">Global CDN Integration</span>
                   </li>
                 </ul>
               </div>
@@ -308,9 +319,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-black">
-                      Web Application Firewall
-                    </span>
+                    <span className="text-black">Web Application Firewall</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -326,9 +335,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-black">
-                      Regular Security Updates
-                    </span>
+                    <span className="text-black">Regular Security Updates</span>
                   </li>
                 </ul>
               </div>
@@ -370,9 +377,7 @@ const SharedHosting: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       ></path>
                     </svg>
-                    <span className="text-black">
-                      99.9% Uptime Guarantee
-                    </span>
+                    <span className="text-black">99.9% Uptime Guarantee</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -433,59 +438,72 @@ const SharedHosting: React.FC = () => {
         </section>
 
         <section className="bg-gradient-to-br from-gray-50 to-teal-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="High-performance hosting infrastructure"
-                className="rounded-2xl shadow-xl"
-              />
-              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-teal-500 to-teal-900 p-3 rounded-xl shadow-lg text-white">
-                <Zap className="h-6 w-6" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <img
+                  src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="High-performance hosting infrastructure"
+                  className="rounded-2xl shadow-xl"
+                />
+                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-teal-500 to-teal-900 p-3 rounded-xl shadow-lg text-white">
+                  <Zap className="h-6 w-6" />
+                </div>
               </div>
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-6">
-                Built for Speed & Reliability
-              </h2>
-              <p className="text-lg text-black mb-8">
-                Our shared hosting platform uses the latest technology to ensure your website 
-                loads quickly and stays online 24/7.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                    <span className="text-white text-sm">✓</span>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-6">
+                  Built for Speed & Reliability
+                </h2>
+                <p className="text-lg text-black mb-8">
+                  Our shared hosting platform uses the latest technology to
+                  ensure your website loads quickly and stays online 24/7.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <span className="text-white text-sm">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-teal-900 mb-1">
+                        SSD Storage
+                      </h4>
+                      <p className="text-black">
+                        Lightning-fast solid-state drives for optimal
+                        performance
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-teal-900 mb-1">SSD Storage</h4>
-                    <p className="text-black">Lightning-fast solid-state drives for optimal performance</p>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <span className="text-white text-sm">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-teal-900 mb-1">
+                        Global CDN
+                      </h4>
+                      <p className="text-black">
+                        Content delivery network for faster global access
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-teal-900 mb-1">Global CDN</h4>
-                    <p className="text-black">Content delivery network for faster global access</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-teal-900 mb-1">Advanced Caching</h4>
-                    <p className="text-black">Built-in caching technology for improved load times</p>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <span className="text-white text-sm">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-teal-900 mb-1">
+                        Advanced Caching
+                      </h4>
+                      <p className="text-black">
+                        Built-in caching technology for improved load times
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* Free Migration */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -565,13 +583,47 @@ const SharedHosting: React.FC = () => {
                     <h3 className="text-xl font-semibold text-teal-900 mb-4">
                       Ready to migrate?
                     </h3>
-                    <a
-                      href="/hosting/migration"
-                      className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-button hover:bg-blue-700"
-                    >
-                      Start Migration Process
-                    </a>
-                    <p className="mt-3 text-sm text-teal-500 text-center">
+                    <Dialog>
+                      <form>
+                        <DialogTrigger asChild>
+                          <p className="w-full cursor-pointer flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-button hover:bg-teal-700">
+                            Start Migration Process
+                          </p>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[40vw]">
+                          <DialogHeader className="!text-xl text-teal-900 font-bold">
+                            Start Migration
+                          </DialogHeader>
+                          <div className="grid gap-4">
+                            <div className="grid gap-3">
+                              <Label htmlFor="name-1">Name</Label>
+                              <Input id="name-1" name="name" />
+                            </div>
+                            <div className="grid gap-3">
+                              <Label htmlFor="email">Email</Label>
+                              <Input id="email" name="email" />
+                            </div>
+                            <div className="grid gap-3">
+                              <Label htmlFor="Phone Number">Phone Number</Label>
+                              <Input id="phone number" name="phone number" />
+                            </div>
+                            <div className="grid gap-3">
+                              <Label htmlFor="url">Website Url</Label>
+                              <Input id="url" name="url" />
+                            </div>
+                            <div className="grid gap-3">
+                              <Label htmlFor="project">Project</Label>
+                              <Input id="project" name="project" />
+                            </div>
+                          </div>
+                          <Button className="!bg-button hover:bg-button/50 w-[40%] flex justify-self-end">
+                            Migrate
+                          </Button>
+                        </DialogContent>
+                      </form>
+                    </Dialog>
+
+                    <p className="mt-3 text-sm text-black text-center">
                       No credit card required for migration
                     </p>
                   </div>
@@ -581,7 +633,7 @@ const SharedHosting: React.FC = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        <PricingPlans />
 
         {/* CTA Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-teal-100">
@@ -600,7 +652,6 @@ const SharedHosting: React.FC = () => {
               >
                 View Hosting Plans
               </a>
-             
             </div>
           </div>
         </section>

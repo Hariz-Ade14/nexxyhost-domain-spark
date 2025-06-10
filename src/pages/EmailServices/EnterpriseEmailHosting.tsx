@@ -1,4 +1,3 @@
-import Layout from '@/components/Layout';
 import { Mail, Shield, Users, Globe, Server, Zap } from 'lucide-react';
 
 const EnterpriseEmailHosting = () => {
@@ -75,50 +74,9 @@ const EnterpriseEmailHosting = () => {
   ];
 
   return (
-    <Layout>
     <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
-                Enterprise Email Hosting Solutions
-                 
-              </h1>
-              <p className="text-base text-black mb-8">
-                Scalable, secure, and compliant email hosting designed for large organizations. 
-                Get dedicated infrastructure, advanced security, and enterprise-grade features 
-                with guaranteed SLAs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
-                  Request Demo
-                </button>
-                {/* <button className="border-2 border-teal-600 text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-teal-600 hover:text-white transition-all">
-                  Contact Enterprise Sales
-                </button> */}
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Enterprise email infrastructure and security"
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-3">
-                  <Server className="h-5 w-5 text-teal-600" />
-                  <span className="text-sm font-semibold text-gray-700">Dedicated Infrastructure</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
-      <section className="py-20">
+      <section className="">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-4">
@@ -358,7 +316,6 @@ const EnterpriseEmailHosting = () => {
         </div>
       </section>
     </div>
-    </Layout>
   );
 };
 

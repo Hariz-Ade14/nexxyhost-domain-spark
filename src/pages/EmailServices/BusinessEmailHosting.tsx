@@ -1,5 +1,4 @@
-import Layout from '@/components/Layout';
-import { Mail, Shield, Users, Globe, Clock, Database } from 'lucide-react';
+import { Mail, Shield, Users, Globe, Clock, Database} from 'lucide-react';
 
 const BusinessEmailHosting = () => {
   const features = [
@@ -46,65 +45,6 @@ const BusinessEmailHosting = () => {
     'Email backup and archiving'
   ];
 
-  // const plans = [
-  //   {
-  //     name: 'Business Starter',
-  //     price: '$4.99',
-  //     popular: false,
-  //     mailboxes: '5 Mailboxes',
-  //     storage: '10GB per mailbox',
-  //     features: [
-  //       '5 Professional Email Accounts',
-  //       '10GB Storage per Mailbox',
-  //       'Webmail Access',
-  //       'Mobile App Support',
-  //       'Basic Spam Protection',
-  //       'Email Forwarding',
-  //       'Auto-Responder',
-  //       '24/7 Email Support'
-  //     ]
-  //   },
-  //   {
-  //     name: 'Business Professional',
-  //     price: '$9.99',
-  //     popular: true,
-  //     mailboxes: '25 Mailboxes',
-  //     storage: '25GB per mailbox',
-  //     features: [
-  //       '25 Professional Email Accounts',
-  //       '25GB Storage per Mailbox',
-  //       'Advanced Webmail Interface',
-  //       'Mobile & Desktop Sync',
-  //       'Advanced Spam Protection',
-  //       'Email Aliases (50)',
-  //       'Shared Calendars',
-  //       'Contact Management',
-  //       'Email Backup',
-  //       'Priority Support'
-  //     ]
-  //   },
-  //   {
-  //     name: 'Business Enterprise',
-  //     price: '$19.99',
-  //     popular: false,
-  //     mailboxes: 'Unlimited Mailboxes',
-  //     storage: '50GB per mailbox',
-  //     features: [
-  //       'Unlimited Email Accounts',
-  //       '50GB Storage per Mailbox',
-  //       'Premium Webmail Interface',
-  //       'Full Device Synchronization',
-  //       'Enterprise Security Suite',
-  //       'Unlimited Email Aliases',
-  //       'Team Collaboration Tools',
-  //       'Advanced Calendar Features',
-  //       'Email Archiving',
-  //       'API Access',
-  //       'Phone Support'
-  //     ]
-  //   }
-  // ];
-
   const securityFeatures = [
     {
       title: 'Spam Protection',
@@ -129,49 +69,9 @@ const BusinessEmailHosting = () => {
   ];
 
   return (
-    <Layout>
     <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
-                Professional Business Email Hosting
-              </h1>
-              <p className="text-base text-black mb-8">
-                Establish credibility and enhance your professional image with custom domain 
-                email addresses. Secure, reliable, and feature-rich email hosting for businesses 
-                of all sizes.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
-                  Start Email Hosting
-                </button>
-                <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
-                  View Features
-                </button>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/1591062/pexels-photo-1591062.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Professional business email communication"
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-teal-600" />
-                  <span className="text-sm font-semibold text-gray-700">Professional Email</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
-      <section className="py-20">
+      <section className="">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-4">
@@ -342,7 +242,6 @@ const BusinessEmailHosting = () => {
         </div>
       </section>
     </div>
-    </Layout>
   );
 };
 

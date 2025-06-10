@@ -161,6 +161,10 @@ const DedicatedCloudHosting = () => {
     },
   ];
 
+  const scrollToPricing = () => {
+    document.getElementById('pricing').scrollIntoView()
+  }
+
   return (
     <Layout>
       <div>
@@ -179,11 +183,8 @@ const DedicatedCloudHosting = () => {
                   applications.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
+                  <button onClick={scrollToPricing} className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
                     Launch Cloud Server
-                  </button>
-                  <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
-                    Talk to Cloud Expert
                   </button>
                 </div>
               </div>
@@ -378,7 +379,10 @@ const DedicatedCloudHosting = () => {
         </section>
 
         {/* Pricing Section */}
-        <PricingPlans/>
+        <section id="pricing">
+          <PricingPlans/>
+        </section>
+        
 
         {/* Cloud Benefits */}
         <section className="py-20">

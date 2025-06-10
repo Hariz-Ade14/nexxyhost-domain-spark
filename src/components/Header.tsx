@@ -25,7 +25,7 @@ const Header = () => {
     {
       name: "Domains",
       items: [
-        { label: "Transfer | Register Domain", url: "/register-domain" },
+        { label: "Register | Transfer Domain", url: "/register-domain" },
         { label: "Perform WHOIS Search", url: "/register-domain" },
         { label: "Become a Domain Reseller", url: "/register-domain" },
       ],
@@ -44,8 +44,7 @@ const Header = () => {
     {
       name: "Email Services",
       items: [
-        { label: "Business Email Hosting", url: "/business-email-hosting" },
-        { label: "Enterprise Email Hosting", url: "/enterprise-email-hosting" },
+        { label: "Email Services", url: "/email-services" },
       ],
     },
     {
@@ -61,7 +60,7 @@ const Header = () => {
         { label: "Knowledgebase", url: "/register-domain" },
         { label: "Submit Ticket", url: "/submit-ticket" },
         { label: "Legals", url: "/legals" },
-        { label: "Contact Us", url: "/contactus" },
+        { label: "Contact Us", url: "/contact" },
       ],
     },
   ];
@@ -85,8 +84,8 @@ const Header = () => {
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       } ${isMenuOpen && " bg-white"}`}
     >
-      <div className="max-w-full mx-auto sm:px-6 lg:px-2">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-full mx-auto sm:px-6 md:px-0 lg:px-2">
+        <div className="flex items-center md:justify-center md:gap-[4rem] lg:justify-between justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="text-2xl font-bold text-blue-600">
@@ -103,7 +102,7 @@ const Header = () => {
                 {menuItems.map(({ name, items }) => (
                   <NavigationMenuItem className="!bg-transparent" key={name}>
                     <NavigationMenuTrigger
-                      className={`px-3 !bg-transparent !hover:bg-transparent  py-2  hover:underline ${
+                      className={`px-3 md:px-1 lg:px-3 !bg-transparent !hover:bg-transparent  py-2  hover:underline ${
                         location.pathname !== "/"
                           ? "text-black"
                           : "text-gray-300"
@@ -113,7 +112,7 @@ const Header = () => {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-2 p-4 md:w-[500px]">
-                        {items.map((item) => (
+                        {items?.map((item) => (
                           <li key={item.label}>
                             <Link
                               to={item.url}
@@ -147,7 +146,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               className={`inline-flex items-center justify-center p-2 rounded-md  hover:text-teal-600 focus:outline-none ${
-                scrolled ? "text-teal-900" : "text-teal-900"
+                scrolled ? "text-teal-900" : "text-teal-500"
               }`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
