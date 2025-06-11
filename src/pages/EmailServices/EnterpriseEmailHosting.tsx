@@ -1,5 +1,5 @@
 import { Mail, Shield, Users, Globe, Server, Zap } from 'lucide-react';
-
+import EmailPricing from '@/components/EmailPricing';
 const EnterpriseEmailHosting = () => {
   const features = [
     {
@@ -194,7 +194,7 @@ const EnterpriseEmailHosting = () => {
           </div>
         </div>
       </section>
-
+<EmailPricing type='Enterprise'/>
       {/* Performance Stats */}
       <section className="bg-gradient-to-r from-teal-600 to-cyan-600 py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -228,6 +228,7 @@ const EnterpriseEmailHosting = () => {
         </div>
       </section>
 
+      
   
 
       {/* Enterprise Benefits */}

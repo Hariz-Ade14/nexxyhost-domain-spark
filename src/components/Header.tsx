@@ -90,7 +90,7 @@ const Header = () => {
           <div className="flex-shrink-0">
             <div className="text-2xl font-bold text-blue-600">
               <a href="/">
-                <img src="/favicon.ico" alt="favicon" className="w-[120px]" />
+                <img src="/nexxylogo.png" alt="favicon" className="w-[120px]" />
               </a>
             </div>
           </div>
