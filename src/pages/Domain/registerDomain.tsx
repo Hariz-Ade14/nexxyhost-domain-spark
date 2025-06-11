@@ -242,3 +242,5 @@ const PurchaseRegister: React.FC = () => {
 };
 
 export default PurchaseRegister;
+
+

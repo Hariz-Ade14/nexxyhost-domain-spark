@@ -14,9 +14,10 @@ import HostingMigrationAndTransfer from "./pages/WebsiteAndHosting/HostingMigrat
 import WordpressShareHosting from "./pages/WebsiteAndHosting/wordpressShareHosting";
 import DedicatedCloudHosting from "./pages/WebsiteAndHosting/DedicatedCloudHosting";
 import Resellerhosting from "./pages/WebsiteAndHosting/resellerhosting";
-import BusinessEmailHosting from "./pages/EmailServices/BusinessEmailHosting";
+import WebSecurityPage from "./pages/Security/WebsiteSecurity";
 import EnterpriseEmailHosting from "./pages/EmailServices/EnterpriseEmailHosting";
 import EmailServices from "./pages/EmailServices/EmailServices";
+import SSLCertificatesPage from "./pages/Security/SSLCertificate";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -33,6 +34,8 @@ const App = () => (
           <Route path="/regiter-domain" element={<WhoIsSearch/>}/>
           <Route path="/shared-hosting" element={<SharedHosting/>}/>
           <Route path="/website-builder" element={<WebsiteBuilder/>}/>
+          <Route path="/website-security" element={<WebSecurityPage/>}/>
+          <Route path="/ssl-certificate" element={<SSLCertificatesPage/>}/>
           <Route path="/wordpressshared-hosting" element={<WordpressShareHosting/>}/>
           <Route path="/hosting-migration" element={<HostingMigrationAndTransfer/>}/>
           <Route path="/dedicated-cloud-hosting" element={<DedicatedCloudHosting/>}/>
