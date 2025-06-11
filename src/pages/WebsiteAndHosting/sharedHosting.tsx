@@ -586,37 +586,43 @@ const SharedHosting: React.FC = () => {
                     <Dialog>
                       <form>
                         <DialogTrigger asChild>
-                          <p
-                            className="w-full cursor-pointer flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-button hover:bg-teal-700"
-                          >
+                          <p className="w-full cursor-pointer flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-button hover:bg-teal-700">
                             Start Migration Process
                           </p>
                         </DialogTrigger>
                         <DialogContent className="sm:max-w-[40vw]">
-                          <DialogHeader>
-                            <DialogTitle className="!text-2xl !text-teal-900">Start Migration</DialogTitle>
+                          <DialogHeader className="!text-xl text-teal-900 font-bold">
+                            Start Migration
                           </DialogHeader>
                           <div className="grid gap-4">
                             <div className="grid gap-3">
                               <Label htmlFor="name-1">Name</Label>
-                              <Input
-                                id="name-1"
-                                name="name"
-                              
-                              />
+                              <Input id="name-1" name="name" />
                             </div>
                             <div className="grid gap-3">
-                              <Label htmlFor="email">email</Label>
-                              <Input
-                                id="email"
-                                name="email"
-                              />
+                              <Label htmlFor="email">Email</Label>
+                              <Input id="email" name="email" />
+                            </div>
+                            <div className="grid gap-3">
+                              <Label htmlFor="Phone Number">Phone Number</Label>
+                              <Input id="phone number" name="phone number" />
+                            </div>
+                            <div className="grid gap-3">
+                              <Label htmlFor="url">Website Url</Label>
+                              <Input id="url" name="url" />
+                            </div>
+                            <div className="grid gap-3">
+                              <Label htmlFor="project">Project</Label>
+                              <Input id="project" name="project" />
                             </div>
                           </div>
-                          <Button className="!bg-button hover:bg-button/50 w-[40%] flex justify-self-end">Migrate</Button>
+                          <Button className="!bg-button hover:bg-button/50 w-[40%] flex justify-self-end">
+                            Migrate
+                          </Button>
                         </DialogContent>
                       </form>
                     </Dialog>
+
                     <p className="mt-3 text-sm text-black text-center">
                       No credit card required for migration
                     </p>

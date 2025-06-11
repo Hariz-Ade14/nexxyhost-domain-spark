@@ -16,8 +16,7 @@ import DedicatedCloudHosting from "./pages/WebsiteAndHosting/DedicatedCloudHosti
 import Resellerhosting from "./pages/WebsiteAndHosting/resellerhosting";
 import BusinessEmailHosting from "./pages/EmailServices/BusinessEmailHosting";
 import EnterpriseEmailHosting from "./pages/EmailServices/EnterpriseEmailHosting";
-
-
+import EmailServices from "./pages/EmailServices/EmailServices";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -38,7 +37,7 @@ const App = () => (
           <Route path="/hosting-migration" element={<HostingMigrationAndTransfer/>}/>
           <Route path="/dedicated-cloud-hosting" element={<DedicatedCloudHosting/>}/>
           <Route path="/reseller-hosting" element={<Resellerhosting/>}/>
-          <Route path="/business-email-hosting" element={<BusinessEmailHosting/>}/>
+          <Route path="/email-services" element={<EmailServices/>}/>
           <Route path="/enterprise-email-hosting" element={<EnterpriseEmailHosting/>}/>
         </Routes>
       </BrowserRouter>

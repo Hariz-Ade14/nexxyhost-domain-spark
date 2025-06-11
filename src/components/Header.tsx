@@ -44,8 +44,7 @@ const Header = () => {
     {
       name: "Email Services",
       items: [
-        { label: "Business Email Hosting", url: "/business-email-hosting" },
-        { label: "Enterprise Email Hosting", url: "/enterprise-email-hosting" },
+        { label: "Email Services", url: "/email-services" },
       ],
     },
     {
@@ -113,7 +112,7 @@ const Header = () => {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-2 p-4 md:w-[500px]">
-                        {items.map((item) => (
+                        {items?.map((item) => (
                           <li key={item.label}>
                             <Link
                               to={item.url}
