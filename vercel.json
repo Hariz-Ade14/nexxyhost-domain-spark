@@ -1,83 +1,8 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "dist"
-        }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "DENY"
-          },
-          {
-            "key": "X-XSS-Protection",
-            "value": "1; mode=block"
-          }
-        ]
-      },
-      {
-        "source": "/api/(.*)",
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          },
-          {
-            "key": "Access-Control-Allow-Methods",
-            "value": "GET, POST, PUT, DELETE, OPTIONS"
-          },
-          {
-            "key": "Access-Control-Allow-Headers",
-            "value": "X-Requested-With, Content-Type, Accept, Authorization"
-          }
-        ]
-      }
-    ],
     "rewrites": [
       {
-        "source": "/api/(.*)",
-        "destination": "/api/$1"
+        "source": "/(.*)",
+        "destination": "/index.html"
       }
-    ],
-    "redirects": [
-      {
-        "source": "/old-page",
-        "destination": "/new-page",
-        "permanent": true
-      }
-    ],
-    "functions": {
-      "pages/api/**/*.js": {
-        "runtime": "nodejs18.x"
-      }
-    },
-    "regions": ["iad1"],
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
-    "installCommand": "npm install",
-    "devCommand": "npm run dev",
-    "framework": "vite",
-    "cleanUrls": true,
-    "trailingSlash": false
+    ]
   }
