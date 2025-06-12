@@ -26,7 +26,7 @@ const Header = () => {
       name: "Domains",
       items: [
         { label: "Register | Transfer Domain", url: "/register-domain" },
-        { label: "Perform WHOIS Search", url: "/register-domain" },
+        { label: "Perform WHOIS Search", url: "/whois-search" },
         { label: "Become a Domain Reseller", url: "/register-domain" },
       ],
     },
