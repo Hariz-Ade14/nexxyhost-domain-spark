@@ -16,7 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Layout from "@/components/Layout";
-
+import FAQs from "@/components/FAQs";
 export default function WebSecurityPage() {
   const securityPlans = [
     {
@@ -100,20 +100,40 @@ export default function WebSecurityPage() {
     },
   ];
 
+  const securityFaqData = [
+    {
+      question: "How does the website firewall work?",
+      answer: "Our Web Application Firewall (WAF) acts as a shield between your website and the internet. It filters all incoming traffic, blocking malicious requests before they reach your website. The WAF uses intelligent rules to identify and block common attack patterns, SQL injections, cross-site scripting, and other threats."
+    },
+    {
+      question: "What happens if malware is detected on my site?",
+      answer: "When malware is detected, you'll receive an immediate alert. With our Advanced and Enterprise plans, we automatically remove the malware and patch the vulnerability that allowed the infection. We then perform a thorough scan to ensure all malicious code has been removed and provide a detailed report of the incident."
+    },
+    {
+      question: "Can security solutions slow down my website?",
+      answer: "Our security solutions are designed to have minimal impact on website performance. We use a cloud-based approach that filters traffic before it reaches your server, actually improving performance in many cases by blocking malicious requests. Our system is optimized to add less than 1ms of latency to legitimate requests."
+    },
+    {
+      question: "Do I need security if I have a small website?",
+      answer: "Small websites are actually targeted more frequently because they often have fewer security measures in place. Hackers use automated tools that scan the internet for vulnerable websites regardless of size. Our Basic Protection plan is specifically designed to provide affordable but effective security for small websites."
+    }
+  ];
+  
+
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-teal-600 via-cyan-600 to-teal-700 text-white py-24">
+        <section className="bg- text-white py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-white/20 text-white hover:bg-white/30">
                 Advanced Protection
               </Badge>
-              <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl">
+              <h1 className="mb-6 text-4xl font-bold text-teal-900 tracking-tight sm:text-6xl">
                 Web Security Solutions
               </h1>
-              <p className="mb-8 text-xl text-cyan-100 max-w-2xl mx-auto">
+              <p className="mb-8 text-base text-black text-base max-w-2xl mx-auto">
                 Protect your website from hackers, malware, and data breaches
                 with our comprehensive security solutions. Keep your business
                 and customers safe online.
@@ -121,14 +141,14 @@ export default function WebSecurityPage() {
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Button
                   size="lg"
-                  className="bg-white text-teal-600 hover:bg-gray-100"
+                  className="bg-button text-white hover:bg-teal-900"
                 >
                   Secure Your Website
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white/10"
+                  className="border-teal-900 border border-2 text-teal-900 hover:bg-button hover:text-white"
                 >
                   Free Security Scan
                 </Button>
@@ -143,10 +163,10 @@ export default function WebSecurityPage() {
             <div className="max-w-6xl mx-auto">
               <div className="grid gap-12 lg:grid-cols-2 items-center">
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-3xl font-bold text-teal-900 mb-6">
                     Protect Against Growing Cyber Threats
                   </h2>
-                  <p className="text-lg text-gray-600 mb-6">
+                  <p className="text-lg text-black mb-6">
                     Websites face an average of 94 attacks per day. Our
                     comprehensive security solutions protect your website from
                     hackers, malware, and other online threats, ensuring your
@@ -155,31 +175,31 @@ export default function WebSecurityPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         Malware & Ransomware
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         SQL Injection Attacks
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         DDoS Attacks
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         Brute Force Attempts
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         Zero-Day Exploits
                       </span>
                     </div>
@@ -188,7 +208,7 @@ export default function WebSecurityPage() {
                 <div className="relative">
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <img
-                      src="/images/security-shield.png"
+                      src="/images/websecurity.avif"
                       alt="Advanced web security protection shield"
                       className="w-full h-auto object-cover"
                     />
@@ -223,16 +243,16 @@ export default function WebSecurityPage() {
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+              <h2 className="text-3xl font-bold text-teal-900 sm:text-4xl mb-4">
                 Comprehensive Security Features
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-black max-w-2xl mx-auto">
                 Our multi-layered security approach protects your website from
                 all angles
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 px-10">
               {securityFeatures.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
@@ -262,7 +282,7 @@ export default function WebSecurityPage() {
         <section className="py-24 bg-gradient-to-br from-teal-50 to-cyan-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+              <h2 className="text-3xl font-bold text-teal-900 text-center mb-12">
                 How Our Security Works
               </h2>
               <div className="grid gap-8 md:grid-cols-4">
@@ -270,10 +290,10 @@ export default function WebSecurityPage() {
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-white text-2xl font-bold">
                     1
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-teal-900 mb-2">
                     Monitor
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Continuous monitoring of your website for suspicious
                     activity and potential threats
                   </p>
@@ -282,10 +302,10 @@ export default function WebSecurityPage() {
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-white text-2xl font-bold">
                     2
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-teal-900 mb-2">
                     Detect
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Advanced algorithms identify malware, vulnerabilities, and
                     attack patterns
                   </p>
@@ -294,10 +314,10 @@ export default function WebSecurityPage() {
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-white text-2xl font-bold">
                     3
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-teal-900 mb-2">
                     Protect
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Automatically block threats and apply security patches to
                     vulnerabilities
                   </p>
@@ -306,10 +326,10 @@ export default function WebSecurityPage() {
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 text-white text-2xl font-bold">
                     4
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-teal-900 mb-2">
                     Report
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Detailed security reports and alerts keep you informed of
                     your website's security status
                   </p>
@@ -327,7 +347,7 @@ export default function WebSecurityPage() {
                 <div className="relative">
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <img
-                      src="/images/performance-dashboard.png"
+                      src="/images/websecurity2.avif"
                       alt="Security monitoring dashboard"
                       className="w-full h-auto object-cover"
                     />
@@ -354,10 +374,10 @@ export default function WebSecurityPage() {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-3xl font-bold text-teal-900 mb-6">
                     Real-Time Security Dashboard
                   </h2>
-                  <p className="text-lg text-gray-600 mb-6">
+                  <p className="text-lg text-black mb-6">
                     Monitor your website's security status in real-time with our
                     intuitive dashboard. Get instant alerts about potential
                     threats and take immediate action to protect your website.
@@ -365,25 +385,25 @@ export default function WebSecurityPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         Real-time threat monitoring
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         Security incident history
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         Vulnerability assessment
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-black font-medium">
                         One-click security actions
                       </span>
                     </div>
@@ -398,7 +418,7 @@ export default function WebSecurityPage() {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+              <h2 className="text-3xl font-bold text-teal-900 sm:text-4xl mb-4">
                 Security Plans
               </h2>
               <p className="text-lg text-gray-600">
@@ -451,126 +471,7 @@ export default function WebSecurityPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 bg-gradient-to-br from-teal-50 to-cyan-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-                Security FAQ
-              </h2>
-              <div className="space-y-6">
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                  <details className="group">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        How does the website firewall work?
-                      </h3>
-                      <div className="flex-shrink-0 ml-4">
-                        <div className="w-6 h-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <span className="text-white text-sm font-bold group-open:rotate-45 transition-transform">
-                            +
-                          </span>
-                        </div>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        Our Web Application Firewall (WAF) acts as a shield
-                        between your website and the internet. It filters all
-                        incoming traffic, blocking malicious requests before
-                        they reach your website. The WAF uses intelligent rules
-                        to identify and block common attack patterns, SQL
-                        injections, cross-site scripting, and other threats.
-                      </p>
-                    </div>
-                  </details>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                  <details className="group">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        What happens if malware is detected on my site?
-                      </h3>
-                      <div className="flex-shrink-0 ml-4">
-                        <div className="w-6 h-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <span className="text-white text-sm font-bold group-open:rotate-45 transition-transform">
-                            +
-                          </span>
-                        </div>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        When malware is detected, you'll receive an immediate
-                        alert. With our Advanced and Enterprise plans, we
-                        automatically remove the malware and patch the
-                        vulnerability that allowed the infection. We then
-                        perform a thorough scan to ensure all malicious code has
-                        been removed and provide a detailed report of the
-                        incident.
-                      </p>
-                    </div>
-                  </details>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                  <details className="group">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        Can security solutions slow down my website?
-                      </h3>
-                      <div className="flex-shrink-0 ml-4">
-                        <div className="w-6 h-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <span className="text-white text-sm font-bold group-open:rotate-45 transition-transform">
-                            +
-                          </span>
-                        </div>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        Our security solutions are designed to have minimal
-                        impact on website performance. We use a cloud-based
-                        approach that filters traffic before it reaches your
-                        server, actually improving performance in many cases by
-                        blocking malicious requests. Our system is optimized to
-                        add less than 1ms of latency to legitimate requests.
-                      </p>
-                    </div>
-                  </details>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                  <details className="group">
-                    <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        Do I need security if I have a small website?
-                      </h3>
-                      <div className="flex-shrink-0 ml-4">
-                        <div className="w-6 h-6 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
-                          <span className="text-white text-sm font-bold group-open:rotate-45 transition-transform">
-                            +
-                          </span>
-                        </div>
-                      </div>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        Small websites are actually targeted more frequently
-                        because they often have fewer security measures in
-                        place. Hackers use automated tools that scan the
-                        internet for vulnerable websites regardless of size. Our
-                        Basic Protection plan is specifically designed to
-                        provide affordable but effective security for small
-                        websites.
-                      </p>
-                    </div>
-                  </details>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FAQs faqs={securityFaqData}/>
 
         {/* CTA Section */}
         <section className="bg-gradient-to-r from-teal-500 to-cyan-500 py-16 text-white">

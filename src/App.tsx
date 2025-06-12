@@ -17,6 +17,7 @@ import Resellerhosting from "./pages/WebsiteAndHosting/resellerhosting";
 import WebSecurityPage from "./pages/Security/WebsiteSecurity";
 import EnterpriseEmailHosting from "./pages/EmailServices/EnterpriseEmailHosting";
 import EmailServices from "./pages/EmailServices/EmailServices";
+import WhoisSearchPage from "./pages/Domain/whoIsSearch";
 import SSLCertificatesPage from "./pages/Security/SSLCertificate";
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/dedicated-cloud-hosting" element={<DedicatedCloudHosting/>}/>
           <Route path="/reseller-hosting" element={<Resellerhosting/>}/>
           <Route path="/email-services" element={<EmailServices/>}/>
+          <Route path="/whois-search" element={<WhoisSearchPage/>}/>
           <Route path="/enterprise-email-hosting" element={<EnterpriseEmailHosting/>}/>
         </Routes>
       </BrowserRouter>

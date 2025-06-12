@@ -7,7 +7,7 @@ type faqProps = {
   answer: string;
 };
 
-const faqs: faqProps[] = [
+export const faqs: faqProps[] = [
   {
     question: "What type of hosting is best for my website?",
     answer:
@@ -33,24 +33,9 @@ const faqs: faqProps[] = [
     answer:
       "Yes! All our hosting plans include free SSL certificates. We automatically install and configure SSL certificates for your domains, ensuring your website is secure and trusted by visitors. SSL certificates are essential for SEO and building customer trust.",
   },
-//   {
-//     question: "How often do you backup my website?",
-//     answer:
-//       "We perform daily automated backups of all websites and databases. Backups are stored securely and can be easily restored through your control panel. For premium plans, we also offer on-demand backup creation and longer retention periods to ensure your data is always protected.",
-//   },
-//   {
-//     question: "Can I upgrade or downgrade my hosting plan?",
-//     answer:
-//       "Absolutely! You can upgrade or downgrade your hosting plan at any time through your account dashboard. Upgrades take effect immediately, while downgrades are processed at your next billing cycle. We'll help ensure a smooth transition and assist with any technical requirements.",
-//   },
-//   {
-//     question: "What is your uptime guarantee?",
-//     answer:
-//       "We guarantee 99.9% uptime for all our hosting services. Our infrastructure is built with redundancy and monitored 24/7 to ensure maximum availability. In the rare event we don't meet our uptime guarantee, we provide service credits as compensation for any inconvenience caused.",
-//   },
 ];
 
-const FAQs = () => {
+const FAQs = ({faqs,subheading}: {faqs: Record<string,string>[],subheading?: string}) => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -62,12 +47,11 @@ const FAQs = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+            <h2 className="text-3xl font-bold text-teal-900 sm:text-4xl mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-gray-600">
-              Get answers to the most common questions about our hosting
-              services
+            <p className="text-lg text-black">
+              {subheading}
             </p>
           </div>
 
@@ -102,7 +86,7 @@ const FAQs = () => {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">
+            <p className="text-black mb-6">
               Still have questions? Our support team is here to help!
             </p>
             <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
