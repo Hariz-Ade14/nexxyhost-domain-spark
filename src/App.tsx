@@ -19,6 +19,7 @@ import EnterpriseEmailHosting from "./pages/EmailServices/EnterpriseEmailHosting
 import EmailServices from "./pages/EmailServices/EmailServices";
 import WhoisSearchPage from "./pages/Domain/whoIsSearch";
 import SSLCertificatesPage from "./pages/Security/SSLCertificate";
+import ContactPage from "./pages/Support/contactUs";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/reseller-hosting" element={<Resellerhosting/>}/>
           <Route path="/email-services" element={<EmailServices/>}/>
           <Route path="/whois-search" element={<WhoisSearchPage/>}/>
+          <Route path="/contact" element={<ContactPage/>}/>
           <Route path="/enterprise-email-hosting" element={<EnterpriseEmailHosting/>}/>
         </Routes>
       </BrowserRouter>
