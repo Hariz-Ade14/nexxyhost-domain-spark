@@ -113,16 +113,62 @@ export default function SSLCertificatesPage() {
               Secure your website with industry-standard SSL encryption. Build customer trust, improve SEO rankings, and
               protect sensitive data with our range of SSL certificate options.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <div className="flex gap-4 sm:flex-row sm:justify-center">
               <Button size="lg" className="bg-button text-white hover:bg-teal-900">
                 Get SSL Protection
               </Button>
-              <Button size="lg" variant="outline" className="border-teal-900 border border-2 text-teal-900 hover:bg-button hover:text-white">
-                Compare SSL Types
-              </Button>
+             
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-teal-900 sm:text-4xl mb-4">Choose Your SSL Certificate</h2>
+            <p className="text-lg text-black">Select the right level of validation for your website needs</p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-3 max-w-6xl mx-auto">
+            {sslTypes.map((ssl, index) => (
+              <Card
+                key={index}
+                className={`relative ${ssl.color} ${ssl.popular ? "ring-2 ring-teal-900 scale-105" : ""} transition-transform hover:scale-105`}
+              >
+                {ssl.popular && (
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-teal-500 to-cyan-500">
+                    Most Popular
+                  </Badge>
+                )}
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl text-teal-900">{ssl.name}</CardTitle>
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-4xl font-bold text-teal-900">{ssl.price}</span>
+                    <span className="text-black">{ssl.period}</span>
+                  </div>
+                  <CardDescription>{ssl.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 mb-6">
+                    {ssl.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <Check className="h-5 w-5 text-teal-500 mr-3 flex-shrink-0" />
+                        <span className="text-black">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button className="w-full bg-button hover:from-teal-600 hover:to-cyan-600 hover:bg-teal-800">
+                    Get Certificate
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        <Button className="mt-20 flex mx-auto bg-button hover:from-teal-600 hover:to-cyan-600 hover:bg-teal-800">
+                    See More SSL Certificates
+                  </Button>
       </section>
 
       {/* SSL Illustration Section */}
@@ -216,50 +262,7 @@ export default function SSLCertificatesPage() {
       </section>
 
       {/* SSL Types Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-teal-900 sm:text-4xl mb-4">Choose Your SSL Certificate</h2>
-            <p className="text-lg text-black">Select the right level of validation for your website needs</p>
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-3 max-w-6xl mx-auto">
-            {sslTypes.map((ssl, index) => (
-              <Card
-                key={index}
-                className={`relative ${ssl.color} ${ssl.popular ? "ring-2 ring-teal-900 scale-105" : ""} transition-transform hover:scale-105`}
-              >
-                {ssl.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-teal-500 to-cyan-500">
-                    Most Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl text-teal-900">{ssl.name}</CardTitle>
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-4xl font-bold text-teal-900">{ssl.price}</span>
-                    <span className="text-black">{ssl.period}</span>
-                  </div>
-                  <CardDescription>{ssl.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {ssl.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <Check className="h-5 w-5 text-teal-500 mr-3 flex-shrink-0" />
-                        <span className="text-black">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full bg-button hover:from-teal-600 hover:to-cyan-600 hover:bg-teal-800">
-                    Get Certificate
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* How It Works Section */}
       <section className="py-24 bg-gradient-to-br from-teal-50 to-cyan-50">

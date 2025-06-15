@@ -9,10 +9,12 @@ body{
   font-family:  "Ubuntu", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+
+html, body {
+  scroll-behavior: auto;
+  height: auto;
+  overflow-y: auto;
 }
-              
 
 
 @layer base {

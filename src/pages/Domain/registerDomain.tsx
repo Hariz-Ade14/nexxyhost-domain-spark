@@ -13,7 +13,6 @@ const domainExtensions = [
   { name: ".dev", price: 15.99 },
 ];
 
-
 const PurchaseRegister: React.FC = () => {
   const [domainName, setDomainName] = useState("");
   const [searchResults, setSearchResults] = useState<
@@ -24,19 +23,28 @@ const PurchaseRegister: React.FC = () => {
     }[]
   >([]);
 
-  const handleSearch = (e: React.FormEvent) => {
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const apiURL = import.meta.env.VITE_API_URL;
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!domainName) return;
-
-    // Simulate domain search results
-    const results = domainExtensions.map((ext) => ({
-      available: Math.random() > 0.3, // Randomly determine availability
-      domain: `${domainName}${ext.name}`,
-      price: ext.price,
-    }));
-
-    setSearchResults(results);
+    if (domainName) {
+      const domainAvailailtySearch = await fetch(
+        // `${apiURL}/view-domain`,
+       `${apiURL}/checkdomainavailable?APIKey=xuxASjwpmP71KtJ&websiteName="sanni.com"`,
+      //   {
+      //     method: 'GET',
+      //     headers: {
+      //         'Content-Type': 'application/json',
+      //         'Authorization': `Bearer ${apiKey}`, // Replace with your auth mechanism
+      //         'Accept': 'application/json'
+      //     },
+      //     // body: JSON.stringify({ domainName: domainName }) // Stringify the domain name
+      // }
+      );
+      const response = await domainAvailailtySearch.json();
+      console.log(response);
+    }
   };
 
   return (
@@ -59,16 +67,23 @@ const PurchaseRegister: React.FC = () => {
                     <input
                       type="text"
                       placeholder="Enter your domain name..."
+                      value={domainName}
+                      onChange={(e) => setDomainName(e.target.value)}
                       className="flex-1 px-4 py-3 border border-teal-900 rounded-lg"
                     />
-                    <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all">
+                    <button
+                      onClick={handleSearch}
+                      className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all"
+                    >
                       Search
                     </button>
-                   
-                  </div> 
-                  <a href="https://nexxyhost.com/clientarea/cart.php?a=add&domain=transfer" className="text-teal-900 hover:underline no-underline flex mt-5">
-                      Transfer Domain from another registrar <ChevronRight />
-                    </a>
+                  </div>
+                  <a
+                    href="https://nexxyhost.com/clientarea/cart.php?a=add&domain=transfer"
+                    className="text-teal-900 hover:underline no-underline flex mt-5"
+                  >
+                    Transfer Domain from another registrar <ChevronRight />
+                  </a>
                 </div>
                 <p className="text-teal-600">
                   <span className="font-semibold">Popular:</span> .com, .net,
@@ -242,5 +257,3 @@ const PurchaseRegister: React.FC = () => {
 };
 
 export default PurchaseRegister;
-
-

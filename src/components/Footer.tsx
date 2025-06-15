@@ -7,7 +7,7 @@ const Footer = () => {
     {
       name: "Domains",
       items: [
-        { label: "Transfer | Register Domain", url: "/register-domain" },
+        { label: "Register | Transfer Domain", url: "/register-domain" },
         { label: "Perform WHOIS Search", url: "/register-domain" },
         { label: "Become a Domain Reseller", url: "/register-domain" },
       ],
@@ -50,9 +50,11 @@ const Footer = () => {
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Newsletter subscription:", email);
     setEmail("");
   };
+
+  const date = new Date();
+  const year = date.getFullYear();
 
   return (
     <footer className="text-white bg-teal-600">
@@ -96,17 +98,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-7 gap-3">
           {/* Logo and description */}
           <div className="lg:col-span-2">
-            {/* <div className="flex-shrink-0">
-              <div className="text-2xl font-bold text-blue-600">
-                <a href="/">
-                  <img src="/favicon.ico" alt="favicon" className="" />
-                </a>
-              </div>
-            </div> */}
-            {/* <p className="text-white-400 mb-6 mt-5 max-w-fit">
-              Empowering businesses worldwide with reliable hosting, domains,
-              and security solutions since 2008.
-            </p> */}
+            
             <div className="flex flex-col">
               <h4 className="text-sm font-bold text-[#048086ff] mb-4 uppercase tracking-wider">
                 Address
@@ -119,6 +111,8 @@ const Footer = () => {
                   Phone: (234) 811-690-0912
                 </li>
               </ul>
+              
+             
             </div>
 
             {/* Social icons */}
@@ -136,6 +130,16 @@ const Footer = () => {
                 <FaYoutube size={25} />
               </a>
             </div>
+
+            <div className="flex-shrink-0">
+              <div className="text-2xl font-bold flex gap-5 items-center text-blue-600">
+                
+                  <img src="/images/paystack.png" alt="paystack" className="w-[100px]" />
+                  <img src="/images/mastercard.png" alt="mastercard" className="w-[100px]" />
+                  <img src="/images/visa.png" alt="visa" className="w-[100px]" />
+              </div>
+            </div>
+          
           </div>
 
           {/* Footer links */}
@@ -163,7 +167,7 @@ const Footer = () => {
         {/* Webmail login link */}
         <div className="mt-12 pt-8 border-t border-white-800">
           <p className="text-white-400 text-center text-sm">
-            © 2024 NexxyHost. All rights reserved.
+            © {year} NexxyHost. All rights reserved.
           </p>
         </div>
       </div>

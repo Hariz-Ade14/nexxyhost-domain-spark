@@ -11,6 +11,12 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useLocation } from "react-router-dom";
+import Legals from "./Legals";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,42 +31,102 @@ const Header = () => {
     {
       name: "Domains",
       items: [
-        { label: "Register | Transfer Domain", url: "/register-domain" },
-        { label: "Perform WHOIS Search", url: "/whois-search" },
-        { label: "Become a Domain Reseller", url: "/register-domain" },
+        {
+          label: "Register | Transfer Domain",
+          url: "/register-domain",
+          text: "Secure your online identity with the perfect domain name. ",
+        },
+        {
+          label: "Perform WHOIS Search",
+          url: "/whois-search",
+          text: "Find detailed information about any domain name. Check domain availability, ownership details, expiration dates, and more with our free WHOIS lookup tool.",
+        },
+        {
+          label: "Become a Domain Reseller",
+          url: "/domain-reseller",
+          text: "Automate reselling of Domain via API",
+        },
       ],
     },
     {
       name: "Website & Hosting",
       items: [
-        { label: "Website Builder", url: "/website-builder" },
-        { label: "Shared Hosting", url: "/shared-hosting" },
-        { label: "WordPress Shared Hosting", url: "/wordpressshared-hosting" },
-        { label: "Hosting Migration and Transfer", url: "/hosting-migration" },
-        { label: "Dedicated Cloud Hosting", url: "/dedicated-cloud-hosting" },
-        { label: "Reseller Hosting", url: "/reseller-hosting" },
+        {
+          label: "Website Builder",
+          url: "/website-builder",
+          text: "Create stunning websites in minutes with our drag-and-drop builder.",
+        },
+        {
+          label: "Shared Hosting",
+          url: "/shared-hosting",
+          text: "Perfect for personal websites, blogs, and small businesses.",
+        },
+        {
+          label: "WordPress Shared Hosting",
+          url: "/wordpressshared-hosting",
+          text: "Experience the fastest WordPress hosting with our optimized servers.",
+        },
+        {
+          label: "Hosting Migration and Transfer",
+          url: "/hosting-migration",
+          text: "Switch to our high-performance hosting with complete peace of mind. ",
+        },
+        {
+          label: "Dedicated Cloud Hosting",
+          url: "/dedicated-cloud-hosting",
+          text: "Scale your business with our high-performance cloud infrastructure.",
+        },
+        {
+          label: "Reseller Hosting",
+          url: "/reseller-hosting",
+          text: "Scale your business with our high-performance cloud infrastructure.",
+        },
       ],
     },
     {
       name: "Email Services",
       items: [
-        { label: "Email Services", url: "/email-services" },
+        {
+          label: "Email Services",
+          url: "/email-services",
+          text: "Establish credibility and enhance your professional image with custom domain email addresses. ",
+        },
       ],
     },
     {
       name: "Security",
       items: [
-        { label: "SSL Certificates", url: "/ssl-certificate" },
-        { label: "Website Security", url: "/website-security" },
+        {
+          label: "SSL Certificates",
+          url: "/ssl-certificate",
+          text: "Secure your website with industry-standard SSL encryption.",
+        },
+        {
+          label: "Website Security",
+          url: "/website-security",
+          text: "Protect your website from hackers, malware, and data breaches with our comprehensive security solutions.",
+        },
       ],
     },
     {
       name: "Support",
       items: [
-        { label: "Knowledgebase", url: "/register-domain" },
-        { label: "Submit Ticket", url: "/submit-ticket" },
-        { label: "Legals", url: "/legals" },
-        { label: "Contact Us", url: "/contact" },
+        {
+          label: "Knowledgebase",
+          url: "/knowledgebase",
+          text: "We're here to help",
+        },
+        {
+          label: "Submit Ticket",
+          url: "/submit-ticket",
+          text: "Need help? Our support team is here to assist you 24/7",
+        },
+        { label: "Legals", url: "/legals", text: "Our legal policies" },
+        {
+          label: "Contact Us",
+          url: "/contact",
+          text: "Have questions about our hosting services? ",
+        },
       ],
     },
   ];
@@ -78,9 +144,11 @@ const Header = () => {
 
   const location = useLocation();
 
+  const [legals, setLegals] = useState(false);
+
   return (
     <header
-      className={`fixed w-full lg:px-4 py-1 transition-all duration-300 z-10 ${
+      className={`fixed w-full lg:px-4 py-1 transition-all duration-300 top-0 z-10 ${
         scrolled ? "bg-white shadow-md" : "bg-transparent"
       } ${isMenuOpen && " bg-white"}`}
     >
@@ -111,18 +179,75 @@ const Header = () => {
                       {name}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-2 p-4 md:w-[500px]">
-                        {items?.map((item) => (
-                          <li key={item.label}>
-                            <Link
-                              to={item.url}
-                              className="block select-none space-y-1 text-teal-900 rounded-md p-3 leading-none no-underline outline-none hover:underline"
+                      {name === "Website & Hosting" ? (
+                        <div className="flex items-start justify-between">
+                          <ul className="w-[300px] gap-2 p-4 md:w-[300px]">
+                            {items?.slice(0, 3).map((item) => (
+                              <li
+                                className="block select-none space-y-1 text-teal-900 rounded-md p-3 leading-none no-underline outline-none"
+                                key={item.label}
+                              >
+                                <Link to={item.url} className="hover:underline">
+                                  {item.label}
+                                  <br />
+                                </Link>
+                                <sub className="hover:no-underline">
+                                  {item.text}
+                                </sub>
+                              </li>
+                            ))}
+                          </ul>
+
+                          <ul className="w-[300px] gap-2 p-4 md:w-[300px]">
+                            {items?.slice(3, 6).map((item) => (
+                              <li
+                                className="block select-none space-y-1 text-teal-900 rounded-md p-3 leading-none no-underline outline-none"
+                                key={item.label}
+                              >
+                                <Link to={item.url} className="hover:underline">
+                                  {item.label}
+                                  <br />
+                                </Link>
+                                <sub className="hover:no-underline">
+                                  {item.text}
+                                </sub>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : (
+                        <ul className="w-[400px] gap-2 p-4 md:w-[500px]">
+                          {items?.map((item) => (
+                            <li
+                              className="block select-none text-teal-900 rounded-md p-3 leading-none no-underline outline-none"
+                              key={item.label}
                             >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                              {item.label === "Legals" ? (
+                                <HoverCard>
+                                  <HoverCardTrigger>
+                                    <p className="hover:underline cursor-pointer">
+                                      {item.label}
+                                    </p>
+                                    <sub className="hover:no-underline">
+                                      {item.text}
+                                    </sub>
+                                  </HoverCardTrigger>
+                                  <HoverCardContent>
+                                    <Legals />
+                                  </HoverCardContent>
+                                </HoverCard>
+                              ) : (
+                                <Link to={item.url}>
+                                  <p className="hover:underline">{item.label}</p>
+                                  <sub className="hover:no-underline">
+                                    {item.text}
+                                  </sub>
+                                </Link>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 ))}
@@ -137,7 +262,7 @@ const Header = () => {
               className="no-underline"
             >
               <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
-                Login
+                Client Area
               </button>
             </a>
           </div>
@@ -197,6 +322,7 @@ const Header = () => {
           </div>
         )}
       </div>
+      {/* {legals &&  <Legals/>} */}
     </header>
   );
 };
