@@ -90,7 +90,7 @@ export default function ContactPage() {
                 <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-teal-900">
                   Contact Our Team
                 </h1>
-                <p className="text-base text-black mb-8 font-light leading-relaxed">
+                <p className="text-base text-black mb-8">
                   Have questions about our hosting services? Need technical
                   support? Our expert team is here to help you succeed.
                 </p>

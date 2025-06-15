@@ -314,7 +314,7 @@ const ResellerHosting = () => {
 
       {/* Pricing Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-4">
               Reseller Hosting Plans
@@ -324,7 +324,7 @@ const ResellerHosting = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 px-10 gap-12 md:gap-8">
             {plans.map((plan, index) => (
               <div key={index} className={`bg-white rounded-2xl ${plan.popular ? 'ring-4 ring-teal-500 transform scale-105' : 'shadow-lg'}`}>
                 {plan.popular && (
