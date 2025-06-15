@@ -7,28 +7,24 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: 'Ifeanyi Fred',
-      // company: 'Digital Marketing Agency',
       avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b932?w=100&h=100&fit=crop&crop=face',
       text: "Very friendly and helped with what I wanted without stressing me out.",
       rating: 5
     },
     {
       name: 'Divine Uche',
-      // company: 'E-commerce Store Owner',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
       text: "Great experience! Weldone.",
       rating: 5
     },
     {
       name: 'Christian Okoro',
-      // company: 'Blogger & Content Creator',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
       text: "Good job nexxyhost. Keep it up.",
       rating: 5
     },
     {
       name: 'Muhammad Saghir Husseini',
-      // company: 'Startup Founder',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
       text: "Great Customer Support. Please keep it up.",
       rating: 5
@@ -72,17 +68,9 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center justify-center">
-                {/* <img
-                  src={testimonials[currentTestimonial].avatar}
-                  alt={testimonials[currentTestimonial].name}
-                  className="w-16 h-16 rounded-full mr-4"
-                /> */}
                 <div className="text-left">
                   <div className="text-xl font-semibold text-white">
                     {testimonials[currentTestimonial].name}
-                  </div>
-                  <div className="text-teal-400">
-                    {testimonials[currentTestimonial].company}
                   </div>
                 </div>
               </div>

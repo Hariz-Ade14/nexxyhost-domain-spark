@@ -34,9 +34,9 @@ export default function ContactPage() {
   const contactMethods = [
     {
       icon: <Phone className="h-6 w-6" />,
-      title: "Phone Support",
+      title: "Whatsapp Support",
       description: "Speak directly with our support team",
-      contact: "+1 (555) 123-4567",
+      contact: "(234) 811-690-0912",
       availability: "24/7 Available",
     },
     {
@@ -52,13 +52,6 @@ export default function ContactPage() {
       description: "Get instant help from our team",
       contact: "Available on website",
       availability: "24/7 Available",
-    },
-    {
-      icon: <MapPin className="h-6 w-6" />,
-      title: "Office Location",
-      description: "Visit our headquarters",
-      contact: "123 Tech Street, San Francisco, CA",
-      availability: "Mon-Fri 9AM-6PM PST",
     },
   ];
 
@@ -316,14 +309,14 @@ export default function ContactPage() {
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              <h2 className="text-3xl lg:text-4xl text-teal-900 font-bold mb-4">
                 How Can We Help You?
               </h2>
-              <p className="text-xl text-gray-600 font-light">
+              <p className="text-base text-black font-light">
                 Choose the best way to reach our team
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
               {contactMethods.map((method, index) => (
                 <Card
                   key={index}
@@ -333,11 +326,11 @@ export default function ContactPage() {
                     <div className="mx-auto w-12 h-12 bg-gradient-to-r from-teal-100 to-cyan-100 rounded-lg flex items-center justify-center text-teal-600 mb-4">
                       {method.icon}
                     </div>
-                    <CardTitle className="text-lg">{method.title}</CardTitle>
-                    <CardDescription>{method.description}</CardDescription>
+                    <CardTitle className="text-lg text-teal-900">{method.title}</CardTitle>
+                    <CardDescription className="!text-black">{method.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="font-medium text-gray-900 mb-2">
+                    <p className="font-medium text-black mb-2">
                       {method.contact}
                     </p>
                     <Badge variant="outline" className="text-xs">
@@ -350,15 +343,24 @@ export default function ContactPage() {
           </div>
         </section>
 
+       <a href="mailto:abuse@nexxyhost.com">
+        <Button
+          type="submit"
+          size="lg"
+          className="flex mx-auto bg-button hover:bg-teal-900 font-medium"
+        >
+         Report Spam | Phishing Activities
+        </Button></a>
+
         {/* Contact Form and Departments */}
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-2">
+            <div className="grid gap-12 lg:grid-cols-1">
               {/* Contact Form */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-2xl text-teal-900">Send Us a Message</CardTitle>
+                  <CardDescription className="!text-black">
                     Fill out the form below and we'll get back to you as soon as
                     possible
                   </CardDescription>
@@ -420,7 +422,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 font-medium"
+                      className="w-full bg-button hover:bg-teal-900 font-medium"
                     >
                       Send Message
                     </Button>
@@ -429,7 +431,7 @@ export default function ContactPage() {
               </Card>
 
               {/* Departments */}
-              <div className="space-y-6">
+              {/* <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-bold mb-4">
                     Contact Departments
@@ -458,24 +460,8 @@ export default function ContactPage() {
                     </CardContent>
                   </Card>
                 ))}
-              </div>
+              </div> */}
             </div>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-6xl">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7879.98923885757!2d7.447269579179605!3d9.064253557869336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0ba5808f8b2d%3A0xa7190191916f082b!2sCentral%20Business%20District%2C%20Abuja%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1749696260060!5m2!1sen!2sng"
-              width=""
-              height="350"
-              className="w-[100%]"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
           </div>
         </section>
       </div>
