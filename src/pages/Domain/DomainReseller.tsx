@@ -44,45 +44,6 @@ const DomainResellerProgram = () => {
     });
   };
 
-  const pricingTiers = [
-    {
-      name: "Starter",
-      minVolume: "1-50 domains/month",
-      discount: "15%",
-      features: [
-        "Basic reseller dashboard",
-        "API access",
-        "Email support",
-        "Monthly billing",
-      ],
-    },
-    {
-      name: "Professional",
-      minVolume: "51-200 domains/month",
-      discount: "25%",
-      features: [
-        "Advanced reseller dashboard",
-        "Priority API access",
-        "Phone & email support",
-        "Custom branding options",
-        "Bulk domain tools",
-      ],
-      popular: true,
-    },
-    {
-      name: "Enterprise",
-      minVolume: "200+ domains/month",
-      discount: "35%",
-      features: [
-        "Full-featured dashboard",
-        "Dedicated API endpoints",
-        "Dedicated account manager",
-        "White-label solutions",
-        "Custom integration support",
-        "Volume-based pricing",
-      ],
-    },
-  ];
 
   const benefits = [
     {
@@ -138,9 +99,6 @@ const DomainResellerProgram = () => {
               <Button size="lg" className="text !bg-button px-8">
                 Start Your Application
               </Button>
-              {/* <Button variant="outline" size="lg" className="text-lg px-8">
-                View Pricing
-              </Button> */}
             </div>
           </div>
 
@@ -168,55 +126,7 @@ const DomainResellerProgram = () => {
           </div>
 
           {/* Pricing Tiers */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-teal-900 text-center mb-12">
-              Reseller Pricing Tiers
-            </h2>
-            <div className="grid md:grid-cols-3 max-w-[80%] flex mx-auto gap-8">
-              {pricingTiers.map((tier, index) => (
-                <Card
-                  key={index}
-                  className={`relative ${
-                    tier.popular ? "border-teal-900 border-2" : ""
-                  }`}
-                >
-                  {tier.popular && (
-                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-teal-900">
-                      Most Popular
-                    </Badge>
-                  )}
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-2xl text-teal-900">{tier.name}</CardTitle>
-                    <div className="text-sm text-black mb-2">
-                      {tier.minVolume}
-                    </div>
-                    <div className="text-3xl font-bold text-teal-900">
-                      {tier.discount} <span className="text-lg">OFF</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3 mb-6">
-                      {tier.features.map((feature, featureIndex) => (
-                        <li
-                          key={featureIndex}
-                          className="flex items-center gap-2"
-                        >
-                          <div className="w-2 h-2 bg-teal-900 rounded-full"></div>
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button
-                      className="w-full !bg-button !text-white"
-                      variant={tier.popular ? "default" : "outline"}
-                    >
-                      Get Started
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+        
 
           {/* Application Form */}
           <div className="bg-white rounded-lg p-8 shadow-sm mb-16">

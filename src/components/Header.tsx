@@ -184,14 +184,14 @@ const Header = () => {
                           <ul className="w-[300px] gap-2 p-4 md:w-[300px]">
                             {items?.slice(0, 3).map((item) => (
                               <li
-                                className="block select-none space-y-1 text-teal-900 rounded-md p-3 leading-none no-underline outline-none"
+                                className="block select-none space-y-1rounded-md p-3 leading-none no-underline outline-none"
                                 key={item.label}
                               >
-                                <Link to={item.url} className="hover:underline">
+                                <Link to={item.url} className="hover:underline text-black  font-bold">
                                   {item.label}
                                   <br />
                                 </Link>
-                                <sub className="hover:no-underline">
+                                <sub className="hover:no-underline text-teal-900">
                                   {item.text}
                                 </sub>
                               </li>
@@ -201,14 +201,14 @@ const Header = () => {
                           <ul className="w-[300px] gap-2 p-4 md:w-[300px]">
                             {items?.slice(3, 6).map((item) => (
                               <li
-                                className="block select-none space-y-1 text-teal-900 rounded-md p-3 leading-none no-underline outline-none"
+                                className="block select-none space-y-1  rounded-md p-3 leading-none no-underline outline-none"
                                 key={item.label}
                               >
-                                <Link to={item.url} className="hover:underline">
+                                <Link to={item.url} className="hover:underline font-bold text-black">
                                   {item.label}
                                   <br />
                                 </Link>
-                                <sub className="hover:no-underline">
+                                <sub className="hover:no-underline text-teal-900 ">
                                   {item.text}
                                 </sub>
                               </li>
@@ -219,16 +219,16 @@ const Header = () => {
                         <ul className="w-[400px] gap-2 p-4 md:w-[500px]">
                           {items?.map((item) => (
                             <li
-                              className="block select-none text-teal-900 rounded-md p-3 leading-none no-underline outline-none"
+                              className="block select-none rounded-md p-3 leading-none no-underline outline-none"
                               key={item.label}
                             >
                               {item.label === "Legals" ? (
                                 <HoverCard>
                                   <HoverCardTrigger>
-                                    <p className="hover:underline cursor-pointer">
+                                    <p className="hover:underline text-black font-bold cursor-pointer">
                                       {item.label}
                                     </p>
-                                    <sub className="hover:no-underline">
+                                    <sub className="hover:no-underline text-teal-900">
                                       {item.text}
                                     </sub>
                                   </HoverCardTrigger>
@@ -238,10 +238,10 @@ const Header = () => {
                                 </HoverCard>
                               ) : (
                                 <Link to={item.url}>
-                                  <p className="hover:underline">
+                                  <p className="hover:underline text-black font-bold">
                                     {item.label}
                                   </p>
-                                  <sub className="hover:no-underline">
+                                  <sub className="hover:no-underline text-teal-900">
                                     {item.text}
                                   </sub>
                                 </Link>

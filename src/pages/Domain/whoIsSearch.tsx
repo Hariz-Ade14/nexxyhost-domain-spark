@@ -11,7 +11,14 @@ import { Search, Globe, Calendar, User, ArrowRight, Check } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Layout from "@/components/Layout";
 import { useState } from "react";
+import axios from "axios";
+
 export default function WhoisSearchPage() {
+  const [domainName,setDomainName] = useState("");
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   const domainExtensions = [
     { name: ".com", price: "$12.99/year", popular: true },
     { name: ".org", price: "$14.99/year" },
@@ -43,18 +50,32 @@ export default function WhoisSearchPage() {
     },
   ];
 
-  const [domainName, setDomainName] = useState("");
+  const handleSearch = async (e: React.FormEvent) => {
+    setLoading(true);
+    e.preventDefault();
+    if (!domainName) {
+      setError("Please enter a domain name");
+      setLoading(false);
 
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const apiURL = import.meta.env.VITE_API_URL;
+      return;
+    }
 
-  const handleSearch = async () => {
-    if (domainName) {
-      const domainAvailailtySearch = await fetch(
-        `${apiURL}/ViewDomain?APIKey=${apiKey}&websiteName=${domainName}`
-      );
-      const response = await domainAvailailtySearch.json();
-      console.log(response);
+    try {
+      setError(null);
+      setResult(null);
+      const response = await axios.get("http://localhost:4000/view-domain", {
+        params: { domainName },
+      });
+
+      const responseMessage = response.data.responseMsg.message;
+      if (response) {
+        setError(false);
+        setLoading(false);
+        setResult(responseMessage);
+      }
+      console.log(response.data);
+    } catch (err) {
+      setError("Failed to fetch domain info.");
     }
   };
 

@@ -166,7 +166,7 @@ const ResellerHosting = () => {
             </div>
             <div className="relative">
               <img 
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                src="/images/reseller.jpg" 
                 alt="Business growth and reseller hosting opportunities"
                 className="rounded-2xl shadow-2xl"
               />
