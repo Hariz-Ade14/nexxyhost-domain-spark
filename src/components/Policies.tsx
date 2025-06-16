@@ -13,8 +13,8 @@ const Policies = ({
   return (
     <div>
       {" "}
-      <div className="max-w-5xl mx-auto p-6 min-h-screen">
-        <div className="rounded-lg p-8 mt-6">
+      <div className="md:max-w-5xl mx-auto md:p-6 pt-6 min-h-screen">
+        <div className="rounded-lg py-8 px-5 md:p-8 mt-6">
           <h1 className="text-3xl font-bold text-teal-900 mb-8 text-center border-b pb-4">
             NEXXYHOST | {text}
           </h1>
@@ -23,7 +23,7 @@ const Policies = ({
             {Policies.map(({ id, title, content }) => (
               <div
                 key={id}
-                className="bg-gradient-to-r from-teal-50 to-teal-50 rounded-lg p-6 border-l-4 border-teal-900 hover:shadow-md transition-shadow duration-300"
+                className="bg-gradient-to-r from-teal-50 to-teal-50 rounded-lg p-6 md:border-l-4 border-t-4 md:border-t-0 border-teal-900 hover:shadow-md transition-shadow duration-300"
               >
                 <h2 className="text-xl font-semibold text-gray-800 mb-3 flex items-center">
                   <span className="bg-teal-900 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">

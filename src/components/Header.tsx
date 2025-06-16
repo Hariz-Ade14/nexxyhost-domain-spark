@@ -121,7 +121,7 @@ const Header = () => {
           url: "/submit-ticket",
           text: "Need help? Our support team is here to assist you 24/7",
         },
-        { label: "Legals", url: "/legals", text: "Our legal policies" },
+        { label: "Legals", text: "Our legal policies" },
         {
           label: "Contact Us",
           url: "/contact",
@@ -238,7 +238,9 @@ const Header = () => {
                                 </HoverCard>
                               ) : (
                                 <Link to={item.url}>
-                                  <p className="hover:underline">{item.label}</p>
+                                  <p className="hover:underline">
+                                    {item.label}
+                                  </p>
                                   <sub className="hover:no-underline">
                                     {item.text}
                                   </sub>
@@ -297,16 +299,32 @@ const Header = () => {
                 <div key={name} className="space-y-2">
                   <div className="font-medium px-2 text-teal-900">{name}</div>
                   <div className="space-y-1">
-                    {items.map((item) => (
-                      <Link
-                        key={item.label}
-                        to={item.url}
-                        className="block px-3 py-2 rounded-md text-teal-700 hover:underline"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
+                    {items.map((item) =>
+                      item.label === "Legals" ? (
+                        <NavigationMenu className="!m-0 !p-0" key={item.label}>
+                          <NavigationMenuList>
+                            <NavigationMenuItem className="block rounded-md text-teal-700 hover:underline">
+                              {" "}
+                              <NavigationMenuTrigger>
+                                {item.label}
+                              </NavigationMenuTrigger>
+                              <NavigationMenuContent>
+                                <Legals />
+                              </NavigationMenuContent>
+                            </NavigationMenuItem>
+                          </NavigationMenuList>
+                        </NavigationMenu>
+                      ) : (
+                        <Link
+                          key={item.label}
+                          to={item.url}
+                          className="block px-3 py-2 rounded-md text-teal-700 hover:underline"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      )
+                    )}
                   </div>
                 </div>
               ))}

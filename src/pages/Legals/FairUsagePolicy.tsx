@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 const FairUsagePolicy = () => {
   return (
     <Layout>
-      <div className="mt-20 max-w-5xl flex mx-auto flex-col text-center gap-5 pb-20">
+      <div className="mt-20 px-5 md:px-0 md:max-w-5xl flex mx-auto flex-col text-center gap-5 pb-20">
         <h1 className="text-3xl font-bold text-teal-900 mb-2 text-center border-b pb-4">
           NEXXYHOST | FAIR USAGE POLICY
         </h1>

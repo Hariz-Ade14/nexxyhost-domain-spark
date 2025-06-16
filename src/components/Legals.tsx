@@ -11,7 +11,7 @@ const Legals = () => {
     { title: "SSL Terms of service", url: "/ssl-terms" },
   ];
   return (
-    <div className="rounded-lg flex flex-col gap-5 w-fit text-teal-900 p-2">
+    <div className="rounded-lg flex flex-col w-[300px] ms-2 md:mr-0 gap-5 md:w-fit text-teal-900 p-2">
       {legals.map(({ title, url }) => {
         return (
           <Link className=" hover:underline" to={url}>
