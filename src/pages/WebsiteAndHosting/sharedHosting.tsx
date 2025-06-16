@@ -30,9 +30,11 @@ const SharedHosting: React.FC = () => {
                   need to succeed online.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
-                    Start Your Website
-                  </button>
+                  <a href="#pricing">
+                    <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
+                      Start Your Website
+                    </button>
+                  </a>
                   <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
                     View All Features
                   </button>
@@ -633,7 +635,8 @@ const SharedHosting: React.FC = () => {
           </div>
         </section>
 
-        <PricingPlans />
+        <div id="pricing" className=""><PricingPlans /></div>
+        
 
         {/* CTA Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-teal-100">

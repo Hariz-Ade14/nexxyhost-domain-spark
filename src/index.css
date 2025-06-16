@@ -11,7 +11,7 @@ body{
 
 
 html, body {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
   height: auto;
   overflow-y: auto;
 }

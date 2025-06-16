@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 import { Check, ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
+
 const domainExtensions = [
   { name: ".com", price: 12.99 },
   { name: ".org", price: 11.99 },
@@ -15,35 +16,41 @@ const domainExtensions = [
 
 const PurchaseRegister: React.FC = () => {
   const [domainName, setDomainName] = useState("");
-  const [searchResults, setSearchResults] = useState<
-    {
-      available: boolean;
-      domain: string;
-      price: number;
-    }[]
-  >([]);
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const apiURL = import.meta.env.VITE_API_URL;
   const handleSearch = async (e: React.FormEvent) => {
+    setLoading(true);
     e.preventDefault();
+    if (!domainName) {
+      setError("Please enter a domain name");
+      setLoading(false);
 
-    if (domainName) {
-      const domainAvailailtySearch = await fetch(
-        // `${apiURL}/view-domain`,
-       `${apiURL}/checkdomainavailable?APIKey=xuxASjwpmP71KtJ&websiteName="sanni.com"`,
-      //   {
-      //     method: 'GET',
-      //     headers: {
-      //         'Content-Type': 'application/json',
-      //         'Authorization': `Bearer ${apiKey}`, // Replace with your auth mechanism
-      //         'Accept': 'application/json'
-      //     },
-      //     // body: JSON.stringify({ domainName: domainName }) // Stringify the domain name
-      // }
-      );
-      const response = await domainAvailailtySearch.json();
-      console.log(response);
+      return;
+    }
+
+    try {
+      setError(null);
+      setResult(null);
+      const response = await axios.get("http://localhost:4000/check-domain", {
+        params: { domainName },
+      });
+
+      const responseMessage = response.data.responseMsg.message;
+      if (response) {
+        setError(false);
+        setLoading(false);
+        setResult(responseMessage);
+      }
+
+      if(error) {
+        setLoading(false);
+      }
+      console.log(response.data);
+    } catch (err) {
+      setError("Failed to fetch domain info.");
+      setLoading(false);
     }
   };
 
@@ -75,9 +82,25 @@ const PurchaseRegister: React.FC = () => {
                       onClick={handleSearch}
                       className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all"
                     >
-                      Search
+                      {loading ? "Searching..." : "Search"}
+                      {/* {error && "Search"} */}
                     </button>
                   </div>
+                  {error && (
+                    <sub className={`${error && "text-red-500"}`}>{error}</sub>
+                  )}
+                  {result && (
+                    <sub
+                      className={`${
+                        result.includes("not")
+                          ? "text-red-500"
+                          : "text-teal-900"
+                      }`}
+                    >
+                      {result}
+                    </sub>
+                  )}
+
                   <a
                     href="https://nexxyhost.com/clientarea/cart.php?a=add&domain=transfer"
                     className="text-teal-900 hover:underline no-underline flex mt-5"

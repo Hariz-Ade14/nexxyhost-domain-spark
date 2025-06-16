@@ -21,34 +21,34 @@ const WordpressShareHosting = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
-                WordPress Hosting Built for Performance
+                  WordPress Hosting Built for Performance
                 </h1>
                 <p className="text-base text-black mb-8">
-                Experience the fastest WordPress hosting with our optimized
+                  Experience the fastest WordPress hosting with our optimized
                   servers, advanced caching, and expert support. Perfect for
                   bloggers, businesses, and agencies who demand the best.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
-                  Start Your WordPress Site
-                  </button>
+                  <a href="#pricing">
+                    <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
+                      Start Your WordPress Site
+                    </button>
+                  </a>
                   <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
-                  Free Migration
+                    Free Migration
                   </button>
                 </div>
               </div>
               <div className="relative">
-              <img
+                <img
                   src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="WordPress development and optimization"
                   className="rounded-2xl shadow-2xl"
                 />
-               
               </div>
             </div>
           </div>
         </section>
-       
 
         <section className="bg-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,9 +59,6 @@ const WordpressShareHosting = () => {
                   alt="WordPress dashboard and content management"
                   className="rounded-2xl  w-[450px]"
                 />
-                {/* <div className="absolute -top-4 -right-4 bg-gradient-to-r from-teal-500 to-teal-900 p-3 rounded-xl shadow-lg text-white">
-                  <RefreshCw className="h-6 w-6" />
-                </div> */}
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-teal-900 mb-6">
@@ -118,7 +115,9 @@ const WordpressShareHosting = () => {
           </div>
         </section>
 
-        <PricingPlans plan="Wordpress Shared Hosting" />
+        <div className="" id="pricing">
+          <PricingPlans plan="Wordpress Shared Hosting" />
+        </div>
 
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
