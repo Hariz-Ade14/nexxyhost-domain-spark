@@ -63,7 +63,7 @@ export default function WhoisSearchPage() {
     try {
       setError(null);
       setResult(null);
-      const response = await axios.get("http://localhost:4000/view-domain", {
+      const response = await axios.get("https://nexxy-server.vercel.app/view-domain", {
         params: { domainName },
       });
 
