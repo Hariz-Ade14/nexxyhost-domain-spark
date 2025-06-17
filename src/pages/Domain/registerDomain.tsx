@@ -33,7 +33,7 @@ const PurchaseRegister: React.FC = () => {
     try {
       setError(null);
       setResult(null);
-      const response = await axios.get("http://localhost:4000/check-domain", {
+      const response = await axios.get("https://nexxy-server.vercel.app/check-domain", {
         params: { domainName },
       });
 

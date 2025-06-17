@@ -38,7 +38,6 @@ app.get('/view-domain', async (req, res) => {
   if (!domainName) {
     return res.status(400).json({ error: 'Missing domain name' });
   }
-  https://api.connectreseller.com/ConnectReseller/ESHOP/checkdomainavailable?APIKey=
 
   try {
     const response = await axios.get('https://api.connectreseller.com/ConnectReseller/ESHOP/checkdomainavailable', {

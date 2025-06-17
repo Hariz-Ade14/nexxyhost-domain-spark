@@ -17,6 +17,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import React, { useRef } from "react";
+import emailjs from '@emailjs/browser'
+
 const HostingMigrationAndTransfer = () => {
   const migrationSteps = [
     {
@@ -111,6 +114,25 @@ const HostingMigrationAndTransfer = () => {
     "Node.js Applications",
     "Python Applications",
   ];
+
+  const form = useRef();
+
+  const handleMigration = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    emailjs
+      .sendForm("service_j815vdf", "template_a8070ug", e.target, {
+        publicKey: 'jUf2HiyIkrdLy2LaB',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  }
 
   return (
     <Layout>
@@ -377,7 +399,7 @@ const HostingMigrationAndTransfer = () => {
                   </div>
 
                   <Dialog>
-                    <form>
+                    <form ref={form} onSubmit={handleMigration}>
                       <DialogTrigger asChild>
                         <p className="w-full cursor-pointer flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-teal-900 bg-white hover:bg">
                           Request Free Migration

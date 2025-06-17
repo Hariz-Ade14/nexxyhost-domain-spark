@@ -75,21 +75,21 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <section className="bg-white to-cyan-50 py-8">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12 ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-white to-cyan-50 py-0">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-10 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
             <div className="relative">
               <img
-                src="/images/image4.avif"
+                src="/images/heroimage.jpg"
                 alt="Website design and development illustration"
-                className="rounded-2xl w-[1000px]"
+                className="rounded-2xl w-[900px]"
               />
             </div>
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
+            <div className="bg-none p-0">
+              <h1 className="text-4xl md:text-5xl font-bold text-teal-900">
                 Reliable, Secured & Affordable
               </h1>
-              <p className="text-base text-black mb-8">
+              <p className="text-base text-black">
                 For NexxyHost, It is all about great pricing and a commitment to
                 World-class customer service delivery. It's fundamental to
                 generate confidence and security in each of our customers,
@@ -119,9 +119,9 @@ const Hero = () => {
             </div>
             <div className="relative">
               <img
-                src="/images/image2.jpg"
+                src="/images/heroimage.gif"
                 alt="Website design and development illustration"
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl"
               />
             </div>
           </div>
