@@ -50,7 +50,6 @@ function ScrollToTop() {
 }
 
 
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>

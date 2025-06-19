@@ -50,7 +50,7 @@ const EmailServices = () => {
               <div className="bg-gray-100 p-1 rounded-lg">
                 <button
                   onClick={() => setActiveTab("business")}
-                  className={`px-8 py-3 rounded-lg font-semibold transition-all ${
+                  className={`md:px-8 px-5 py-3 rounded-lg font-semibold transition-all ${
                     activeTab === "business"
                       ? "bg-button text-white"
                       : "text-gray-600 hover:text-gray-900"
@@ -60,7 +60,7 @@ const EmailServices = () => {
                 </button>
                 <button
                   onClick={() => setActiveTab("enterprise")}
-                  className={`px-8 py-3 rounded-lg font-semibold transition-all ${
+                  className={`md:px-8 px-5 py-3 rounded-lg font-semibold transition-all ${
                     activeTab === "enterprise"
                       ? "bg-button text-white"
                       : "text-black"
