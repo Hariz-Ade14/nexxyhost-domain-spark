@@ -95,7 +95,7 @@ const PurchaseRegister: React.FC = () => {
                       onClick={handleSearch}
                       className={`bg-button text-white ${
                         loading ? "py-0" : "py-3 "
-                      } px-8 rounded-lg font-semibold h-[50px] w-[140px] hover:from-teal-700 hover:to-cyan-700 transition-all`}
+                      } md:px-8 px-6 rounded-lg font-semibold h-[50px] w-[120px] md:w-[140px] hover:from-teal-700 hover:to-cyan-700 transition-all`}
                     >
                       {loading ? (
                         <CircularProgress color="inherit" size="30px" />
