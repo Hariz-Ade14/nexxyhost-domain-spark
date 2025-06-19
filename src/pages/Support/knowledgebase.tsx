@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 const Knowledgebase = () => {
   return (
     <Layout>
-      <div className="mt-20 min-h-screen px-20 py-10 flex flex-col gap-12 mx-auto bg-red-500 bg-teal-100/50">
+      <div className="mt-20 min-h-screen px-5 lg:px-20 py-10 flex flex-col gap-12 mx-auto bg-red-500 bg-teal-100/50">
         <h1 className="font-bold text-3xl text-teal-900">
           Advice and answers from the Customer Success Team
         </h1>
