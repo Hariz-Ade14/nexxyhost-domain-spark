@@ -30,8 +30,8 @@ const SharedHosting: React.FC = () => {
                   need to succeed online.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#pricing">
-                    <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
+                  <a className="bg-button text-center text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105" href="#pricing">
+                    <button >
                       Start Your Website
                     </button>
                   </a>

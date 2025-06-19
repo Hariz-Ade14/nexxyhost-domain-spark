@@ -173,9 +173,9 @@ const HostingMigrationAndTransfer = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="https://wa.me/message/3NHP6PHXLBWSD1"
-                    className="no-underline"
+                    className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105 text-center no-underline"
                   >
-                    <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
+                    <button >
                       Talk to Migration Expert
                     </button>
                   </a>

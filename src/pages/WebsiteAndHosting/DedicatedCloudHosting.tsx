@@ -183,8 +183,8 @@ const DedicatedCloudHosting = () => {
                   applications.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#pricing">
-                  <button onClick={scrollToPricing} className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
+                  <a href="#pricing" className="bg-button text-center text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
+                  <button onClick={scrollToPricing}>
                     Launch Cloud Server
                   </button>
                   </a>
