@@ -82,7 +82,7 @@ const PurchaseRegister: React.FC = () => {
                   Choose from hundreds of extension and get your website online
                   today with instant activation.
                 </p>
-                <div className="bg-white p-2 rounded-2xl mb-8">
+                <div className="bg-white md:p-2 rounded-2xl mb-8">
                   <div className="flex items-center sm:flex-row gap-4">
                     <input
                       type="text"
