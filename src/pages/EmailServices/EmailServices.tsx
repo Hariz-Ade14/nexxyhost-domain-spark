@@ -23,14 +23,7 @@ const EmailServices = () => {
                   custom domain email addresses. Secure, reliable, and
                   feature-rich email hosting for businesses of all sizes.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
-                    Start Email Hosting
-                  </button>
-                  <button className="border-2 border-button text-button px-8 py-3 rounded-lg font-semibold hover:bg-button hover:text-white transition-all">
-                    View Features
-                  </button>
-                </div>
+                
               </div>
               <div className="relative">
                 <img

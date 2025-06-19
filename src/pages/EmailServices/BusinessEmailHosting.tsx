@@ -181,7 +181,11 @@ const BusinessEmailHosting = () => {
           </div>
         </div>
       </section>
-      <EmailPricing type="Busniess" />
+
+      <div id="pricing">
+        <EmailPricing type="Busniess" />
+      </div>
+
       {/* Security Features */}
       <section className="py-20">
         <div className="md:max-w-7xl mx-auto px-12 sm:px-6 lg:px-8">
@@ -272,12 +276,18 @@ const BusinessEmailHosting = () => {
             professional communications
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
-              Start 
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-teal-600 transition-all">
-              Contact Sales
-            </button>
+            <a href="#pricing">
+              {" "}
+              <button className="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
+                Start
+              </button>
+            </a>
+
+            <a href="https://api.whatsapp.com/message/3NHP6PHXLBWSD1?autoload=1&app_absent=0">
+              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-teal-600 transition-all">
+                Contact Sales
+              </button>
+            </a>
           </div>
         </div>
       </section>

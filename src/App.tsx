@@ -29,8 +29,27 @@ import GeneralTermOFService from "./pages/Legals/GeneralTermOFService";
 import Knowledgebase from "./pages/Support/knowledgebase";
 import SubmitTicket from "./pages/Support/submitTicket";
 import DomainReseller from "./pages/Domain/DomainReseller";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 
 const queryClient = new QueryClient();
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      
+    });
+  }, [pathname]);
+
+  return null;
+}
+
+
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -38,6 +57,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+       <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="*" element={<NotFound />} />

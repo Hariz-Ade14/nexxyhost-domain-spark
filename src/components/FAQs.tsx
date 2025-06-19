@@ -24,7 +24,8 @@ export const faqs: faqProps[] = [
       "We offer free website migration services! Our expert team will handle the entire process for you, ensuring zero downtime during the transfer. Simply provide us with your current hosting details, and we'll take care of moving your files, databases, and email accounts safely to our servers.",
   },
   {
-    question: "Can I schedule lessons and content ahead and get released automatically over time?",
+    question:
+      "Can I schedule lessons and content ahead and get released automatically over time?",
     answer:
       "We provide 24/7 technical support through live chat, email, and phone. Our support team consists of experienced hosting professionals who can help with everything from basic account questions to complex technical issues. We also maintain a comprehensive knowledge base with tutorials and guides.",
   },
@@ -35,7 +36,13 @@ export const faqs: faqProps[] = [
   },
 ];
 
-const FAQs = ({faqs,subheading}: {faqs: Record<string,string>[],subheading?: string}) => {
+const FAQs = ({
+  faqs,
+  subheading,
+}: {
+  faqs: Record<string, string>[];
+  subheading?: string;
+}) => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -50,9 +57,7 @@ const FAQs = ({faqs,subheading}: {faqs: Record<string,string>[],subheading?: str
             <h2 className="text-3xl font-bold text-teal-900 sm:text-4xl mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-black">
-              {subheading}
-            </p>
+            <p className="text-lg text-black">{subheading}</p>
           </div>
 
           <div className="space-y-6">
@@ -62,7 +67,7 @@ const FAQs = ({faqs,subheading}: {faqs: Record<string,string>[],subheading?: str
                 data-aos="fade-down"
                 className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
               >
-                <details  data-aos="fade-in" className="group">
+                <details data-aos="fade-in" className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
                     <h3 className="text-lg lg:font-semibold text-gray-900">
                       {faq.question}
@@ -75,7 +80,7 @@ const FAQs = ({faqs,subheading}: {faqs: Record<string,string>[],subheading?: str
                       </div>
                     </div>
                   </summary>
-                  <div data-aos="fade-in" className="px-6 pb-6" >
+                  <div data-aos="fade-in" className="px-6 pb-6">
                     <p className="text-gray-600 leading-relaxed">
                       {faq.answer}
                     </p>
@@ -89,9 +94,11 @@ const FAQs = ({faqs,subheading}: {faqs: Record<string,string>[],subheading?: str
             <p className="text-black mb-6">
               Still have questions? Our support team is here to help!
             </p>
-            <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
-              Support
-            </button>
+            <a href="https://api.whatsapp.com/message/3NHP6PHXLBWSD1?autoload=1&app_absent=0">
+              <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                Support
+              </button>
+            </a>
           </div>
         </div>
       </div>
