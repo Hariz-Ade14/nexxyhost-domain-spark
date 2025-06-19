@@ -187,7 +187,10 @@ const Header = () => {
                                 className="block select-none space-y-1rounded-md p-3 leading-none no-underline outline-none"
                                 key={item.label}
                               >
-                                <Link to={item.url} className="hover:underline text-black  font-bold">
+                                <Link
+                                  to={item.url}
+                                  className="hover:underline text-black  font-bold"
+                                >
                                   {item.label}
                                   <br />
                                 </Link>
@@ -204,7 +207,10 @@ const Header = () => {
                                 className="block select-none space-y-1  rounded-md p-3 leading-none no-underline outline-none"
                                 key={item.label}
                               >
-                                <Link to={item.url} className="hover:underline font-bold text-black">
+                                <Link
+                                  to={item.url}
+                                  className="hover:underline font-bold text-black"
+                                >
                                   {item.label}
                                   <br />
                                 </Link>
@@ -270,7 +276,15 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex gap-4 items-center">
+            <a
+              href="https://nexxyhost.com/clientarea/clientarea.php"
+              className="no-underline"
+            >
+              <button className="bg-button md:hidden text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                Log In
+              </button>
+            </a>
             <button
               className={`inline-flex items-center justify-center p-2 rounded-md  hover:text-teal-600 focus:outline-none ${
                 scrolled ? "text-teal-900" : "text-teal-500"
@@ -328,14 +342,14 @@ const Header = () => {
                   </div>
                 </div>
               ))}
-              <a
+              {/* <a
                 href="https://nexxyhost.com/clientarea/clientarea.php"
                 className="no-underline mx-3 my-10"
               >
                 <button className="bg-button text-white px-10 py-2 rounded-lg hover:bg-teal-700 transition-colors">
                   Login
                 </button>
-              </a>
+              </a> */}
             </div>
           </div>
         )}
