@@ -13,10 +13,24 @@ import Layout from "@/components/Layout";
 import { useState } from "react";
 import axios from "axios";
 
+// Define a type for the WHOIS result
+interface WhoisResult {
+  domain_name?: string;
+  whois_server?: string;
+  creation_date?: string;
+  expiration_date?: string;
+  registrar?: string;
+
+  registrar_url?: string;
+
+  name_servers?: string[];
+  // Add other fields as needed
+}
+
 export default function WhoisSearchPage() {
-  const [domainName,setDomainName] = useState("");
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState(null);
+  const [domainName, setDomainName] = useState("");
+  const [result, setResult] = useState<WhoisResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const domainExtensions = [
@@ -60,20 +74,30 @@ export default function WhoisSearchPage() {
       return;
     }
 
+    const token = import.meta.env.VITE_WHOIS_API_KEY;
+
     try {
       setError(null);
       setResult(null);
-      const response = await axios.get("http://localhost:4000/view-domain", {
-        params: { domainName },
+      const response = await axios.get("https://api.api-ninjas.com/v1/whois", {
+        params: { domain: domainName },
+        headers: {  
+          Authorization: "Bearer",
+          "X-Api-Key": token ,
+          "Content-Type": "application/json",
+        },
       });
+      const responseMessage = response.data;
 
-      const responseMessage = response.data.responseMsg.message;
+      console.log(responseMessage);
+      console.log(responseMessage.domain_name);
+      console.log(response);
+
       if (response) {
         setError(false);
         setLoading(false);
         setResult(responseMessage);
       }
-      console.log(response.data);
     } catch (err) {
       setError("Failed to fetch domain info.");
     }
@@ -358,11 +382,11 @@ export default function WhoisSearchPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-teal-900 mb-4">
-                  Sample WHOIS Results
+                  WHOIS Results
                 </h2>
-                <p className="text-lg text-black">
+                {/* <p className="text-lg text-black">
                   Here's an example of the information our WHOIS lookup provides
-                </p>
+                </p> */}
               </div>
 
               <Card className="border-0 shadow-lg">
@@ -385,23 +409,23 @@ export default function WhoisSearchPage() {
                               Domain Name:
                             </p>
                             <p className="font-medium text-gray-900">
-                              example.com
+                              {result && result.domain_name}
                             </p>
                           </div>
-                          <div>
+                          {/* <div>
                             <p className="text-sm text-gray-500">
                               Domain Status:
                             </p>
                             <p className="font-medium text-green-600">
                               Registered
                             </p>
-                          </div>
+                          </div> */}
                           <div>
                             <p className="text-sm text-gray-500">
                               Creation Date:
                             </p>
                             <p className="font-medium text-gray-900">
-                              1995-08-14
+                              {result && result.creation_date}
                             </p>
                           </div>
                           <div>
@@ -409,7 +433,7 @@ export default function WhoisSearchPage() {
                               Expiration Date:
                             </p>
                             <p className="font-medium text-gray-900">
-                              2023-08-13
+                              {result && result.expiration_date}
                             </p>
                           </div>
                         </div>
@@ -426,7 +450,7 @@ export default function WhoisSearchPage() {
                           <div>
                             <p className="text-sm text-gray-500">Registrar:</p>
                             <p className="font-medium text-gray-900">
-                              Example Registrar, Inc.
+                              {result && result.registrar}
                             </p>
                           </div>
                           <div>
@@ -434,15 +458,15 @@ export default function WhoisSearchPage() {
                               WHOIS Server:
                             </p>
                             <p className="font-medium text-gray-900">
-                              whois.example-registrar.com
+                              {result && result.whois_server}
                             </p>
                           </div>
                           <div>
                             <p className="text-sm text-gray-500">
-                              Referral URL:
+                              Registrar URL:
                             </p>
                             <p className="font-medium text-gray-900">
-                              http://www.example-registrar.com
+                              {result && result.registrar_url}
                             </p>
                           </div>
                         </div>
@@ -457,10 +481,10 @@ export default function WhoisSearchPage() {
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <div className="space-y-2">
                           <p className="font-medium text-gray-900">
-                            NS1.EXAMPLE-DNS.COM
+                            {result && result.name_servers[0]}
                           </p>
                           <p className="font-medium text-gray-900">
-                            NS2.EXAMPLE-DNS.COM
+                            {result && result.name_servers[1]}
                           </p>
                         </div>
                       </div>

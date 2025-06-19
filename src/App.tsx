@@ -32,7 +32,6 @@ import DomainReseller from "./pages/Domain/DomainReseller";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-
 const queryClient = new QueryClient();
 
 function ScrollToTop() {
@@ -42,67 +41,83 @@ function ScrollToTop() {
     window.scrollTo({
       top: 0,
       left: 0,
-      
     });
   }, [pathname]);
 
   return null;
 }
 
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-       <ScrollToTop/>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/register-domain" element={<RegisterDomain />} />
-          <Route path="/transfer-domain" element={<TransferDomain />} />
-          <Route path="/regiter-domain" element={<WhoIsSearch />} />
-          <Route path="/shared-hosting" element={<SharedHosting />} />
-          <Route path="/website-builder" element={<WebsiteBuilder />} />
-          <Route path="/website-security" element={<WebSecurityPage />} />
-          <Route path="/ssl-certificate" element={<SSLCertificatesPage />} />
-          <Route
-            path="/wordpressshared-hosting"
-            element={<WordpressShareHosting />}
-          /> 
-          <Route
-            path="/hosting-migration"
-            element={<HostingMigrationAndTransfer />}
-          />
-          <Route
-            path="/dedicated-cloud-hosting"
-            element={<DedicatedCloudHosting />}
-          />
-          <Route path="/reseller-hosting" element={<Resellerhosting />} />
-          <Route path="/domain-reseller" element={<DomainReseller />} />
-          <Route path="/email-services" element={<EmailServices />} />
-          <Route path="/whois-search" element={<WhoisSearchPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route
-            path="/enterprise-email-hosting"
-            element={<EnterpriseEmailHosting />}
-          />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/knowledgebase" element={<Knowledgebase />} />
-          <Route path="/submit-ticket" element={<SubmitTicket />} />
-          <Route path="/refund-policy" element={<RefundPolicy />} />
-          <Route path="/fair-usage-policy" element={<FairUsagePolicy />} />
-          <Route path="/ssl-terms" element={<SSLTermsOfService />} />
-          <Route path="/terms-of-services" element={<GeneralTermOFService />} />
-          <Route
-            path="/webdevelopment-policy"
-            element={<WebDevelopmentPolicy />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  useEffect(() => {
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/5f0a41165b59f94722ba8cff/default";
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  }, []);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/register-domain" element={<RegisterDomain />} />
+            <Route path="/transfer-domain" element={<TransferDomain />} />
+            <Route path="/regiter-domain" element={<WhoIsSearch />} />
+            <Route path="/shared-hosting" element={<SharedHosting />} />
+            <Route path="/website-builder" element={<WebsiteBuilder />} />
+            <Route path="/website-security" element={<WebSecurityPage />} />
+            <Route path="/ssl-certificate" element={<SSLCertificatesPage />} />
+            <Route
+              path="/wordpressshared-hosting"
+              element={<WordpressShareHosting />}
+            />
+            <Route
+              path="/hosting-migration"
+              element={<HostingMigrationAndTransfer />}
+            />
+            <Route
+              path="/dedicated-cloud-hosting"
+              element={<DedicatedCloudHosting />}
+            />
+            <Route path="/reseller-hosting" element={<Resellerhosting />} />
+            <Route path="/domain-reseller" element={<DomainReseller />} />
+            <Route path="/email-services" element={<EmailServices />} />
+            <Route path="/whois-search" element={<WhoisSearchPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route
+              path="/enterprise-email-hosting"
+              element={<EnterpriseEmailHosting />}
+            />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/knowledgebase" element={<Knowledgebase />} />
+            <Route path="/submit-ticket" element={<SubmitTicket />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/fair-usage-policy" element={<FairUsagePolicy />} />
+            <Route path="/ssl-terms" element={<SSLTermsOfService />} />
+            <Route
+              path="/terms-of-services"
+              element={<GeneralTermOFService />}
+            />
+            <Route
+              path="/webdevelopment-policy"
+              element={<WebDevelopmentPolicy />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

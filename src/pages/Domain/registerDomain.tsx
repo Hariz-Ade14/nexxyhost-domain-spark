@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Check, ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
-
+import CircularProgress from "@mui/material/CircularProgress";
+import { useNavigate } from "react-router-dom";
 const domainExtensions = [
   { name: ".com", price: 12.99 },
   { name: ".org", price: 11.99 },
@@ -20,22 +21,25 @@ const PurchaseRegister: React.FC = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const Route = useNavigate();
   const handleSearch = async (e: React.FormEvent) => {
     setLoading(true);
     e.preventDefault();
     if (!domainName) {
       setError("Please enter a domain name");
       setLoading(false);
-
       return;
     }
 
     try {
       setError(null);
       setResult(null);
-      const response = await axios.get("https://nexxy-server.vercel.app/check-domain", {
-        params: { domainName },
-      });
+      const response = await axios.get(
+        "https://nexxy-server.vercel.app/check-domain",
+        {
+          params: { domainName },
+        }
+      );
 
       const responseMessage = response.data.responseMsg.message;
       if (response) {
@@ -44,7 +48,16 @@ const PurchaseRegister: React.FC = () => {
         setResult(responseMessage);
       }
 
-      if(error) {
+      const registernewdomain = responseMessage.includes("not");
+
+      if (response && registernewdomain) {
+        setTimeout(() => {
+          window.location.href =
+            "https://nexxyhost.com/clientarea/cart.php?a=add&domain=register";
+        }, 2000);
+      }
+
+      if (error) {
         setLoading(false);
       }
       console.log(response.data);
@@ -70,7 +83,7 @@ const PurchaseRegister: React.FC = () => {
                   today with instant activation.
                 </p>
                 <div className="bg-white p-2 rounded-2xl mb-8">
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex items-center sm:flex-row gap-4">
                     <input
                       type="text"
                       placeholder="Enter your domain name..."
@@ -80,14 +93,22 @@ const PurchaseRegister: React.FC = () => {
                     />
                     <button
                       onClick={handleSearch}
-                      className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all"
+                      className={`bg-button text-white ${
+                        loading ? "py-0" : "py-3 "
+                      } px-8 rounded-lg font-semibold h-[50px] w-[140px] hover:from-teal-700 hover:to-cyan-700 transition-all`}
                     >
-                      {loading ? "Searching..." : "Search"}
-                      {/* {error && "Search"} */}
+                      {loading ? (
+                        <CircularProgress color="inherit" size="30px" />
+                      ) : (
+                        "Search"
+                      )}
                     </button>
                   </div>
+
                   {error && (
-                    <sub className={`${error && "text-red-500"}`}>{error}</sub>
+                    <span className={` ${error && "text-red-500"}`}>
+                      {error}
+                    </span>
                   )}
                   {result && (
                     <sub
