@@ -29,7 +29,7 @@ const WordpressShareHosting = () => {
                   bloggers, businesses, and agencies who demand the best.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#pricing">
+                  <a className="pricing" href="#pricing">
                     <button className="bg-button text-white px-8 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all transform hover:scale-105">
                       Start Your WordPress Site
                     </button>
@@ -115,7 +115,7 @@ const WordpressShareHosting = () => {
           </div>
         </section>
 
-        <div className="" id="pricing">
+        <div className="pricing" id="pricing">
           <PricingPlans plan="Wordpress Shared Hosting" />
         </div>
 

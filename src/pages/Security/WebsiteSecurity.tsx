@@ -139,19 +139,14 @@ export default function WebSecurityPage() {
                 and customers safe online.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+                <a href="#pricing">
                 <Button
                   size="lg"
                   className="bg-button text-white hover:bg-teal-900"
                 >
                   Secure Your Website
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-teal-900 border border-2 text-teal-900 hover:bg-button hover:text-white"
-                >
-                  Free Security Scan
-                </Button>
+               </a>
               </div>
             </div>
           </div>
@@ -414,8 +409,8 @@ export default function WebSecurityPage() {
           </div>
         </section>
 
-        {/* Security Plans Section */}
-        <section className="py-24 bg-white">
+        {/* Pricing */}
+        <section id="pricing" className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-teal-900 sm:text-4xl mb-4">
