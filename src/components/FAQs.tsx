@@ -19,12 +19,12 @@ export const faqs: faqProps[] = [
       "Yes! We offer a 30-day money-back guarantee on all our hosting plans. If you're not completely satisfied with our service within the first 30 days, we'll refund your hosting fees. This gives you peace of mind to try our services risk-free.",
   },
   {
-    question: "How do I migrate my existing website to your hosting?",
+    question: "How does Tracheids HLX serve and protect me and my contents?",
     answer:
       "We offer free website migration services! Our expert team will handle the entire process for you, ensuring zero downtime during the transfer. Simply provide us with your current hosting details, and we'll take care of moving your files, databases, and email accounts safely to our servers.",
   },
   {
-    question: "What kind of support do you provide?",
+    question: "Can I schedule lessons and content ahead and get released automatically over time?",
     answer:
       "We provide 24/7 technical support through live chat, email, and phone. Our support team consists of experienced hosting professionals who can help with everything from basic account questions to complex technical issues. We also maintain a comprehensive knowledge base with tutorials and guides.",
   },

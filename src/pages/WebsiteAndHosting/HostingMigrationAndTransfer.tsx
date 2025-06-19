@@ -17,8 +17,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import React, { useRef } from "react";
-import emailjs from '@emailjs/browser'
+import React, { useRef, useState } from "react";
+// import emailjs from "@emailjs/browser";
+import emailjs from 'emailjs-com';
 
 const HostingMigrationAndTransfer = () => {
   const migrationSteps = [
@@ -117,22 +118,41 @@ const HostingMigrationAndTransfer = () => {
 
   const form = useRef();
 
-  const handleMigration = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+    websiteUrl: "",
+    project: "",
+  });
+
+  const { name, email, phoneNumber, websiteUrl, project } = formData;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const formRef = useRef();
+  
+  const handleMigration = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    emailjs
-      .sendForm("service_j815vdf", "template_a8070ug", e.target, {
-        publicKey: 'jUf2HiyIkrdLy2LaB',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-  }
+    // const res = await fetch("http://localhost:4000/send-email", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(formData),
+    // });
+
+    // const result = await res.json();
+    // console.log(result);
+
+    emailjs.sendForm('service_j815vdf', 'template_a8070ug', formRef.current, 'jUf2HiyIkrdLy2LaB')
+    .then(() => console.log("Email sent!"))
+    .catch(err => console.log("Failed: " + err));
+  };
 
   return (
     <Layout>
@@ -399,7 +419,7 @@ const HostingMigrationAndTransfer = () => {
                   </div>
 
                   <Dialog>
-                    <form ref={form} onSubmit={handleMigration}>
+                    <form id="migrationForm" ref={formRef} onSubmit={handleMigration}>
                       <DialogTrigger asChild>
                         <p className="w-full cursor-pointer flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-teal-900 bg-white hover:bg">
                           Request Free Migration
@@ -414,26 +434,51 @@ const HostingMigrationAndTransfer = () => {
                         <div className="grid gap-4">
                           <div className="grid gap-3">
                             <Label htmlFor="name-1">Name</Label>
-                            <Input id="name-1" name="name" />
+                            <input
+                              value={name}
+                              onChange={handleChange}
+                              id="name-1"
+                              name="name"
+                            />
                           </div>
                           <div className="grid gap-3">
                             <Label htmlFor="email">Email</Label>
-                            <Input id="email" name="email" />
+                            <input
+                              value={email}
+                              onChange={handleChange}
+                              id="email"
+                              name="email"
+                            />
                           </div>
                           <div className="grid gap-3">
-                            <Label htmlFor="Phone Number">Phone Number</Label>
-                            <Input id="phone number" name="phone number" />
+                            <Label htmlFor="phoneNumber">Phone Number</Label>
+                            <input
+                              value={phoneNumber}
+                              onChange={handleChange}
+                              id="phone number"
+                              name="phoneNumber"
+                            />
                           </div>
                           <div className="grid gap-3">
-                            <Label htmlFor="url">Website Url</Label>
-                            <Input id="url" name="url" />
+                            <Label htmlFor="websiteUrl">Website Url</Label>
+                            <input
+                              value={websiteUrl}
+                              onChange={handleChange}
+                              id="url"
+                              name="websiteUrl"
+                            />
                           </div>
                           <div className="grid gap-3">
                             <Label htmlFor="project">Project</Label>
-                            <Input id="project" name="project" />
+                            <input
+                              value={project}
+                              onChange={handleChange}
+                              id="project"
+                              name="project"
+                            />
                           </div>
                         </div>
-                        <Button className="!bg-button hover:bg-button/50 w-[40%] flex justify-self-end">
+                        <Button type="submit" onClick={handleMigration} className="!bg-button hover:cursor-pointer hover:bg-button/50 w-[40%] flex justify-self-end">
                           Migrate
                         </Button>
                       </DialogContent>

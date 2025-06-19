@@ -76,45 +76,45 @@ const Hero = () => {
         </div>
       </div>
       <section className="bg-white to-cyan-50 py-0">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-10 ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div className="max-w-6xl py-20 mx-auto px-4 sm:px-6 lg:px-10 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <img
                 src="/images/heroimage.jpg"
                 alt="Website design and development illustration"
-                className="rounded-2xl w-[900px]"
+                className="rounded-2xl w-[1000px]"
               />
             </div>
             <div className="bg-none p-0">
-              <h1 className="text-4xl md:text-5xl font-bold text-teal-900">
-                Reliable, Secured & Affordable
+              <h1 className="text-4xl md:text-3xl mb-4 font-bold text-teal-900">
+                Domain Name | Hosting | Security 
               </h1>
-              <p className="text-base text-black">
-                For NexxyHost, It is all about great pricing and a commitment to
-                World-class customer service delivery. It's fundamental to
-                generate confidence and security in each of our customers,
-                offering them Top-notch services. Our vast Team is dedicated to
-                helping our customers around the clock so we can be the best web
-                hosting company to our customer at all times.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-8">
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-teal-900 mb-6">
-              Domain Name | Hosting | Security
-              </h1>
-              <p className="text-base text-black mb-8">
+             <p className="text-base text-black leading-[2rem] mb-8">
                 At NexxyHost, Our main goal has been to provide high quality
                 Hosting, Servers and Domain Name Registration at an affordable
                 price to every client, Beginners, Small Businesses and Large
                 Businesses. Without successful clients, we wouldn't be around,
                 which is what pushes us to provide the best service possible
                 without compromising on quality or features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-8">
+        <div className="max-w-6xl  mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <h1 className="text-4xl md:text-3xl font-bold text-teal-900 mb-6">
+              Reliable, Secured & Affordable
+              </h1>
+               <p className="text-base text-black leading-[2rem]">
+                For NexxyHost, It is all about great pricing and a commitment to
+                World-class customer service delivery. It's fundamental to
+                generate confidence and security in each of our customers,
+                offering them Top-notch services. Our vast Team is dedicated to
+                helping our customers around the clock so we can be the best web
+                hosting company to our customer at all times.
               </p>
             </div>
             <div className="relative">
